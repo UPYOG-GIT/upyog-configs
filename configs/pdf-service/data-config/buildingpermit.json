@@ -621,7 +621,8 @@
                 "responseMapping": [
                   {
                     "variable": "logoImage",
-                    "value": "$.MdmsRes.tenant.tenants[0].logoId",
+                    "value": "$.MdmsRes.common-masters.StateInfo[0].permitCertificateLogoLeft",
+					"value": "$.MdmsRes.common-masters.StateInfo[1].permitCertificateLogoRight",
                     "type": "image"
                   },
                   {
