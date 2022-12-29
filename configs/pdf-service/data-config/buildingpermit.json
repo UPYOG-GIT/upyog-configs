@@ -616,13 +616,17 @@
               },
               {
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
-                "queryParam": "moduleName=common-masters&masterName=StateInfo&tenantId=cg&filter=%5B?(@.code=='{$.tenantId}')%5D",
+                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=cg&filter=%5B?(@.code=='{$.tenantId}')%5D",
                 "apiRequest": null,
                 "responseMapping": [
                   {
                     "variable": "logoImage",
-                    "value": "$.MdmsRes.common-masters.StateInfo[0].permitCertificateLogoLeft",
-					"value": "$.MdmsRes.common-masters.StateInfo[1].permitCertificateLogoRight",
+                    "value": "$.MdmsRes.tenant.tenants[0].logoId",
+                    "type": "image"
+                  },
+				  {
+                    "variable": "logoImage1",
+                    "value": "$.MdmsRes.tenant.tenants[0].logoId1",
                     "type": "image"
                   },
                   {

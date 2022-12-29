@@ -48,7 +48,7 @@
             ]
           },
           {
-            "image": "{{logoImage}}",
+            "image": "{{logoImage1}}",
             "width": 50,
             "height": 61.25,
             "alignment": "right"
