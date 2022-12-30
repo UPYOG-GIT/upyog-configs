@@ -93,6 +93,84 @@
           },
           {
             "text": ", {{PERMISSION_GRANT_TXT}} : "
+          },
+		  {
+            "text": "{{RULE_1}}"
+          },
+		  {
+            "text": "{{RULE_2}}"
+          },
+		  {
+            "text": "{{RULE_2A}}"
+          },
+		  {
+            "text": "{{RULE_2B}}"
+          },
+		  {
+            "text": "{{RULE_2C}}"
+          },
+		  {
+            "text": "{{RULE_3}}"
+          },
+		  {
+            "text": "{{RULE_4}}"
+          },
+		  {
+            "text": "{{RULE_4A}}"
+          },
+		  {
+            "text": "{{RULE_5}}"
+          },
+		  {
+            "text": "{{RULE_6}}"
+          },
+		  {
+            "text": "{{RULE_7}}"
+          },
+		  {
+            "text": "{{RULE_8}}"
+          },
+		  {
+            "text": "{{RULE_9}}"
+          },
+		  {
+            "text": "{{RULE_10}}"
+          },
+		  {
+            "text": "{{RULE_11}}"
+          },
+		  {
+            "text": "{{RULE_12}}"
+          },
+		  {
+            "text": "{{RULE_13}}"
+          },
+		  {
+            "text": "{{RULE_14}}"
+          },
+		  {
+            "text": "{{RULE_15}}"
+          },
+		  {
+            "text": "{{RULE_15A}}"
+          },
+		  {
+            "text": "{{RULE_16}}"
+          },
+		  {
+            "text": "{{RULE_17}}"
+          },
+		  {
+            "text": "{{RULE_17A}}"
+          },
+		  {
+            "text": "{{RULE_18}}"
+          },
+		  {
+            "text": "{{RULE_19}}"
+          },
+		  {
+            "text": "{{RULE_20}}"
           }
         ],
         "style": "top-margin"
