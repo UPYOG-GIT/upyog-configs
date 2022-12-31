@@ -275,7 +275,7 @@
       {
         "text": "{{NOTE}} : ",
         "bold": true,
-        "style": "top-margin"
+        "style": "header"
       },
       {
         "text": [
