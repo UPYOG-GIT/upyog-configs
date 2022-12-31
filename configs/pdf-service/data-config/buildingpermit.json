@@ -777,6 +777,7 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
+			  },
               {
                 "variable": "AUTH_DSCR",
                 "value": {
