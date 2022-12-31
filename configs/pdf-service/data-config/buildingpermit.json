@@ -455,9 +455,9 @@
                 }
               },
               {
-                "variable": "NOTE",
+                "variable": "HEADING_FOR_RULES",
                 "value": {
-                  "path": "BPA_PDF_NOTE"
+                  "path": "BPA_PDF_CONSTRUCTION_HEADING"
                 },
                 "type": "label",
                 "localisation": {

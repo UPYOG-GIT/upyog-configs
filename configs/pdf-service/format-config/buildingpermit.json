@@ -273,7 +273,7 @@
         "bold": true
       },
       {
-        "text": "{{NOTE}} : ",
+        "text": "{{HEADING_FOR_RULES}} : ",
         "bold": true,
         "style": "header"
       },
