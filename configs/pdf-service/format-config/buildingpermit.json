@@ -280,82 +280,82 @@
       {
         "text": [
 		  {
-            "text": "{{RULE_1}}"
+            "text1": "{{RULE_1}}"
           },
           {
-            "text": "{{RULE_2}}"
+            "text2": "{{RULE_2}}"
           },
 		  {
-            "text": "{{RULE_2A}}"
+            "text2a": "{{RULE_2A}}"
           },
 		  {
-            "text": "{{RULE_2B}}"
+            "text2b": "{{RULE_2B}}"
           },
 		  {
-            "text": "{{RULE_2C}}"
+            "text2c": "{{RULE_2C}}"
           },
 		  {
-            "text": "{{RULE_3}}"
+            "text3": "{{RULE_3}}"
           },
 		  {
-            "text": "{{RULE_4}}"
+            "text4": "{{RULE_4}}"
           },
 		  {
-            "text": "{{RULE_4A}}"
+            "text4": "{{RULE_4A}}"
           },
 		  {
-            "text": "{{RULE_5}}"
+            "text5": "{{RULE_5}}"
           },
 		  {
-            "text": "{{RULE_6}}"
+            "text6": "{{RULE_6}}"
           },
 		  {
-            "text": "{{RULE_7}}"
+            "text7": "{{RULE_7}}"
           },
 		  {
-            "text": "{{RULE_8}}"
+            "text8": "{{RULE_8}}"
           },
 		  {
-            "text": "{{RULE_9}}"
+            "text9": "{{RULE_9}}"
           },
 		  {
-            "text": "{{RULE_10}}"
+            "text10": "{{RULE_10}}"
           },
 		  {
-            "text": "{{RULE_11}}"
+            "text11": "{{RULE_11}}"
           },
 		  {
-            "text": "{{RULE_12}}"
+            "text12": "{{RULE_12}}"
           },
 		  {
-            "text": "{{RULE_13}}"
+            "text13": "{{RULE_13}}"
           },
 		  {
-            "text": "{{RULE_14}}"
+            "text14": "{{RULE_14}}"
           },
 		  {
-            "text": "{{RULE_15}}"
+            "text15": "{{RULE_15}}"
           },
 		  {
-            "text": "{{RULE_15A}}"
+            "text15": "{{RULE_15A}}"
           },
 		  {
-            "text": "{{RULE_16}}"
+            "text16": "{{RULE_16}}"
           },
 		  {
-            "text": "{{RULE_17}}"
+            "text17": "{{RULE_17}}"
           },
 		  {
-            "text": "{{RULE_17A}}"
+            "text17": "{{RULE_17A}}"
           },
 		  {
-            "text": "{{RULE_18}}"
+            "text18": "{{RULE_18}}"
           },
 		  {
-            "text": "{{RULE_19}}"
+            "text19": "{{RULE_19}}"
           },
 		  {
-            "text": "{{RULE_20}}"
+            "text20": "{{RULE_20}}"
           }
         ],
         "style": "top-margin"
