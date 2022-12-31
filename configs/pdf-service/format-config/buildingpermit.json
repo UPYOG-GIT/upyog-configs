@@ -353,6 +353,9 @@
           },
 		  {
             "text19": "{{RULE_19}}"
+          },
+		  {
+            "text20": "{{RULE_20}}"
           }
         ],
         "style": "top-margin"
