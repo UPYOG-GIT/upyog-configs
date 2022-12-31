@@ -766,18 +766,6 @@
                   "module": "rainmaker-bpa"
                 }
               },
-			  {
-                "variable": "RULE_20",
-                "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWENTEEN"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-bpa"
-                }
-			  },
               {
                 "variable": "AUTH_DSCR",
                 "value": {
