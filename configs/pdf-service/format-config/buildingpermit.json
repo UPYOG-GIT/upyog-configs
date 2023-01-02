@@ -171,7 +171,8 @@
       {
         "separator": ")",
         "ol": [
-           "{{RULE_1}}",
+		  "{{HEADING_FOR_RULES}}",
+          "{{RULE_1}}",
 		  "{{RULE_2}}",
 		  "{{RULE_2A}}",
 		  "{{RULE_2B}}",
