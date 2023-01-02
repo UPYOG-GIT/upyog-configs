@@ -279,87 +279,38 @@
       },
       {
         "text": [
-		  {
-            "text": "{{RULE_1}}"
-          },
-          {
-            "text": "{{RULE_2}}"
-          },
-		  {
-            "text": "{{RULE_2A}}"
-          },
-		  {
-            "text": "{{RULE_2B}}"
-          },
-		  {
-            "text": "{{RULE_2C}}"
-          },
-		  {
-            "text": "{{RULE_3}}"
-          },
-		  {
-            "text": "{{RULE_4}}"
-          },
-		  {
-            "text": "{{RULE_4A}}"
-          },
-		  {
-            "text": "{{RULE_5}}"
-          },
-		  {
-            "text": "{{RULE_6}}"
-          },
-		  {
-            "text": "{{RULE_7}}"
-          },
-		  {
-            "text": "{{RULE_8}}"
-          },
-		  {
-            "text": "{{RULE_9}}"
-          },
-		  {
-            "text": "{{RULE_10}}"
-          },
-		  {
-            "text": "{{RULE_11}}"
-          },
-		  {
-            "text": "{{RULE_12}}"
-          },
-		  {
-            "text": "{{RULE_13}}"
-          },
-		  {
-            "text": "{{RULE_14}}"
-          },
-		  {
-            "text": "{{RULE_15}}"
-          },
-		  {
-            "text": "{{RULE_15A}}"
-          },
-		  {
-            "text": "{{RULE_16}}"
-          },
-		  {
-            "text": "{{RULE_17}}"
-          },
-		  {
-            "text": "{{RULE_17A}}"
-          },
-		  {
-            "text": "{{RULE_18}}"
-          },
-		  {
-            "text": "{{RULE_19}}"
-          },
-		  {
-            "text": "{{RULE_20}}"
-          }
-        ],
+		"ol": [
+          "{{RULE_1}}"
+		  "{{RULE_2}}"
+		  "{{RULE_2A}}"
+		  "{{RULE_2B}}"
+		  "{{RULE_2C}}"
+		  "{{RULE_3}}"
+		  "{{RULE_4}}"
+		  "{{RULE_4A}}"
+		  "{{RULE_5}}"
+		  "{{RULE_6}}"
+		  "{{RULE_7}}"
+		  "{{RULE_8}}"
+		  "{{RULE_9}}"
+		  "{{RULE_10}}"
+		  "{{RULE_11}}"
+		  "{{RULE_12}}"
+		  "{{RULE_13}}"
+		  "{{RULE_14}}"
+		  "{{RULE_15}}"
+		  "{{RULE_15A}}"
+		  "{{RULE_16}}"
+		  "{{RULE_17}}"
+		  "{{RULE_17A}}"
+		  "{{RULE_18}}"
+		  "{{RULE_19}}"
+		  "{{RULE_20}}"
+		  
+        ]
+	 ],
         "style": "top-margin"
-      },
+},
       {
         "image": "{{qrCode}}",
         "alignment": "right",
