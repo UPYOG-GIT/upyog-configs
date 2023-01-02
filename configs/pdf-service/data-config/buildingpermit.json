@@ -471,7 +471,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_ONE"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -483,7 +483,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWO"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -495,7 +495,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWO_A"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -507,7 +507,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWO_B"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -519,7 +519,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWO_C"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -531,7 +531,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_THREE"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -543,7 +543,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_FOUR"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -555,7 +555,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_FOUR_SUB"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -567,7 +567,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_FIVE"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -579,7 +579,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_SIX"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -591,7 +591,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_SEVEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -603,7 +603,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_EIGHT"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -615,7 +615,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_NINE"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -627,7 +627,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -639,7 +639,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_ELEVEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -651,7 +651,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWELVE"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -663,7 +663,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_THIRTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -675,7 +675,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_FOURTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -687,7 +687,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_FIFTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -699,7 +699,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_FIFTEEN_HALF"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -711,7 +711,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_SIXTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -723,7 +723,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_SEVENTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -735,7 +735,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_SEVENTEEN_HAIF"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -747,7 +747,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_EIGHTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -759,7 +759,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_NINETEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,
@@ -771,7 +771,7 @@
                 "value": {
                   "path": "BPA_PDF_CONSTRUCTION_WORK_SPECIFICATIONS_LINE_TWENTEEN"
                 },
-                "type": "label",
+                "type" : "array-orderedlist",
                 "localisation": {
                   "required": true,
                   "prefix": null,

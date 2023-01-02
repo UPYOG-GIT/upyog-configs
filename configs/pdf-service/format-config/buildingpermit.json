@@ -310,7 +310,7 @@
         ]
 	 ],
         "style": "top-margin"
-},
+     },
       {
         "image": "{{qrCode}}",
         "alignment": "right",
