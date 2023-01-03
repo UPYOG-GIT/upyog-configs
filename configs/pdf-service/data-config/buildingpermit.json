@@ -194,9 +194,33 @@
                 }
               },
               {
-                "variable": "BPA_BYELAWS",
+                "variable": "BPA_HEADER_RULE",
                 "value": {
-                  "path": "BPA_PDF_BYELAWS"
+                  "path": "BPA_PDF_VIKAS_RULE""
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+			  {
+                "variable": "BPA_LAND_RULE",
+                "value": {
+                  "path": "BPA_PDF_CERTIFICATE_LAND_RULE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+			  {
+                "variable": "BPA_CERTIFICATE_INTRODUCTION",
+                "value": {
+                  "path": "BPA_PDF_CERTIFICATE_INTRODUCTION"
                 },
                 "type": "label",
                 "localisation": {

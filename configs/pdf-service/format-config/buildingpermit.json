@@ -23,8 +23,8 @@
         "columns": [
           {
             "image": "{{logoImage}}",
-            "width": 50,
-            "height": 61.25,
+            "width": 55,
+            "height": 65,
             "alignment": "left"
           },
           {
@@ -42,15 +42,15 @@
                 "style": "header"
               },
               {
-                "text": "{{BPA_BYELAWS}}",
+                "text": "{{BPA_HEADER_RULE}}",
                 "style": "sub-header"
               }
             ]
           },
           {
             "image": "{{logoImage1}}",
-            "width": 50,
-            "height": 61.25,
+            "width": 55,
+            "height": 65,
             "alignment": "right"
           }
         ]
@@ -59,6 +59,15 @@
         "columns": [
           {
             "text": [
+			
+			  {
+                "text": "{{BPA_LAND_RULE}}",
+                "bold": false
+              },
+			  {
+                "text": "{{BPA_CERTIFICATE_INTRODUCTION}}",
+                "bold": false
+              },
               {
                 "text": "{{PLAN_PERMISION_NO}} : ",
                 "bold": true
