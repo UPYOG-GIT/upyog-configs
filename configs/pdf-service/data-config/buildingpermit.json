@@ -170,9 +170,9 @@
                 }
               },
               {
-                "variable": "BPA_FORM",
+                "variable": "APPENDIX",
                 "value": {
-                  "path": "BPA_PDF_FORM"
+                  "path": "BPA_PDF_APPENDIX"
                 },
                 "type": "label",
                 "localisation": {

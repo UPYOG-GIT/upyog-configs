@@ -23,8 +23,8 @@
         "columns": [
           {
             "image": "{{logoImage}}",
-            "width": 55,
-            "height": 65,
+            "width": 70,
+            "height": 75,
             "alignment": "left"
           },
           {
@@ -34,7 +34,7 @@
                 "style": "header"
               },
               {
-                "text": "{{BPA_FORM}}",
+                "text": "{{APPENDIX}}",
                 "style": "sub-header"
               },
               {
@@ -49,8 +49,8 @@
           },
           {
             "image": "{{logoImage1}}",
-            "width": 55,
-            "height": 65,
+            "width": 70,
+            "height": 75,
             "alignment": "right"
           }
         ]
