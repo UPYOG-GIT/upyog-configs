@@ -304,8 +304,6 @@
         "style": "header"
       },
       {
-        "text": [
-		  {
         "separator": ")",
         "ol": [
 		  "{{HEADING_FOR_RULES}}",
@@ -336,9 +334,6 @@
 		  "{{RULE_19}}",
 		  "{{RULE_20}}"
         ]
-      }
-        ],
-        "style": "top-margin"
       },
       {
         "image": "{{qrCode}}",
