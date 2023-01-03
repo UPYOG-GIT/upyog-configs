@@ -196,7 +196,7 @@
               {
                 "variable": "BPA_HEADER_RULE",
                 "value": {
-                  "path": "BPA_PDF_VIKAS_RULE""
+                  "path": "BPA_PDF_VIKAS_RULE"
                 },
                 "type": "label",
                 "localisation": {
