@@ -282,7 +282,7 @@
         "bold": true
       },
       {
-        "text": "{{HEADING_FOR_RULES}} : ",
+        "text": "{{HEADING_FOR_NEW_RULES}} ",
         "bold": true,
         "style": "header"
       },
@@ -291,11 +291,8 @@
         "ol": [
 		  "{{RULE_1}}",
 		  "{{RULE_2}}",
-		  "{{RULE_2A}}",
-		  "{{RULE_2B}}",
-		  "{{RULE_2C}}",
 		  "{{RULE_3}}",
-		  "{{RULE_4,RULE_4A}}",
+		  "{{RULE_4}}",
 		  "{{RULE_5}}",
 		  "{{RULE_6}}",
 		  "{{RULE_7}}",
@@ -305,13 +302,7 @@
 		  "{{RULE_11}}",
 		  "{{RULE_12}}",
 		  "{{RULE_13}}",
-		  "{{RULE_14}}",
-		  "{{RULE_15,RULE_15A}}",
-		  "{{RULE_16}}",
-		  "{{RULE_17,RULE_17A}}",
-		  "{{RULE_18}}",
-		  "{{RULE_19}}",
-		  "{{RULE_20}}"
+		  "{{RULE_14}}"
         ]
       },
       {
