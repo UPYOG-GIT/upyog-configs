@@ -169,6 +169,18 @@
                   "module": "rainmaker-bpa"
                 }
               },
+			  {
+                "variable": "APPENDIX",
+                "value": {
+                  "path": "BPA_PDF_APPENDIX"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
               {
                 "variable": "BPA_FORM",
                 "value": {
@@ -194,11 +206,11 @@
                 }
               },
               {
-                "variable": "BPA_BYELAWS",
+                "variable": "BPA_HEADER_RULE",
                 "value": {
-                  "path": "BPA_PDF_BYELAWS"
+                  "path": "BPA_PDF_VIKAS_RULE"
                 },
-                "type" : "label",
+                "type": "label",
                 "localisation": {
                   "required": true,
                   "prefix": null,
