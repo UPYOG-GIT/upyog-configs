@@ -1,5 +1,5 @@
 {
-  "key": "buildingpermit",
+  "key": "buildingpermit-low",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -23,8 +23,8 @@
         "columns": [
           {
             "image": "{{logoImage}}",
-            "width": 70,
-            "height": 75,
+            "width": 50,
+            "height": 61.25,
             "alignment": "left"
           },
           {
@@ -34,7 +34,7 @@
                 "style": "header"
               },
               {
-                "text": "{{APPENDIX}}",
+                "text": "{{BPA_FORM}}",
                 "style": "sub-header"
               },
               {
@@ -42,15 +42,15 @@
                 "style": "header"
               },
               {
-                "text": "{{BPA_HEADER_RULE}}",
+                "text": "{{BPA_BYELAWS}}",
                 "style": "sub-header"
               }
             ]
           },
           {
-            "image": "{{logoImage1}}",
-            "width": 70,
-            "height": 75,
+            "image": "{{logoImage}}",
+            "width": 50,
+            "height": 61.25,
             "alignment": "right"
           }
         ]
@@ -59,15 +59,6 @@
         "columns": [
           {
             "text": [
-			
-			  {
-                "text": "{{BPA_LAND_RULE}}",
-                "bold": false
-              },
-			  {
-                "text": "{{BPA_CERTIFICATE_INTRODUCTION}}",
-                "bold": false
-              },
               {
                 "text": "{{PLAN_PERMISION_NO}} : ",
                 "bold": true
@@ -90,19 +81,19 @@
             "text": "{{WRT_TXT}}"
           },
           {
-            "text": " {{applicationNo}}",
-            "bold": true,
+            "text" : " {{applicationNo}}",
+            "bold" : true,
             "font": "Roboto"
           },
           {
-            "text": " {{dated}}"
+            "text" : " {{dated}}"
           },
           {
-            "text": " {{applicationDate}}"
+            "text" : " {{applicationDate}}"
           },
           {
-            "text": ", {{PERMISSION_GRANT_TXT}} : "
-          }    
+            "text" : ", {{PERMISSION_GRANT_TXT}} : "
+          }
         ],
         "style": "top-margin"
       },
@@ -145,25 +136,25 @@
             "bold": true
           },
           {
-            "text": " {{SERVEY_NO}} "
+             "text" : " {{SERVEY_NO}} "
           },
           {
-            "text": "{{reServeyPlotNo}}",
-            "bold": true
+            "text" : "{{reServeyPlotNo}}",
+            "bold" : true
+          },          
+          {
+            "text" : " {{TOWNPLANNING_TXT}} "
+         },
+         {
+           "text" : "{{townPlanningScheme}}",
+           "bold" : true
+         },         
+          {
+          "text" : " {{PROPOSE_LAND}} "
           },
           {
-            "text": " {{TOWNPLANNING_TXT}} "
-          },
-          {
-            "text": "{{townPlanningScheme}}",
-            "bold": true
-          },
-          {
-            "text": " {{PROPOSE_LAND}} "
-          },
-          {
-            "text": "{{proposedLandUse}}",
-            "bold": true
+            "text" : "{{proposedLandUse}}",
+            "bold" : true
           },
           {
             "text": " {{OF}} "
@@ -179,9 +170,7 @@
       },
       {
         "separator": ")",
-        "ol": [
-          "{{conditions}}"
-        ]
+        "ol": ["{{conditions}}"]
       },
       {
         "stack": [
@@ -201,45 +190,28 @@
           "body": [
             [
               {
-                "text": "Fee Description",
-                "bold": true
+                "text" : "{{FEE_DSCR}}",
+                "alignment" : "center",
+                "bold" : true
               },
               {
-                "text": "Amount (Rs)",
-                "bold": true,
-                "alignment": "right"
+                "text" : "{{AMOUNT}}",
+                "bold" : true,
+                "alignment" : "right"
               }
-            ],
-            [
-              {
-                "text": "{{appHeadCode}}"
-              },
-              {
-                "text": "{{appFee}}",
-                "alignment": "right"
-              }
-            ],
-            [
-              {
-                "text": "{{sanHeadCode}}"
-              },
-              {
-                "text": "{{sanFee}}",
-                "alignment": "right"
-              }
-            ],
-            [
-              {
-                "text": "Total",
-                "bold": true
-              },
-              {
-                "text": "{{totalDue}}",
-                "bold": true,
-                "alignment": "right"
-              }
+            ],            
+            "{{#paymentDetails}}[{ \"text\":\"{{headCode}}\", \"border\":[ true, true, true, true ],\"alignment\": \"center\"},{ \"text\":\"{{amnt}}\", \"border\":[ true, true, true, true ],\"alignment\": \"right\"}]{{/paymentDetails}}",
+              [
+                {
+                  "text" : "{{TOTAL}}",
+                  "alignment" : "center"
+                },
+                {
+                  "text" : "{{totalDue}}",
+                  "alignment" : "right"
+                }
+              ]
             ]
-          ]
         },
         "margin": [
           0,
@@ -259,12 +231,19 @@
             "margin": 2
           },
           {
-            "text": "{{approvedBy}}",
+            "text": "{{tenantName}}",
             "margin": 2
           }
         ],
         "alignment": "right",
         "style": "top-margin"
+      },
+      {
+        "text" : [
+          {
+            "text" : "{{AUTH_DSCR}}"
+          }
+        ]
       },
       {
         "text": [
@@ -282,37 +261,23 @@
         "bold": true
       },
       {
-        "text": "{{HEADING_FOR_RULES}} : ",
+        "text": "{{NOTE}} : ",
         "bold": true,
-        "style": "header"
+        "style": "top-margin"
       },
       {
-        "separator": ")",
-        "ol": [
-		  "{{RULE_1}}",
-		  "{{RULE_2}}",
-		  "{{RULE_2A}}",
-		  "{{RULE_2B}}",
-		  "{{RULE_2C}}",
-		  "{{RULE_3}}",
-		  "{{RULE_4,RULE_4A}}",
-		  "{{RULE_5}}",
-		  "{{RULE_6}}",
-		  "{{RULE_7}}",
-		  "{{RULE_8}}",
-		  "{{RULE_9}}",
-		  "{{RULE_10}}",
-		  "{{RULE_11}}",
-		  "{{RULE_12}}",
-		  "{{RULE_13}}",
-		  "{{RULE_14}}",
-		  "{{RULE_15,RULE_15A}}",
-		  "{{RULE_16}}",
-		  "{{RULE_17,RULE_17A}}",
-		  "{{RULE_18}}",
-		  "{{RULE_19}}",
-		  "{{RULE_20}}"
-        ]
+        "text": [
+          {
+            "text" : "{{SUMMARY1}}"
+          },
+          {
+            "text" : " {{Bihar_Tenant}} "
+          },
+          {
+            "text" : "{{SUMMARY2}}."
+          }
+        ],
+        "style": "top-margin"
       },
       {
         "image": "{{qrCode}}",
@@ -324,13 +289,13 @@
         "stack":[
           {
             "text" : "{{REPORT_RUNDATE}} : {{reportrunDate}}",
-            "alignment" : "right"              
+            "alignment" : "right" 
           }
         ]
       }
     ],
-  "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
-	"styles": {
+    "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
+    "styles": {
       "header": {
         "bold": true,
         "alignment": "center"
