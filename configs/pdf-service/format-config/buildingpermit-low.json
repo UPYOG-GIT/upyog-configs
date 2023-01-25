@@ -200,7 +200,7 @@
                 "alignment" : "right"
               }
             ],            
-            "{{#paymentDetails}}[{ \"text\":\"{{headCode}}\", \"border\":[ true, true, true, true ],\"alignment\": \"center\"},{ \"text\":\"{{amnt}}\", \"border\":[ true, true, true, true ],\"alignment\": \"right\"}]{{/paymentDetails}}",
+            "{{#paymentDetails}}[{ \"text\":\"{{headCode}}\", \"border\":[ true, true, true ],\"alignment\": \"center\"},{ \"text\":\"{{amnt}}\", \"border\":[ true, true, true ],\"alignment\": \"right\"}]{{/paymentDetails}}",
               [
                 {
                   "text" : "{{TOTAL}}",
