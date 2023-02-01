@@ -219,7 +219,7 @@
               {
                 "text": "Amount (Rs)",
                 "bold": true,
-                "alignment": "right"
+                "alignment": "center"
               }
             ],
             [
@@ -228,7 +228,7 @@
               },
               {
                 "text": "{{appFee}}",
-                "alignment": "right"
+                "alignment": "center"
               }
             ],
             [
@@ -237,7 +237,7 @@
               },
               {
                 "text": "{{sanFee}}",
-                "alignment": "right"
+                "alignment": "center"
               }
             ],
 			[
@@ -246,7 +246,7 @@
               },
               {
                 "text": "",
-                "alignment": "right"
+                "alignment": "center"
               }
             ],
 			[
@@ -255,7 +255,7 @@
               },
               {
                 "text": "",
-                "alignment": "right"
+                "alignment": "center"
               }
             ],
 			[
@@ -264,7 +264,7 @@
               },
               {
                 "text": "",
-                "alignment": "right"
+                "alignment": "center"
               }
             ],
             [
@@ -275,7 +275,7 @@
               {
                 "text": "{{totalDue}}",
                 "bold": true,
-                "alignment": "right"
+                "alignment": "center"
               }
             ]
           ]
@@ -320,74 +320,8 @@
         ],
         "style": "top-margin",
         "bold": true
-      }   
-    ],
-  "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
-	"styles": {
-      "header": {
-        "bold": true,
-        "alignment": "center"
       },
-      "sub-header": {
-        "alignment": "center",
-        "margin": [
-          0,
-          5,
-          0,
-          5
-        ]
-      },
-      "top-margin": {
-        "margin": [
-          0,
-          10,
-          0,
-          0
-        ]
-      },
-      "top-high-margin": {
-        "margin": [
-          0,
-          30,
-          0,
-          0
-        ]
-      }
-    },
-	 "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
-	"styles": {
-      "header": {
-        "bold": true,
-        "alignment": "center"
-      },
-      "sub-header": {
-        "alignment": "center",
-        "margin": [
-          0,
-          5,
-          0,
-          5
-        ]
-      },
-      "top-margin": {
-        "margin": [
-          0,
-          10,
-          0,
-          0
-        ]
-      },
-      "top-high-margin": {
-        "margin": [
-          0,
-          30,
-          0,
-          0
-        ]
-      },
-	  "footer": {"page-break-before": "always"},
- "content1":[
-	   {
+      {
         "text": "{{HEADING_FOR_NEW_RULES}} ",
         "bold": true,
         "style": "header"
@@ -425,7 +359,38 @@
           }
         ]
       }
-	] 
+    ],
+  "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
+	"styles": {
+      "header": {
+        "bold": true,
+        "alignment": "center"
+      },
+      "sub-header": {
+        "alignment": "center",
+        "margin": [
+          0,
+          5,
+          0,
+          5
+        ]
+      },
+      "top-margin": {
+        "margin": [
+          0,
+          10,
+          0,
+          0
+        ]
+      },
+      "top-high-margin": {
+        "margin": [
+          0,
+          30,
+          0,
+          0
+        ]
+      }
+    }
   }
- }
 }
