@@ -76,9 +76,11 @@
         "style": "top-margin"
       },
 	  {
+        "columns": [
+          {
             "text": [
 			
-              {
+			  {
                 "text": "{{PLAN_PERMISION_NO}} : ",
                 "bold": true
               },
@@ -90,7 +92,9 @@
             ],
             "alignment": "left",
             "width": "*"
-			"style": "top-margin"
+          }
+        ],
+        "style": "top-margin"
       },
       {
         "text": [
