@@ -385,7 +385,7 @@
           0
         ]
       },
-	  "footer": { "page-break-before": "always"},
+	  "footer": {"page-break-before": "always"},
  "content":[
 	   {
         "text": "{{HEADING_FOR_NEW_RULES}} ",
