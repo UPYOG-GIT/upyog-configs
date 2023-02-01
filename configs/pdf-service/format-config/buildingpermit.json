@@ -67,7 +67,17 @@
 			  {
                 "text": "{{BPA_CERTIFICATE_INTRODUCTION}}",
                 "bold": false
-              },
+              }
+            ],
+            "alignment": "left",
+            "width": "*"
+          }
+        ],
+        "style": "top-margin"
+      },
+	  {
+            "text": [
+			
               {
                 "text": "{{PLAN_PERMISION_NO}} : ",
                 "bold": true
@@ -80,9 +90,7 @@
             ],
             "alignment": "left",
             "width": "*"
-          }
-        ],
-        "style": "top-margin"
+			"style": "top-margin"
       },
       {
         "text": [
