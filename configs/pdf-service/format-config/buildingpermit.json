@@ -293,6 +293,7 @@
         "style": "top-margin",
         "bold": true
       },
+	    "footer": "(page-break-before: always)",
       {
         "text": "{{HEADING_FOR_NEW_RULES}} ",
         "bold": true,
