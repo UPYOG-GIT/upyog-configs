@@ -386,7 +386,7 @@
         ]
       },
 	  "footer": {"page-break-before": "always"},
- "content":[
+ "content1":[
 	   {
         "text": "{{HEADING_FOR_NEW_RULES}} ",
         "bold": true,
