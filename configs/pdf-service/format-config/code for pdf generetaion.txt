@@ -1,0 +1,79 @@
+
+
+
+     
+	  
+	   "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
+	"styles": {
+      "header": {
+        "bold": true,
+        "alignment": "center"
+      },
+      "sub-header": {
+        "alignment": "center",
+        "margin": [
+          0,
+          5,
+          0,
+          5
+        ]
+      },
+      "top-margin": {
+        "margin": [
+          0,
+          10,
+          0,
+          0
+        ]
+      },
+      "top-high-margin": {
+        "margin": [
+          0,
+          30,
+          0,
+          0
+        ]
+      },
+	  "footer": { "page-break-before": "always"},
+ "content":[
+	   {
+        "text": "{{HEADING_FOR_NEW_RULES}} ",
+        "bold": true,
+        "style": "header"
+      },
+      {
+        "separator": ")",
+        "ol": [
+		  "{{RULE_1}}",
+		  "{{RULE_2}}",
+		  "{{RULE_3}}",
+		  "{{RULE_4}}",
+		  "{{RULE_5}}",
+		  "{{RULE_6}}",
+		  "{{RULE_7}}",
+		  "{{RULE_8}}",
+		  "{{RULE_9}}",
+		  "{{RULE_10}}",
+		  "{{RULE_11}}",
+		  "{{RULE_12}}",
+		  "{{RULE_13}}",
+		  "{{RULE_14}}"
+        ]
+      },
+      {
+        "image": "{{qrCode}}",
+        "alignment": "right",
+        "width": 100,
+        "height": 100
+      },
+      {
+        "stack":[
+          {
+            "text" : "{{REPORT_RUNDATE}} : {{reportrunDate}}",
+            "alignment" : "right"              
+          }
+        ]
+      }
+	]  
+   
+    
