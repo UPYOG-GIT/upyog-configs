@@ -240,6 +240,33 @@
                 "alignment": "right"
               }
             ],
+			[
+              {
+                "text": ""
+              },
+              {
+                "text": "",
+                "alignment": "right"
+              }
+            ],
+			[
+              {
+                "text": ""
+              },
+              {
+                "text": "",
+                "alignment": "right"
+              }
+            ],
+			[
+              {
+                "text": ""
+              },
+              {
+                "text": "",
+                "alignment": "right"
+              }
+            ]
             [
               {
                 "text": "Total",
@@ -253,6 +280,7 @@
             ]
           ]
         },
+		"alignment": "center"
         "margin": [
           0,
           5,
@@ -293,7 +321,6 @@
         "style": "top-margin",
         "bold": true
       },
-	    "footer": "(page-break-before: always)",
       {
         "text": "{{HEADING_FOR_NEW_RULES}} ",
         "bold": true,
