@@ -84,8 +84,8 @@
                 "border": [
                   true,
                   true,
-                  false,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table-value"
               },
