@@ -225,30 +225,33 @@
                 "border": [
                   true,
                   true,
-                  false,
+                  true,
                   true
                 ],
-                "style": "receipt-table-value"
+                "bold": true,
+				"alignment": "center"
               },
               {
                 "text": "particular",
                 "border": [
-                  false,
+                  true,
                   true,
                   true,
                   true
                 ],
-                "style": "receipt-table"
+				"bold": true,
+                "alignment": "center"
               },
               {
                 "text": "Amount",
                 "border": [
-                  false,
                   true,
-                  false,
+                  true,
+                  true,
                   true
                 ],
-                "style": "receipt-table-value"
+				"bold": true,
+				"alignment": "center"
               }
             ]
           ]
