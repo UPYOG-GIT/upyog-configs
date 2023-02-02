@@ -227,7 +227,7 @@
                   true,
                   true,
                   false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -236,8 +236,8 @@
                 "border": [
                   false,
                   true,
-                  false,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               },
@@ -247,7 +247,7 @@
                   false,
                   true,
                   false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -257,7 +257,7 @@
                   false,
                   true,
                   true,
-                  false
+                  true
                 ],
                 "style": "receipt-table"
               }
@@ -267,9 +267,9 @@
                 "text": "{{total_bill_amount}}",
                 "border": [
                   true,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -278,8 +278,8 @@
                 "border": [
                   false,
                   false,
-                  false,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               },
@@ -287,9 +287,9 @@
                 "text": "{{paid_amount}}",
                 "border": [
                   false,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -297,9 +297,9 @@
                 "text": "₹ {{paidAmount}}",
                 "border": [
                   false,
-                  false,
                   true,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               }
@@ -309,9 +309,9 @@
                 "text": "{{pending_amount}}",
                 "border": [
                   true,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -319,9 +319,9 @@
                 "text": "₹ {{pendingAmount}}",
                 "border": [
                   false,
-                  false,
-                  false,
-                  false
+                  true,
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               },
@@ -329,9 +329,9 @@
                 "text": "{{excess_amount_paid}}",
                 "border": [
                   false,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -339,9 +339,9 @@
                 "text": "₹ {{excessAmountPaid}}",
                 "border": [
                   false,
-                  false,
                   true,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               }
@@ -351,9 +351,9 @@
                 "text": "{{payment_mode}}",
                 "border": [
                   true,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -361,9 +361,9 @@
                 "text": "{{paymentMode}}",
                 "border": [
                   false,
-                  false,
-                  false,
-                  false
+                  true,
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               },
@@ -371,9 +371,9 @@
                 "text": "{{transaction_id}}",
                 "border": [
                   false,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -381,9 +381,9 @@
                 "text": "{{transactionID}}",
                 "border": [
                   false,
-                  false,
                   true,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table",
                 "font": "Roboto"
