@@ -214,10 +214,9 @@
         "style": "next-noc-table",
         "table": {
           "widths": [
-           "auto",
-		   "auto",
-		   "auto",
-		   "auto"
+           "10%",
+		   "70%",
+		   "20%"
           ],
           "body": [
             [
