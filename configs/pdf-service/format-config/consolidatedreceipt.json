@@ -92,9 +92,9 @@
               {
                 "text": "{{receiptNo}}",
                 "border": [
-                  true,
-                  true,
                   false,
+                  true,
+                  true,
                   true
                 ],
                 "style": "receipt-table",
