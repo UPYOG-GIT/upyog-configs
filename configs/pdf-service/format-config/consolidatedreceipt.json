@@ -232,7 +232,7 @@
 				"alignment": "center"
               },
               {
-                "text": "particular",
+                "text": "Particular",
                 "border": [
                   true,
                   true,
@@ -251,6 +251,41 @@
                   true
                 ],
 				"bold": true,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "1",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "paid amount",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "₹ {{paidAmount}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
 				"alignment": "center"
               }
             ]
