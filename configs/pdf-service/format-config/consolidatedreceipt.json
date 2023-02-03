@@ -27,7 +27,7 @@
                     "style": "receipt-logo-header"
                   },
                   {
-                    "text": "{{serviceType}} {{payment_receipt}}",
+                    "text": "{{payment_receipt}}",
                     "style": "receipt-logo-sub-header"
                   }
                 ],
@@ -36,30 +36,6 @@
                   0,
                   10,
                   0,
-                  0
-                ]
-              },
-              {
-                "stack": [
-                  {
-                    "text": "{{address}}"
-                  },
-                  {
-                    "text": "{{phoneNumber}}"
-                  },
-                  {
-                    "text": "{{website}}"
-                  },
-                  {
-                    "text": "{{email}}"
-                  }
-                ],
-                "alignment": "right",
-                "color": "#484848",
-                "margin": [
-                  -100,
-                  0,
-                  -25,
                   0
                 ]
               }
