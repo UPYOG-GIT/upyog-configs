@@ -267,7 +267,7 @@
 				"alignment": "center"
               },
               {
-                "text": "paid amount",
+                "text": "Paid Amount",
                 "border": [
                   true,
                   true,
@@ -279,6 +279,76 @@
               },
               {
                 "text": "₹ {{paidAmount}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "2",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Transaction ID",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{transactionID}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "3",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Service Type",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{serviceType}}",
                 "border": [
                   true,
                   true,
