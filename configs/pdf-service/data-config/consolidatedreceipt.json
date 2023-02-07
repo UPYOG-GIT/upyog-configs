@@ -66,6 +66,12 @@
                   "path": "$.paymentDetails[0].totalAmountPaid"
                 }
               },
+			  {
+                "variable": "totalAmount", 
+                "value": {
+                  "path": "$.paymentDetails[0].totalAmountPaid"
+                }
+              },
               {
                 "variable": "fromPeriod", 
                 "value": {

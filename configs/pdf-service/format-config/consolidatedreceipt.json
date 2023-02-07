@@ -404,6 +404,41 @@
 				"bold": false,
 				"alignment": "center"
               }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Total Amount",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "right"
+              },
+              {
+                "text": "₹ {{totalAmount}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
             ]
           ]
         },
