@@ -235,5 +235,62 @@ ReportDefinitions:
       isLocalisationRequired: true
       localisationPrefix: REPORT_OBPS_
 
-  query: select applicationno,to_char(To_timestamp(bp.applicationdate / 1000), 'DD/MM/YYYY') as applicationdate, landinfo.channel as applicationchannel, usr.name as name,  usr.uuid as uuid, bp.additionaldetails->>'applicationType' as applicationtype, bp.additionaldetails->> 'serviceType' as servicetype, land.occupancytype, bp.status, case when isterminatestate=true then null else userassignee.name end as currentowner, bp.approvalno as permitno FROM eg_wf_state_v2 st inner join eg_wf_processinstance_v2 pi on pi.status=st.uuid inner join eg_bpa_buildingplan bp on pi.businessid=bp.applicationno inner join eg_user usr ON bp.createdby = usr.uuid  inner join eg_land_unit land ON land.landinfoid = bp.landid inner join eg_land_landinfo landinfo ON land.landinfoid = landinfo.id inner join eg_land_address adr ON adr.landinfoid = landinfo.id inner join eg_user userassignee ON assigner = userassignee.uuid WHERE 1=1 AND applicationdate >= :fromDate
+  query: select applicationno,to_char(To_timestamp(bp.applicationdate / 1000), 'DD/MM/YYYY') as applicationdate, landinfo.channel as applicationchannel, usr.name as name,  usr.uuid as uuid, bp.additionaldetails->>'applicationType' as applicationtype, bp.additionaldetails->> 'serviceType' as servicetype, land.occupancytype, bp.status, case when isterminatestate=true then null else userassignee.name end as currentowner, bp.approvalno as permitno FROM eg_wf_state_v2 st inner join eg_wf_processinstance_v2 pi on pi.status=st.uuid inner join eg_bpa_buildingplan bp on pi.businessid=bp.applicationno inner join eg_user usr ON bp.createdby = usr.uuid  inner join eg_land_unit land ON land.landinfoid = bp.landid inner join eg_land_landinfo landinfo ON land.landinfoid = landinfo.id inner join eg_land_address adr ON adr.landinfoid = landinfo.id inner join eg_user userassignee ON assigner = userassignee.uuid WHERE 1=1
   orderby: ORDER BY applicationdate asc
+  
+  - reportName: MisPendencyReport
+  decryptionPathId: MisPendencyReport
+  summary: Fetches pending data based on provided search parameters
+  version: 1.0.0
+  moduleName: obps
+  sourceColumns:
+  - name: Pending_by_architect
+    label: reports.obps.Pending_by_architect
+    type: string
+    source: obps
+  - name: Pending_by_subengineer
+    label: reports.obps.Pending_by_subengineer
+    type: string
+    source: obps
+    showColumn: false
+  - name: Pending_by_Builder
+    label: reports.obps.Pending_by_Builder
+    type: string
+    source: obps
+  - name: Pending_by_commissioner
+    label: reports.obps.Pending_by_commissioner
+    type: stringarray
+    source: obps
+    isLocalisationRequired: true
+  - name: Total_pending_cases
+    label: reports.obps.Total_pending_cases
+    type: string
+    source: obps
+  searchParams:
+  - name: ulb
+    label: ULB
+    type: singlevaluelist
+    pattern: http://www.niwaspass.com/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: obps
+    wrapper: true
+    isMandatory: true
+    searchClause: AND eg_bpa_buildingplan.tenantid = $ulb
+  - name: fromDate
+      label: FromDate
+      type: epoch
+      source: obps
+      isMandatory: false
+      searchClause: AND applicationdate >= $fromDate
+  - name: toDate
+      label: ToDate
+      type: epoch
+      source: obps
+      isMandatory: false
+      searchClause: AND applicationdate  <= $toDate
+  query: select Pending_by_subengineer,  Pending_by_Builder, Pending_by_commissioner, Pending_by_architect, (Pending_by_subengineer + Pending_by_Builder + Pending_by_commissioner + Pending_by_architect ) as Total_pending_cases from (
+SELECT
+    COUNT(CASE WHEN status = 'doc_verification_pending_by_engineer' THEN 1 END) AS Pending_by_subengineer,
+    COUNT(CASE WHEN status = 'doc_verification_inprogress_by_engineer' THEN 1 END) AS Pending_by_Builder,
+    COUNT(CASE WHEN status = 'pendingapproval' THEN 1 END) AS Pending_by_commissioner,
+    COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
+FROM  eg_bpa_buildingplan) as t;
