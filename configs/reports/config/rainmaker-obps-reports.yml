@@ -259,7 +259,7 @@ ReportDefinitions:
     source: obps
   - name: Pending_by_commissioner
     label: reports.obps.Pending_by_commissioner
-    type: stringarray
+    type: string
     source: obps
     isLocalisationRequired: true
   - name: Total_pending_cases
@@ -272,14 +272,14 @@ ReportDefinitions:
     type: singlevaluelist
     pattern: http://www.niwaspass.com/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: obps
-    wrapper: true
-    isMandatory: true
+    wrapper: false
+    isMandatory: false
     searchClause: AND eg_bpa_buildingplan.tenantid = $ulb
   - name: fromDate
       label: FromDate
       type: epoch
       source: obps
-      isMandatory: false
+      isMandatory: true
       searchClause: AND applicationdate >= $fromDate
   - name: toDate
       label: ToDate
