@@ -278,13 +278,13 @@ ReportDefinitions:
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: WHERE applicationdate >= $fromDate
+      searchClause: WHERE eg_bpa_buildingplan.applicationdate >= $fromDate
     - name: toDate
       label: ToDate
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: WHERE applicationdate  <= $toDate
+      searchClause: WHERE eg_bpa_buildingplan.applicationdate  <= $toDate
     - name: ulb
       label: ULB
       type: singlevaluelist
