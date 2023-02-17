@@ -278,19 +278,19 @@ ReportDefinitions:
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: AND applicationdate >= $fromDate
+      searchClause: WHERE applicationdate >= $fromDate
     - name: toDate
       label: ToDate
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: AND applicationdate  <= $toDate
+      searchClause: WHERE applicationdate  <= $toDate
     - name: ulb
       label: ULB
       type: singlevaluelist
       source: obps
       isMandatory: false
-      searchClause: AND eg_bpa_buildingplan.tenantid = $ulb
+      searchClause: WHERE eg_bpa_buildingplan.tenantid = $ulb
       pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
       isLocalisationRequired: true
       localisationPrefix: REPORT_OBPS_
