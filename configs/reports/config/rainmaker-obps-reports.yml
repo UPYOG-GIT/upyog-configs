@@ -302,4 +302,4 @@ ReportDefinitions:
       COUNT(CASE WHEN status = 'pendingapproval' THEN 1 END) AS Pending_by_commissioner,
       COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
       FROM  eg_bpa_buildingplan WHERE applicationdate >= $fromDate) as t WHERE 1=1
-  orderby: ORDER BY eg_bpa_buildingplan.applicationdate asc
+ 
