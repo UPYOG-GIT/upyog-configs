@@ -278,19 +278,19 @@ ReportDefinitions:
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: AND eg_bpa_buildingplan.applicationdate >= $fromDate
+      searchClause: 
     - name: toDate
       label: ToDate
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: AND eg_bpa_buildingplan.applicationdate  <= $toDate
+      searchClause: 
     - name: ulb
       label: ULB
       type: singlevaluelist
       source: obps
       isMandatory: false
-      searchClause: AND eg_bpa_buildingplan.tenantid = $ulb
+      searchClause: 
       pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
       isLocalisationRequired: true
       localisationPrefix: REPORT_OBPS_
@@ -301,5 +301,5 @@ ReportDefinitions:
       COUNT(CASE WHEN status = 'doc_verification_inprogress_by_engineer' THEN 1 END) AS Pending_by_Builder,
       COUNT(CASE WHEN status = 'pendingapproval' THEN 1 END) AS Pending_by_commissioner,
       COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
-      FROM  eg_bpa_buildingplan) as t WHERE 1=1
+      FROM  eg_bpa_buildingplan eg_bpa_buildingplan.applicationdate >= $fromDate) as t 
   orderby: ORDER BY eg_bpa_buildingplan.applicationdate asc
