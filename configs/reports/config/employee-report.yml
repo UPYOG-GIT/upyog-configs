@@ -6,15 +6,15 @@ ReportDefinitions:
   moduleName: hrms
   externalService:
   - entity: $.MdmsRes.common-masters.Department
-    apiURL: http://www.niwaspass.com/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Department&tenantId=$tenantId
+    apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Department&tenantId=$tenantId
     keyOrder: name,code
     tableName: tbl_def_dept
   - entity: $.MdmsRes.common-masters.Designation
-    apiURL: http://www.niwaspass.com/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Designation&tenantId=$tenantId
+    apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Designation&tenantId=$tenantId
     keyOrder: name,code
     tableName: tbl_def_desig
   - entity: $.MdmsRes.ACCESSCONTROL-ROLES.roles
-    apiURL: http://www.niwaspass.com/egov-mdms-service/v1/_get?moduleName=ACCESSCONTROL-ROLES&masterName=roles&tenantId=$tenantId
+    apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=ACCESSCONTROL-ROLES&masterName=roles&tenantId=$tenantId
     keyOrder: name,code
     tableName: tbl_def_roles
   sourceColumns:
@@ -22,6 +22,11 @@ ReportDefinitions:
     label: reports.hrms.id
     type: string
     source: eg_hrms_employee
+  - name: uuid
+    label: reports.hrms.uuid
+    type: string
+    source: eg_hrms_employee
+    showColumn: false
   - name: name
     label: reports.hrms.name
     type: string
@@ -54,7 +59,7 @@ ReportDefinitions:
   - name: ulb
     label: ULB
     type: singlevaluelist
-    pattern: http://www.niwaspass.com/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: pt
     wrapper: true
     isMandatory: true
@@ -62,7 +67,7 @@ ReportDefinitions:
   - name: status
     label: reports.hrms.status
     type: multivaluelist
-    pattern: http://www.niwaspass.com/egov-mdms-service/v1/_get?tenantId=cg&moduleName=egov-hrms&masterName=EmployeeStatus|$.MdmsRes.egov-hrms.EmployeeStatus[?(@.active)].code|$.MdmsRes.egov-hrms.EmployeeStatus[?(@.active)].code
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=cg&moduleName=egov-hrms&masterName=EmployeeStatus|$.MdmsRes.egov-hrms.EmployeeStatus[?(@.active)].code|$.MdmsRes.egov-hrms.EmployeeStatus[?(@.active)].code
     source: seva
     isMandatory: false
     isLocalisationRequired: true
@@ -71,7 +76,7 @@ ReportDefinitions:
   - name: role
     label: reports.hrms.role
     type: multivaluelist
-    pattern: http://www.niwaspass.com/egov-mdms-service/v1/_get?tenantId=cg&moduleName=ACCESSCONTROL-ROLES&masterName=roles|$.MdmsRes.ACCESSCONTROL-ROLES.roles[?(@.code nin ['CITIZEN'])].code|$.MdmsRes.ACCESSCONTROL-ROLES.roles[?(@.code nin ['Citizen'])].code
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=cg&moduleName=ACCESSCONTROL-ROLES&masterName=roles|$.MdmsRes.ACCESSCONTROL-ROLES.roles[?(@.code nin ['CITIZEN'])].code|$.MdmsRes.ACCESSCONTROL-ROLES.roles[?(@.code nin ['Citizen'])].code
     isMandatory: false
     isLocalisationRequired: true
     localisationPrefix: ACCESSCONTROL_ROLES_ROLES_
@@ -80,7 +85,7 @@ ReportDefinitions:
     label: reports.pgr.dept.name
     type: multivaluelist
     source: eg_pgr_service
-    pattern: http://www.niwaspass.com/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=common-masters&masterName=Department|$.MdmsRes.common-masters.Department[*].code|$.MdmsRes.common-masters.Department[*].code
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=common-masters&masterName=Department|$.MdmsRes.common-masters.Department[*].code|$.MdmsRes.common-masters.Department[*].code
     isMandatory: false
     isLocalisationRequired: true
     localisationPrefix: COMMON_MASTERS_DEPARTMENT_
@@ -102,6 +107,7 @@ ReportDefinitions:
       WHERE eu.active = true)
     SELECT emp_data.id as id,
       emp_data.name as name,
+      emp_data.uuid as uuid,
       ARRAY_TO_STRING(emp_data.role, ',') as role,
       ARRAY_TO_STRING(emp_data.rolecodes, ',') as rolecodes,
       desigmap_def.code as designation,
@@ -112,4 +118,3 @@ ReportDefinitions:
     INNER JOIN (VALUES tbl_def_desig) AS desigmap_def(name,code) ON desigmap_def.code=emp_data.designation
     WHERE 1=1
   order by: ehe.id ASC
-
