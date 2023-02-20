@@ -22,37 +22,44 @@ ReportDefinitions:
     label: reports.hrms.id
     type: string
     source: eg_hrms_employee
+    total: false
   - name: uuid
     label: reports.hrms.uuid
     type: string
     source: eg_hrms_employee
     showColumn: false
+    total: false
   - name: name
     label: reports.hrms.name
     type: string
     source: eg_hrms_employee
+    total: false
   - name: rolecodes
     label: reports.hrms.role
     type: stringarray
     source: eg_hrms_employee
+    total: false
     isLocalisationRequired: true
     localisationPrefix: ACCESSCONTROL_ROLES_ROLES_
   - name: designation
     label: reports.hrms.designation
     type: string
     source: eg_hrms_employee
+    total: false
     isLocalisationRequired: true
     localisationPrefix: COMMON_MASTERS_DESIGNATION_
   - name: department
     label: reports.hrms.department
     type: string
     source: eg_hrms_employee
+    total: false
     isLocalisationRequired: true
     localisationPrefix: COMMON_MASTERS_DEPARTMENT_
   - name: status
     label: reports.hrms.status
     type: string
     source: eg_hrms_employee
+    total: false
     isLocalisationRequired: true
     localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
   searchParams:
