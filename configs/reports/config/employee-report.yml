@@ -26,7 +26,7 @@ ReportDefinitions:
   - name: uuid
     label: reports.hrms.uuid
     type: string
-    source: eg_hrms_employee
+    source: eg_user
     showColumn: false
     total: false
   - name: name
