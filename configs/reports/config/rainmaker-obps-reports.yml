@@ -180,11 +180,6 @@ ReportDefinitions:
       type: string
       source: obps
       total: false
-    - name: permitno
-      label: reports.obps.permitno
-      type: string
-      source: obps
-      total: false
   searchParams:
     - name: fromDate
       label: FromDate
