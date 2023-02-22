@@ -186,13 +186,13 @@ ReportDefinitions:
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: AND createdtime >= $fromDate
+      searchClause: AND eg_bpa_buildingplan.createdtime >= $fromDate
     - name: toDate
       label: ToDate
       type: epoch
       source: obps
       isMandatory: false
-      searchClause: AND createdtime  <= $toDate
+      searchClause: AND eg_bpa_buildingplan.createdtime  <= $toDate
     - name: applicationChannel
       label: reports.obps.applicationchannel
       type: multivaluelist
@@ -231,7 +231,7 @@ ReportDefinitions:
       localisationPrefix: REPORT_OBPS_
 
   query: select applicationno,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as applicationdate, landinfo.channel as applicationchannel, usr.name as name,  usr.uuid as uuid, bp.additionaldetails->>'applicationType' as applicationtype, bp.additionaldetails->> 'serviceType' as servicetype, land.occupancytype, bp.status, case when isterminatestate=true then null else userassignee.name end as currentowner, bp.approvalno as permitno FROM eg_wf_state_v2 st inner join eg_wf_processinstance_v2 pi on pi.status=st.uuid inner join eg_bpa_buildingplan bp on pi.businessid=bp.applicationno inner join eg_user usr ON bp.createdby = usr.uuid  inner join eg_land_unit land ON land.landinfoid = bp.landid inner join eg_land_landinfo landinfo ON land.landinfoid = landinfo.id inner join eg_land_address adr ON adr.landinfoid = landinfo.id inner join eg_user userassignee ON assigner = userassignee.uuid WHERE 1=1
-  orderby: ORDER BY createdtime asc 
+  orderby: ORDER BY eg_bpa_buildingplan.createdtime asc 
     
     
     
