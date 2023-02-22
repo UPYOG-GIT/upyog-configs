@@ -148,7 +148,7 @@ ReportDefinitions:
     - name: uuid
       label: reports.obps.uuid
       type: string
-      source: obps
+      source: eg_user
       showColumn: false
     - name: name
       label: reports.obps.name
