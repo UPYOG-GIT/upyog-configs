@@ -38,6 +38,7 @@ ReportDefinitions:
     label: reports.hrms.role
     type: stringarray
     source: eg_hrms_employee
+    showColumn: false
     total: false
     isLocalisationRequired: true
     localisationPrefix: ACCESSCONTROL_ROLES_ROLES_
@@ -45,6 +46,7 @@ ReportDefinitions:
     label: reports.hrms.designation
     type: string
     source: eg_hrms_employee
+    showColumn: false
     total: false
     isLocalisationRequired: true
     localisationPrefix: COMMON_MASTERS_DESIGNATION_
@@ -52,6 +54,7 @@ ReportDefinitions:
     label: reports.hrms.department
     type: string
     source: eg_hrms_employee
+    showColumn: false
     total: false
     isLocalisationRequired: true
     localisationPrefix: COMMON_MASTERS_DEPARTMENT_
@@ -59,6 +62,7 @@ ReportDefinitions:
     label: reports.hrms.status
     type: string
     source: eg_hrms_employee
+    showColumn: false
     total: false
     isLocalisationRequired: true
     localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
