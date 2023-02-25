@@ -134,17 +134,14 @@ ReportDefinitions:
       label: reports.obps.applicationno
       type: string
       source: obps
-      total: false
     - name: applicationdate
       label: reports.obps.applicationdate
       type: string
       source: obps
-      total: false
     - name: applicationchannel
       label: reports.obps.applicationchannel
       type: string
       source: obps
-      total: false
       isLocalisationRequired: true
       localisationPrefix: WF_BPA_
     - name: uuid
@@ -156,44 +153,37 @@ ReportDefinitions:
       label: reports.obps.name
       type: string
       source: obps
-      total: false
     - name: applicationtype
       label: reports.obps.applicationtype
       type: string
       source: obps
-      total: false
       isLocalisationRequired: true
       localisationPrefix: WF_BPA_
     - name: servicetype
       label: reports.obps.servicetype
       type: string
       source: obps
-      total: false
       isLocalisationRequired: true
     - name: occupancytype
       label: reports.obps.occupancytype
       type: string
       source: obps
-      total: false
       isLocalisationRequired: true
       localisationPrefix: BPA_OCCUPANCY_TYPE_
     - name: status
       label: reports.obps.status
       type: string
       source: obps
-      total: false
       isLocalisationRequired: true
       localisationPrefix: WF_BPA_
     - name: currentowner
       label: reports.obps.currentowner
       type: string
       source: obps
-      total: false
     - name: permitno
       label: reports.obps.permitno
       type: string
       source: obps
-      total: false
   searchParams:
     - name: fromDate
       label: FromDate
@@ -259,17 +249,14 @@ ReportDefinitions:
       label: reports.obps.Pending_by_subengineer
       type: string
       source: obps
-      total: false
     - name: Pending_by_Builder
       label: reports.obps.Pending_by_Builder
       type: string
       source: obps
-      total: false
     - name: Pending_by_commissioner
       label: reports.obps.Pending_by_commissioner
       type: string
       source: obps
-      total: false
     - name: Pending_by_architect
       label: reports.obps.Pending_by_architect
       type: string
@@ -279,7 +266,6 @@ ReportDefinitions:
       label: reports.obps.Total_pending_cases
       type: string
       source: obps
-      total: false
   searchParams:
     - name: fromDate
       label: FromDate
