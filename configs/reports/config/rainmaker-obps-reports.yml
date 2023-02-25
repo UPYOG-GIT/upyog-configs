@@ -249,7 +249,6 @@ ReportDefinitions:
     
     
 - reportName: MisPendencyReport
-  decryptionPathId:
   summary: fetch pending applications
   version: 1.0.0
   moduleName: rainmaker-obps
