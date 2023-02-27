@@ -9,17 +9,14 @@ ReportDefinitions:
       label: reports.obps.applicationno
       type: string
       source: obps
-      total: false
     - name: applicationdate
       label: reports.obps.applicationdate
       type: string
       source: obps
-      total: false
     - name: applicationchannel
       label: reports.obps.applicationchannel
       type: string
       source: obps
-      total: false
     - name: uuid
       label: reports.obps.uuid
       type: string
@@ -49,19 +46,7 @@ ReportDefinitions:
       label: reports.obps.currentowner
       type: string
       source: obps
-    - name: permitno
-      label: reports.obps.permitno
-      type: string
-      source: obps
   searchParams:
-    - name: ulb
-      label: ULB
-      type: singlevaluelist
-      pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-      source: pt
-      wrapper: true
-      isMandatory: true
-      searchClause: AND emp_data.tenantid = $ulb
     - name: fromDate
       label: FromDate
       type: epoch
@@ -112,7 +97,8 @@ ReportDefinitions:
       localisationPrefix: REPORT_OBPS_
 
   query: select applicationno,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as applicationdate, landinfo.channel as applicationchannel, usr.name as name,  usr.uuid as uuid, bp.additionaldetails->>'applicationType' as applicationtype, bp.additionaldetails->> 'serviceType' as servicetype, land.occupancytype, bp.status, case when isterminatestate=true then null else userassignee.name end as currentowner, bp.approvalno as permitno FROM eg_wf_state_v2 st inner join eg_wf_processinstance_v2 pi on pi.status=st.uuid inner join eg_bpa_buildingplan bp on pi.businessid=bp.applicationno inner join eg_user usr ON bp.createdby = usr.uuid  inner join eg_land_unit land ON land.landinfoid = bp.landid inner join eg_land_landinfo landinfo ON land.landinfoid = landinfo.id inner join eg_land_address adr ON adr.landinfoid = landinfo.id inner join eg_user userassignee ON assigner = userassignee.uuid WHERE 1=1
-  orderby: ORDER BY bp.createdtime asc  
+  orderby: ORDER BY bp.createdtime asc 
+ 
     
     
 - reportName: MisPendencyReport
