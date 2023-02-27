@@ -30,25 +30,28 @@ ReportDefinitions:
     type: string
     source: bpa
     isLocalisationRequired: true
-    localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
+    localisationPrefix: 
   - name: servicetype
     label: servicetype
     type: string
     source: bpa
     isLocalisationRequired: true
-    localisationPrefix: ""
+    localisationPrefix: 
   - name: occupancytype
     label: occupancytype
     type: string
     source: bpa
+    showColumn: true
   - name: status
     label: status
     type: string
     source: bpa
+    showColumn: true
   - name: currentowner
     label: currentowner
     type: string
     source: bpa
+    showColumn: true
   searchParams:
   - name: fromDate
     label: FromDate
