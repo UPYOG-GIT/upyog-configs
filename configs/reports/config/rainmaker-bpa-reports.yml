@@ -1,5 +1,4 @@
 ReportDefinitions:
-ReportDefinitions:
 - reportName: bpaApplicationStatusReport
   decryptionPathId: bpaApplicationStatusReport
   summary: Fetches bpa data based on provided search parameters
