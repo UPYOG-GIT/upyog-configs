@@ -154,9 +154,9 @@ ReportDefinitions:
 
   query: select Pending_by_subengineer,  Pending_by_Builder, Pending_by_commissioner, Pending_by_architect, (Pending_by_subengineer + Pending_by_Builder + Pending_by_commissioner + Pending_by_architect ) as Total_pending_cases from (
         SELECT
-      COUNT(CASE WHEN status = 'doc_verification_pending_by_engineer' THEN 1 END) AS Pending_by_subengineer,
-      COUNT(CASE WHEN status = 'doc_verification_inprogress_by_engineer' THEN 1 END) AS Pending_by_Builder,
-      COUNT(CASE WHEN status = 'pendingapproval' THEN 1 END) AS Pending_by_commissioner,
+      COUNT(CASE WHEN status = 'DOC_VERIFICATION_PENDING_BY_ENGINEER' THEN 1 END) AS Pending_by_subengineer,
+      COUNT(CASE WHEN status = 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 1 END) AS Pending_by_Builder,
+      COUNT(CASE WHEN status = 'PENDINGAPPROVAL' THEN 1 END) AS Pending_by_commissioner,
       COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
       FROM  eg_bpa_buildingplan WHERE applicationdate >= $fromDate) as t WHERE 1=1
   
