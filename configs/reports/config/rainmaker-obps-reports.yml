@@ -9,43 +9,63 @@ ReportDefinitions:
       label: reports.obps.applicationno
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: applicationdate
       label: reports.obps.applicationdate
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: applicationchannel
       label: reports.obps.applicationchannel
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: uuid
       label: reports.obps.uuid
       type: string
       source: obps
       showColumn: false
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: name
       label: reports.obps.name
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: applicationtype
       label: reports.obps.applicationtype
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: servicetype
       label: reports.obps.servicetype
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: occupancytype
       label: reports.obps.occupancytype
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: status
       label: reports.obps.status
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: currentowner
       label: reports.obps.currentowner
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
   searchParams:
     - name: fromDate
       label: FromDate
@@ -110,23 +130,33 @@ ReportDefinitions:
       label: reports.obps.Pending_by_subengineer
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: Pending_by_Builder
       label: reports.obps.Pending_by_Builder
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: Pending_by_commissioner
       label: reports.obps.Pending_by_commissioner
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: Pending_by_architect
       label: reports.obps.Pending_by_architect
       type: string
       source: obps
       showColumn: false
+      isLocalisationRequired: true
+      localisationPrefix: ""
     - name: Total_pending_cases
       label: reports.obps.Total_pending_cases
       type: string
       source: obps
+      isLocalisationRequired: true
+      localisationPrefix: ""
   searchParams:
     - name: fromDate
       label: FromDate
