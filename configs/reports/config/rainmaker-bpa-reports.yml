@@ -8,61 +8,61 @@ ReportDefinitions:
     - name: applicationno
       label: reports.bpa.applicationno
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: applicationdate
       label: reports.bpa.applicationdate
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: applicationchannel
       label: reports.bpa.applicationchannel
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: uuid
       label: reports.bpa.uuid
       type: string
-      source: bpa
+      source: eg_user
       showColumn: false
     - name: name
       label: reports.bpa.name
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: applicationtype
       label: reports.bpa.applicationtype
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: servicetype
       label: reports.bpa.servicetype
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: occupancytype
       label: reports.bpa.occupancytype
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: status
       label: reports.bpa.status
       type: string
-      source: bpa
+      source: rainmaker-bpa
     - name: currentowner
       label: reports.bpa.currentowner
       type: string
-      source: bpa
+      source: rainmaker-bpa
   searchParams:
     - name: fromDate
       label: FromDate
       type: epoch
-      source: bpa
+      source: rainmaker-bpa
       isMandatory: false
       searchClause: AND bp.createdtime >= $fromDate
     - name: toDate
       label: ToDate
       type: epoch
-      source: bpa
+      source: rainmaker-bpa
       isMandatory: false
       searchClause: AND bp.createdtime  <= $toDate
     - name: applicationChannel
       label: reports.bpa.applicationchannel
       type: multivaluelist
-      source: bpa
+      source: rainmaker-bpa
       isMandatory: false
       searchClause: AND landinfo.channel in ( $applicationChannel )
       pattern: 'list://SYSTEM:SYSTEM'
@@ -71,7 +71,7 @@ ReportDefinitions:
     - name: applicationType
       label: reports.bpa.applicationtype
       type: multivaluelist
-      source: bpa
+      source: rainmaker-bpa
       isMandatory: false
       pattern: 'list://BUILDING_OC_PLAN_SCRUTINY:BUILDING_OC_PLAN_SCRUTINY,BUILDING_PLAN_SCRUTINY:BUILDING_PLAN_SCRUTINY'
       searchClause: AND bp.additionaldetails->>'applicationType' in ( $applicationType )
@@ -80,7 +80,7 @@ ReportDefinitions:
     - name: serviceType
       label: reports.bpa.servicetype
       type: multivaluelist
-      source: bpa
+      source: rainmaker-bpa
       isMandatory: false
       pattern: 'list://NEW_CONSTRUCTION:NEW_CONSTRUCTION'
       searchClause: AND bp.additionaldetails->> 'serviceType' in ( $serviceType )
@@ -89,7 +89,7 @@ ReportDefinitions:
     - name: status
       label: reports.bpa.status
       type: multivaluelist
-      source: bpa
+      source: rainmaker-bpa
       isMandatory: false
       pattern: 'list://CITIZEN_ACTION_PENDING_AT_DOC_VERIF:CITIZEN_ACTION_PENDING_AT_DOC_VERIF,INPROGRESS:INPROGRESS,PENDING_APPL_FEE:PENDING_APPL_FEE,PENDING_SANC_FEE_PAYMENT:PENDING_SANC_FEE_PAYMENT,DOC_VERIFICATION_INPROGRESS:DOC_VERIFICATION_INPROGRESS,CITIZEN_ACTION_PENDING_AT_NOC_VERIF:CITIZEN_ACTION_PENDING_AT_NOC_VERIF,PERMIT REVOCATION:PERMIT REVOCATION,FIELDINSPECTION_INPROGRESS:FIELDINSPECTION_INPROGRESS,PENDING_FEE:PENDING_FEE,NOC_VERIFICATION_INPROGRESS:NOC_VERIFICATION_INPROGRESS,INITIATED:INITIATED,CITIZEN_APPROVAL_INPROCESS:CITIZEN_APPROVAL_INPROCESS,REJECTED:REJECTED,APPROVED:APPROVED,CITIZEN_ACTION_PENDING_AT_FI_VERIF:CITIZEN_ACTION_PENDING_AT_FI_VERIF,APPROVAL_INPROGRESS:APPROVAL_INPROGRESS'
       searchClause: AND bp.status in ( $status )
