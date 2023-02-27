@@ -9,3 +9,4 @@ pt-reports=file:///work-dir/upyog-configs/configs/reports/config/pt-reports.yml
 rainmaker-bnd=file:///work-dir/upyog-configs/configs/reports/config/birthcount-reports.yml
 rainmaker-obps=file:///work-dir/upyog-configs/configs/reports/config/rainmaker-obps-reports.yml
 citizen=file:///work-dir/upyog-configs/configs/reports/config/citizen-reports.yml
+rainmaker-bpa=file:///work-dir/upyog-configs/configs/reports/config/rainmaker-bpa-reports.yml
