@@ -51,13 +51,13 @@ ReportDefinitions:
       label: FromDate
       type: epoch
       source: obps
-      isMandatory: false
+      isMandatory: true
       searchClause: AND bp.createdtime >= $fromDate
     - name: toDate
       label: ToDate
       type: epoch
       source: obps
-      isMandatory: false
+      isMandatory: true
       searchClause: AND bp.createdtime  <= $toDate
     - name: applicationChannel
       label: reports.obps.applicationchannel
