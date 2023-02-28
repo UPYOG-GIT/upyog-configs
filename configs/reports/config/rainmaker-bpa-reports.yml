@@ -18,13 +18,13 @@ ReportDefinitions:
     type: string
     source: bpa
     isLocalisationRequired: true
-    localisationPrefix: ""
+    localisationPrefix: 
   - name: name
     label: name
     type: string
     source: bpa
     isLocalisationRequired: true
-    localisationPrefix: ""
+    localisationPrefix: 
   - name: applicationtype
     label: applicationtype
     type: string
@@ -47,6 +47,7 @@ ReportDefinitions:
     type: string
     source: bpa
     showColumn: true
+    isLocalisationRequired: true
   - name: currentowner
     label: currentowner
     type: string
