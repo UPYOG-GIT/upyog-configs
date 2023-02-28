@@ -113,27 +113,27 @@ ReportDefinitions:
   moduleName: rainmaker-bpa
   sourceColumns:
   - name: Pending_by_subengineer
-    label: Pending_by_subengineer
+    label: Pending by Sub Engineer
     type: string
     source: bpa
   - name: Pending_by_Builder
-    label: Pending_by_Builder
+    label: Pending by Builder
     type: string
     source: bpa
   - name: Pending_by_commissioner
-    label: Pending_by_commissioner
+    label: Pending by Commissioner
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: ""
   - name: Pending_by_architect
-    label: Pending_by_architect
+    label: Pending by Architect
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: ""
   - name: Total_pending_cases
-    label: Total_pending_cases
+    label: Total Pending Cases
     type: string
     source: bpa
     isLocalisationRequired: true
