@@ -6,11 +6,11 @@ ReportDefinitions:
   moduleName: rainmaker-bpa
   sourceColumns:
   - name: applicationno
-    label: applicationno
+    label: Application No
     type: string
     source: bpa
   - name: applicationdate
-    label: applicationdate
+    label: Application Date
     type: string
     source: bpa
   - name: uuid
@@ -20,36 +20,36 @@ ReportDefinitions:
     isLocalisationRequired: true
     localisationPrefix: 
   - name: name
-    label: name
+    label: Name
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
   - name: applicationtype
-    label: applicationtype
+    label: Application Type
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
   - name: servicetype
-    label: servicetype
+    label: Service Type
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
   - name: occupancytype
-    label: occupancytype
+    label: Occupancy Type
     type: string
     source: bpa
     showColumn: true
   - name: status
-    label: status
+    label: Status
     type: string
     source: bpa
     showColumn: true
     isLocalisationRequired: true
   - name: currentowner
-    label: currentowner
+    label: Current Owner
     type: string
     source: bpa
     showColumn: true
