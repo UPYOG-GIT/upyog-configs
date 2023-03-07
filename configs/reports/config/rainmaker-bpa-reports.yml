@@ -165,6 +165,76 @@ ReportDefinitions:
       COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
       FROM  eg_bpa_buildingplan WHERE createdtime >= $fromDate) as t WHERE 1=1
   
-
+- reportName: HistoryMisReport
+  decryptionPathId: HistoryMisReport
+  summary: Fetches History Mis Report data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-bpa
+  sourceColumns:
+  - name: Application_no
+    label: Application_no
+    type: string
+    source: bpa
+  - name: Application_date
+    label: Application_date
+    type: string
+    source: bpa
+  - name: status
+    label: status
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: emailid
+    label: emailid
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix: 
+  - name: mobilenumber
+    label: mobilenumber
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: khataNo
+    label: khataNo
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
+  - name: City
+    label: City
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: plotArea
+    label: plotArea
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: occupancy
+    label: occupancy
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  searchParams:
+  - name: fromDate
+    label: FromDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: AND bp.createdtime >= $fromDate
+  - name: toDate
+    label: ToDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: AND bp.createdtime  <= $toDate
+  query: select applicationno as Application_no,bp.createdtime as Application_date,status,emailid,mobilenumber,khataNo,mauza as City,plotArea,occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1;
+  order by: bp.createdtime ASC
 
  
