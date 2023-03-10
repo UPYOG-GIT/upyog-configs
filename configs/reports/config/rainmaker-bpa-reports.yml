@@ -175,6 +175,10 @@ ReportDefinitions:
     label: Application No
     type: string
     source: bpa
+  - name: Applicant_name
+    label: Applicant Name
+    type: string
+    source: bpa
   - name: Application_date
     label: Application Date
     type: string
@@ -234,8 +238,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate
-  query: select applicationno as Application_no, bp.createdtime as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea,
-  occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
+  query: select applicationno as Application_no, usr.name as Applicant_name, bp.createdtime as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea, occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   order by: bp.createdtime ASC
 
  
