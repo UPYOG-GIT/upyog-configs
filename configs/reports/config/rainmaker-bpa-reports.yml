@@ -179,20 +179,14 @@ ReportDefinitions:
     label: Application_date
     type: string
     source: bpa
-  - name: uuid
-    label: uuid
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: 
   - name: status
     label: status
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: emailid
-    label: emailid
+  - name: plotno
+    label: PlotNo
     type: string
     source: bpa
     isLocalisationRequired: true
