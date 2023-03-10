@@ -172,33 +172,37 @@ ReportDefinitions:
   moduleName: rainmaker-bpa
   sourceColumns:
   - name: Application_no
-    label: Application_no
+    label: Application No
+    type: string
+    source: bpa
+  - name: Applicant_Name
+    label: Applicant Name
     type: string
     source: bpa
   - name: Application_date
-    label: Application_date
+    label: Application Date
     type: string
     source: bpa
   - name: status
-    label: status
+    label: Status
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
   - name: plotno
-    label: PlotNo
+    label: Plot No
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
   - name: mobilenumber
-    label: mobilenumber
+    label: Mobile Number
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
   - name: khataNo
-    label: khataNo
+    label: KhataNo
     type: string
     source: bpa
     isLocalisationRequired: true
@@ -210,13 +214,13 @@ ReportDefinitions:
     isLocalisationRequired: true
     localisationPrefix:
   - name: plotArea
-    label: plotArea
+    label: PlotArea
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
   - name: occupancy
-    label: occupancy
+    label: Occupancy
     type: string
     source: bpa
     isLocalisationRequired: true
@@ -234,7 +238,8 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate
-  query: select applicationno as Application_no,bp.createdtime as Application_date,status,mobilenumber,khataNo,mauza as City,plotno,plotArea,occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
+  query: select applicationno as Application_no, usr.name as Applicant_Name, bp.createdtime as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea,
+  occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   order by: bp.createdtime ASC
 
  
