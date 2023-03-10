@@ -240,7 +240,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate
-  query: select applicationno as Application_no,bp.createdtime as Application_date,usr.uuid,status,emailid,mobilenumber,khataNo,mauza as City,plotArea,occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
+  query: select applicationno as Application_no,bp.createdtime as Application_date,usr.uuid,status,khataNo,mauza as City,plotArea,occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   order by: bp.createdtime ASC
 
  
