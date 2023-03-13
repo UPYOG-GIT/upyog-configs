@@ -8,53 +8,7 @@ ReportDefinitions:
   - name: applicationno
     label: Application No
     type: string
-    source: bpa
-  - name: applicationdate
-    label: Application Date
-    type: string
-    source: bpa
-  - name: uuid
-    label: uuid
-    type: string
-    source: bpa
-    showColumn: false
-    isLocalisationRequired: true
-    localisationPrefix: 
-  - name: name
-    label: Name
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: applicationtype
-    label: Application Type
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: 
-  - name: servicetype
-    label: Service Type
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: occupancytype
-    label: Occupancy Type
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: status
-    label: Status
-    type: string
-    source: bpa
-    showColumn: true
-    isLocalisationRequired: true
-  - name: currentowner
-    label: Current Owner
-    type: string
-    source: bpa
-    showColumn: true	
+    source: bpa 
   searchParams:
   - name: fromDate
     label: FromDate
