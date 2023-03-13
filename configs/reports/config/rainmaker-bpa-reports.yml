@@ -8,7 +8,20 @@ ReportDefinitions:
   - name: applicationno
     label: Application No
     type: string
-    source: bpa 
+    source: bpa
+  - name: applicationdate
+    label: Application Date
+    type: string
+    source: bpa
+  - name: uuid
+    label: uuid
+    type: string
+    source: bpa
+    showColumn: false 
+  - name: name
+    label: Name
+    type: string
+    source: bpa
   searchParams:
   - name: fromDate
     label: FromDate
