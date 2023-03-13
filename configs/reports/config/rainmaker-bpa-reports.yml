@@ -17,7 +17,7 @@ ReportDefinitions:
     label: uuid
     type: string
     source: bpa
-	  showColumn: false
+    showColumn: false
     isLocalisationRequired: true
     localisationPrefix: 
   - name: name
