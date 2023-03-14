@@ -167,7 +167,7 @@ ReportDefinitions:
     type: string
     source: bpa
     isLocalisationRequired: true
-    localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
+    localisationPrefix: 
   - name: City
     label: City
     type: string
