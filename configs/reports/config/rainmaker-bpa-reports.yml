@@ -5,7 +5,7 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   externalService:
-  - entity: $.UPYOG-GIT.releasekit.localisation.2.7.en_IN.rainmaker-common.[]
+  - entity: $.UPYOG-GIT.releasekit.localisation.2.7.en_IN.rainmaker-common.json.[]
     apiURL: http://www.niwaspass.com/localization/messages/v1/_search?moduleName=rainmaker-common&tenantId=$tenantId
     keyOrder: code,message
     tableName: tbl_localization
