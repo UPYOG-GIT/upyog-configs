@@ -446,14 +446,14 @@
                 "border": [
                   true,
                   true,
-                  true,
+                  false,
                   true
                 ],
                 "bold": false,
 		"alignment": "center"
               },
               {
-                "text": "Authorised Signatory",
+                "text": "",
                 "border": [
                   false,
                   true,
@@ -461,19 +461,19 @@
                   true
                 ],
 		"bold": false,
-                "alignment": "right"
+                "alignment": "center"
               },
-			  {
-                "text": "",
-                 "border": [
+              {
+                "text": "Authorised Signatory",
+                "border": [
                   false,
                   true,
                   true,
                   true
                 ],
 				"bold": false,
-				"alignment": "center"
-              }		  
+				"alignment": "right"
+              }
             ],
 			[
               {
