@@ -466,9 +466,9 @@
               {
                 "text": "",
                 "border": [
+                  true,
+                  true,
                   false,
-                  true,
-                  true,
                   true
                 ],
 				"bold": false,
