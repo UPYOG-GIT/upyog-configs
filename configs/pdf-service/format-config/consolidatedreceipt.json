@@ -461,12 +461,12 @@
                   true
                 ],
 				"bold": false,
-                "alignment": "right"
+                "alignment": "center"
               },
               {
-                "text": "₹ {{totalAmount}}",
+                "text": "",
                 "border": [
-                  true,
+                  false,
                   true,
                   true,
                   true
