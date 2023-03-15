@@ -450,7 +450,7 @@
                   true
                 ],
                 "bold": false,
-				"alignment": "center"
+		"alignment": "center"
               },
               {
                 "text": "This is a Computer Generated Printout",
@@ -462,6 +462,17 @@
                 ],
 		"bold": false,
                 "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
               }
             ]
 
