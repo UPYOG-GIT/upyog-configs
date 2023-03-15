@@ -457,7 +457,7 @@
                 "border": [
                   false,
                   true,
-                  true,
+                  false,
                   true
                 ],
 		"bold": false,
