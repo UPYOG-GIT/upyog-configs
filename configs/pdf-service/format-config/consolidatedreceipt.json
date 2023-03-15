@@ -455,20 +455,20 @@
               {
                 "text": "This is a Computer Generated Printout",
                 "border": [
-                  true,
-                  true,
                   false,
+                  true,
+                  true,
                   true
                 ],
-				"bold": false,
+		"bold": false,
                 "alignment": "center"
               },
               {
                 "text": "",
                 "border": [
-                  true,
-                  true,
                   false,
+                  true,
+                  true,
                   true
                 ],
 				"bold": false,
