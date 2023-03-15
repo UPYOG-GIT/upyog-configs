@@ -453,7 +453,7 @@
 		"alignment": "center"
               },
               {
-                "text": "",
+                "text": "Authorised",
                 "border": [
                   false,
                   true,
@@ -461,10 +461,10 @@
                   true
                 ],
 		"bold": false,
-                "alignment": "center"
+                "alignment": "right"
               },
               {
-                "text": "Authorised Signatory",
+                "text": "Signatory",
                 "border": [
                   false,
                   true,
@@ -472,7 +472,7 @@
                   true
                 ],
 				"bold": false,
-				"alignment": "right"
+				"alignment": "left"
               }
             ],
 			[
