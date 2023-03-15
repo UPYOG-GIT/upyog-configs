@@ -300,6 +300,8 @@
 				"alignment": "center"
               }
             ],
+			
+			
 			[
               {
                 "text": "3",
@@ -335,6 +337,11 @@
 				"alignment": "center"
               }
             ],
+			
+			
+			
+			
+			
 			[
               {
                 "text": "",
@@ -370,6 +377,12 @@
 				"alignment": "center"
               }
             ],
+			
+			
+			
+			
+			
+			
 			[
               {
                 "text": "",
@@ -440,13 +453,17 @@
 				"alignment": "center"
               }
             ],
+			
+			
+			
+			
 			[
               {
                 "text": "",
                 "border": [
                   true,
                   true,
-                  false,
+                  true,
                   true
                 ],
                 "bold": false,
@@ -462,19 +479,12 @@
                 ],
 		"bold": false,
                 "alignment": "right"
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
               }
             ],
+			
+			
+			
+			
 			[
               {
                 "text": "",
