@@ -5,7 +5,7 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   externalService:
-  - entity: $.UPYOG-GIT.releasekit.localisation.2.7.en_IN.rainmaker-common.messages[*]
+  - entity: $.releasekit.localisation.2.7.en_IN.rainmaker-common.messages[*]
     apiURL: https://github.com/UPYOG-GIT/releasekit/blob/master/localisation/2.7/en_IN/rainmaker-common.json
     keyOrder: code,message
     tableName: tbl_localization
