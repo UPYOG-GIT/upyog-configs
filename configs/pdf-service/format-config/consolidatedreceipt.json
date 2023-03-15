@@ -462,17 +462,6 @@
                 ],
 		"bold": false,
                 "alignment": "center"
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
               }
             ]
 
