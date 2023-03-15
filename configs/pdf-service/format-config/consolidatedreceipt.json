@@ -453,7 +453,76 @@
 		"alignment": "center"
               },
               {
-                "text": "This is a Computer Generated Printout",
+                "text": "Total Amount(in words): "
+                "border": [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+		"bold": false,
+                "alignment": "left"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
+              {
+                "text": "For Municipal Corporation"
+                "border": [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+		"bold": false,
+                "alignment": "right"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
+              {
+                "text": "This is a Computer Generated Printout.",
                 "border": [
                   false,
                   true,
@@ -475,7 +544,6 @@
 				"alignment": "center"
               }
             ]
-
           ]
         },
         "layout": {}
