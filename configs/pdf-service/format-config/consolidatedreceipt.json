@@ -455,9 +455,9 @@
               {
                 "text": "This is a Computer Generated Printout",
                 "border": [
+                  true,
+                  true,
                   false,
-                  true,
-                  true,
                   true
                 ],
 				"bold": false,
