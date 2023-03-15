@@ -474,40 +474,6 @@
 				"bold": false,
 				"alignment": "center"
               }
-            ],[
-              {
-                "text": "",
-                "border": [
-                  true,
-                  true,
-                  false,
-                  true
-                ],
-                "bold": false,
-		"alignment": "center"
-              },
-              {
-                "text": "For Municipal Corporation"
-                "border": [
-                  false,
-                  true,
-                  false,
-                  true
-                ],
-		"bold": false,
-                "alignment": "right"
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
             ],
 			[
               {
