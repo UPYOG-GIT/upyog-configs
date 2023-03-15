@@ -439,30 +439,6 @@
 				"bold": false,
 				"alignment": "center"
               }
-            ],
-			[
-              {
-                "text": "",
-                "border": [
-                  true,
-                  true,
-                  false,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "This is a Computer Generated Printout",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              }
             ]
           ]
         },
