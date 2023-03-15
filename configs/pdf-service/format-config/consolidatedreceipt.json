@@ -465,16 +465,15 @@
               },
 			  {
                 "text": "",
-                "border": [
+                 "border": [
                   false,
-                  false,
-                  false,
-                  false
+                  true,
+                  true,
+                  true
                 ],
 				"bold": false,
 				"alignment": "center"
-              }
-			  
+              }		  
             ],
 			[
               {
