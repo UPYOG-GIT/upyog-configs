@@ -6,7 +6,7 @@ ReportDefinitions:
   moduleName: rainmaker-bpa
   externalService:
   - entity: $.messages[*]
-    apiURL:  http://www.niwaspass.com/localization/messages/v1/_search?moduleName=rainmaker-common&tenantId=cg
+    apiURL:  https://www.niwaspass.com/localization/messages/v1/_search?locale=en_IN&module=rainmaker-common&tenantId=cg
     keyOrder: code,message
     tableName: message
   sourceColumns:
