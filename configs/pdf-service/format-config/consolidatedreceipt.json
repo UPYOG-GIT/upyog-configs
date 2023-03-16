@@ -463,7 +463,7 @@
                 ],
 		"bold": false,
 		"alignment": "right",
-		"colSpan": 3
+		"colspan": 3
 		
               },
               {
