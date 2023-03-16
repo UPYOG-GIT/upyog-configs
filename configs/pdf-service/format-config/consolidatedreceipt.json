@@ -450,7 +450,7 @@
                   false
                 ],
                 "bold": false,
-		"alignment": "right",
+		"alignment": "right"
 		
               },
               {
@@ -475,7 +475,7 @@
                   false
                 ],
 		"bold": false,
-		"alignment": "right",
+		"alignment": "right"
 		
               }
             ],
