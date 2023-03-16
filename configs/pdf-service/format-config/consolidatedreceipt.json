@@ -513,79 +513,10 @@
 		"alignment": "center"
 		
               }
-            ],
-	    [
-              {
-                "text": "",
-                "border": [
-                  true,
-                  true,
-                  false,
-                  true
-                ],
-                "bold": false,
-		"alignment": "center",
-		  "colspan": 3
-              },
-              {
-                "text": "This is a Computer Generated Printout.",
-                "border": [
-                  false,
-                  true,
-                  false,
-                  true
-                ],
-		"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
             ]
           ]
         },
         "layout": {}
-      },
-      {
-        "style": "receipt-approver",
-        "columns": [
-          {
-            "text": [
-              {
-                "text": "{{generated_by}}: ",
-                "bold": true
-              },
-              {
-                "text": "{{user-name}}",
-                "bold": false
-              }
-            ],
-            "alignment": "left"
-          },
-          {
-            "text": [
-              {
-                "text": "{{commissioner/eo}}",
-                "bold": true
-              }
-            ],
-            "alignment": "right",
-            "margin": [
-                0,
-                0,
-               -10,
-                1
-            ]
-          }
-        ]
       },
       {
         "style": "no-signature",
