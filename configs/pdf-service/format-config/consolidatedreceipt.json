@@ -465,7 +465,44 @@
 		
               },
               {
-                "text": "For Municipal Corporation Raipur\\nAuthorised Sign",
+                "text": "For Municipal Corporation Raipur",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  false
+                ],
+		"bold": false,
+		"alignment": "right"
+		
+              }
+            ],
+		  [
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  false
+                ],
+                "bold": false
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+		"bold": false,
+		  "colspan": 2
+		
+		
+              },
+              {
+                "text": "Authorised Sign",
                 "border": [
                   false,
                   true,
