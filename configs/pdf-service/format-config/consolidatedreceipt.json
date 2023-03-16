@@ -465,7 +465,7 @@
 		
               },
               {
-                "text": "For Municipal Corporation Raipur"\n\n"Authorised Sign",
+                "text": "For Municipal Corporation Raipur"+\n\n+"Authorised Sign",
                 "border": [
                   false,
                   true,
