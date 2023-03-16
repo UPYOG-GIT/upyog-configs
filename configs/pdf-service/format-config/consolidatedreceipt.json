@@ -474,12 +474,12 @@
 				"alignment": "center"
               }
             ],
-			[
+		[
               {
                 "text": "",
                 "border": [
                   true,
-                  true,
+                  false,
                   false,
                   true
                 ],
@@ -490,7 +490,7 @@
                 "text": "",
                 "border": [
                   false,
-                  true,
+                  false,
                   false,
                   true
                 ],
@@ -501,7 +501,7 @@
                 "text": "Authorised Sign",
                 "border": [
                   false,
-                  true,
+                  false,
                   true,
                   true
                 ],
