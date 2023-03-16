@@ -461,7 +461,7 @@
                   true
                 ],
 		"bold": false,
-                "alignment": "right"
+                "alignment": "center"
               },
               {
                 "text": "Authorised Sign",
