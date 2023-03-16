@@ -443,6 +443,7 @@
 	    [
               {
                 "text": "",
+		"colSpan": 3,
                 "border": [
                   true,
                   true,
@@ -451,31 +452,32 @@
                 ],
                 "bold": false,
 		"alignment": "right",
-		"colSpan":3
+		
+              },
+              {
+                "text": "",
+		 "colSpan": 3,
+                "border": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+		"bold": false,
+		"alignment": "right",
+		
               },
               {
                 "text": "For Municipal Corporation Raipur",
                 "border": [
                   false,
                   true,
-                  false,
-                  false
-                ],
-		"bold": false,
-		"alignment": "right",
-		"colSpan":3
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
                   true,
                   false
                 ],
 		"bold": false,
 		"alignment": "right",
-		"colSpan":3
+		
               }
             ],
 		[
