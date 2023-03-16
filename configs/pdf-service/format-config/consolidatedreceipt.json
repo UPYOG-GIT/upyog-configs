@@ -405,7 +405,7 @@
 				"alignment": "center"
               }
             ],
-			[
+	     [
               {
                 "text": "",
                 "border": [
@@ -439,6 +439,40 @@
 				"bold": true,
 				"alignment": "center"
               }
+            ],[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  false
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
+              {
+                "text": "For Municipal Corporation Raipur",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+		"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  false
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
             ],
 			[
               {
@@ -453,7 +487,7 @@
 		"alignment": "center"
               },
               {
-                "text": "For Municipal Corporation Raipur",
+                "text": "",
                 "border": [
                   false,
                   true,
