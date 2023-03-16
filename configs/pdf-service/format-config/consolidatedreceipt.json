@@ -436,7 +436,7 @@
                   true,
                   true
                 ],
-				"bold": false,
+				"bold": true,
 				"alignment": "center"
               }
             ],
@@ -464,7 +464,7 @@
                 "alignment": "right"
               },
               {
-                "text": "For Municipal Corporation Raipur\n\n AuthorisedSignatory",
+                "text": "For Municipal Corporation Raipur",
                 "border": [
                   false,
                   true,
@@ -472,12 +472,12 @@
                   true
                 ],
 				"bold": false,
-				"alignment": "left"
+				"alignment": "center"
               }
             ],
 			[
               {
-                "text": "",
+                "text": "Authorised Sign",
                 "border": [
                   true,
                   true,
