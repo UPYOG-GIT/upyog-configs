@@ -359,7 +359,7 @@
                 "alignment": "right"
               },
               {
-                "text": "0",
+                "text": "₹ {{totalAmount}}",
                 "border": [
                   true,
                   true,
