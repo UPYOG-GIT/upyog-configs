@@ -191,8 +191,8 @@
         "table": {
           "widths": [
            "10%",
-		   "60%",
-		   "30%"
+		   "50%",
+		   "40%"
           ],
           "body": [
             [
@@ -468,7 +468,7 @@
 		
               },
               {
-                "text": "For Municipal Corporation Raipur\n\n Authorised Sign",
+                "text": "For Municipal Corporation Raipur\n\nAuthorised Sign",
                 "border": [
                   false,
                   true,
