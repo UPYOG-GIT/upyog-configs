@@ -449,10 +449,7 @@
                   false,
                   false
                 ],
-                "bold": false,
-		"alignment": "right",
-		 "colspan": 3
-		
+                "bold": false
               },
               {
                 "text": "",
@@ -463,7 +460,7 @@
                   false
                 ],
 		"bold": false,
-		"alignment": "right"
+		  "colspan": 2
 		
 		
               },
