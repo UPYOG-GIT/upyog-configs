@@ -443,7 +443,6 @@
 	    [
               {
                 "text": "",
-		"colSpan": 3,
                 "border": [
                   true,
                   true,
@@ -456,7 +455,6 @@
               },
               {
                 "text": "",
-		 "colSpan": 3,
                 "border": [
                   false,
                   true,
@@ -465,6 +463,7 @@
                 ],
 		"bold": false,
 		"alignment": "right",
+		"colSpan": 3
 		
               },
               {
