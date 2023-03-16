@@ -191,8 +191,8 @@
         "table": {
           "widths": [
            "10%",
-		   "70%",
-		   "20%"
+		   "50%",
+		   "40%"
           ],
           "body": [
             [
@@ -450,7 +450,8 @@
                   false
                 ],
                 "bold": false,
-		"alignment": "right"
+		"alignment": "right",
+		 "colspan": 3
 		
               },
               {
@@ -462,8 +463,8 @@
                   false
                 ],
 		"bold": false,
-		"alignment": "right",
-		"colspan": 3
+		"alignment": "right"
+		
 		
               },
               {
