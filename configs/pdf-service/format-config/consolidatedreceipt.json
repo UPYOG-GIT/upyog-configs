@@ -482,7 +482,7 @@
                 "text": "",
                 "border": [
                   true,
-                  true,
+                  false,
                   false,
                   false
                 ],
@@ -492,7 +492,7 @@
                 "text": "",
                 "border": [
                   false,
-                  true,
+                  false,
                   false,
                   false
                 ],
@@ -505,7 +505,7 @@
                 "text": "Authorised Sign",
                 "border": [
                   false,
-                  true,
+                  false,
                   true,
                   false
                 ],
