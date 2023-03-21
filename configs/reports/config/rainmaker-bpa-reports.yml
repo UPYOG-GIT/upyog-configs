@@ -208,11 +208,11 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   sourceColumns:
-  - name: ulb_tenantid
+  - name: tenantid
     label: city
     type: string
     source: bpa	
-  - name: application_no
+  - name: Application_no
     label: Application No
     type: string
     source: bpa	
@@ -229,6 +229,6 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate 
-  query: select ulb_tenantid,application_no,bp.createdtime from fee_details fd inner join eg_bpa_buildingplan bp on fd.application_no=bp.applicationno where 1=1
+  query: select ulb_tenantid as tenantid,application_no as Application_no,bp.createdtime from fee_details fd inner join eg_bpa_buildingplan bp on fd.application_no=bp.applicationno where 1=1
 
  
