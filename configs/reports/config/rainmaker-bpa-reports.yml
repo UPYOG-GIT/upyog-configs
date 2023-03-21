@@ -217,13 +217,13 @@ ReportDefinitions:
     type: string
     source: bpa	
   searchParams:
-  - name: bp.createdtime
+  - name: fromDate
     label: FromDate
     type: epoch
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime >= $fromDate
-  - name: bp.createdtime
+  - name: toDate
     label: ToDate
     type: epoch
     source: bpa
