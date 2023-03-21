@@ -201,5 +201,34 @@ ReportDefinitions:
     searchClause: AND bp.createdtime  <= $toDate 
   query: select applicationno as Application_no, usr.name as name,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea, occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   orderby: order by bp.createdtime ASC
+  
+- reportName: MisPaymentReport
+  decryptionPathId: MisPaymentReport
+  summary: Fetches payment data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-bpa
+  sourceColumns:
+  - name: ulb_tenantid
+    label: city
+    type: string
+    source: bpa	
+  - name: application_no
+    label: Application No
+    type: string
+    source: bpa	
+  searchParams:
+  - name: fromDate
+    label: FromDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: AND bp.createdtime >= $fromDate
+  - name: toDate
+    label: ToDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: AND bp.createdtime  <= $toDate 
+  query: select ulb_tenantid,application_no from fee_details where 1=1 
 
  
