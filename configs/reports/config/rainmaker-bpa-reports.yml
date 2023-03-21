@@ -217,18 +217,18 @@ ReportDefinitions:
     type: string
     source: bpa	
   searchParams:
-  - name: createddate
+  - name: bp.createdtime
     label: FromDate
     type: epoch
     source: bpa
     isMandatory: false
-    searchClause: AND createddate >= $fromDate
-  - name: createddate
+    searchClause: AND bp.createdtime >= $fromDate
+  - name: bp.createdtime
     label: ToDate
     type: epoch
     source: bpa
     isMandatory: false
-    searchClause: AND createddate <= $toDate 
-  query: select ulb_tenantid,application_no,createddate from fee_details where 1=1 
+    searchClause: AND bp.createdtime <= $toDate 
+  query: select ulb_tenantid,application_no,bp.createdtime from fee_details fd inner join eg_bpa_buildingplan bp on fd.application_no=bp.applicationno where 1=1
 
  
