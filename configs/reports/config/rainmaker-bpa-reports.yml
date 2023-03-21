@@ -208,10 +208,6 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   sourceColumns:
-  - name: tenantid
-    label: city
-    type: string
-    source: bpa	
   - name: Application_no
     label: Application No
     type: string
