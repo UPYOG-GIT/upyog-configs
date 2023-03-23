@@ -208,11 +208,6 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   sourceColumns:
-  - name: uuid
-    label: uuid
-    type: string
-    source: bpa
-    showColumn: false
   - name: tenantid
     label: city
     type: string
