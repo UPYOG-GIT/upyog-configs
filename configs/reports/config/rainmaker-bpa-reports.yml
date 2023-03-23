@@ -233,7 +233,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: select uuid, ulb_tenantid as tenantid,application_no as Appno,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as Application_date from fee_details fd inner join eg_bpa_buildingplan bp on fd.application_no=bp.applicationno inner join eg_user usr on usr.uuid=bp.createdby where 1=1
+  query: select ulb_tenantid as tenantid,application_no as Appno,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as Application_date from fee_details fd inner join eg_bpa_buildingplan bp on fd.application_no=bp.applicationno inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   
 
  
