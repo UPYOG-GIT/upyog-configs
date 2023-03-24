@@ -191,8 +191,8 @@
         "table": {
           "widths": [
            "10%",
-		   "50%",
-		   "40%"
+		   "70%",
+		   "20%"
           ],
           "body": [
             [
@@ -243,7 +243,7 @@
 				"alignment": "center"
               },
               {
-                "text": "Application Fee",
+                "text": "Paid Amount",
                 "border": [
                   true,
                   true,
@@ -359,7 +359,7 @@
                 "alignment": "right"
               },
               {
-                "text": "₹ {{totalAmount}}",
+                "text": "0",
                 "border": [
                   true,
                   true,
@@ -439,8 +439,7 @@
 				"bold": true,
 				"alignment": "center"
               }
-            ],
-	    [
+            ],[
               {
                 "text": "",
                 "border": [
@@ -449,35 +448,33 @@
                   false,
                   false
                 ],
-                "bold": false
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  false,
-                  false
-                ],
-		"bold": false,
-		  "colspan": 2
-		
-		
-              },
-              {
-                "text": "{{logo-header}}",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  false
-                ],
-		"bold": false,
+                "bold": false,
 		"alignment": "center"
-		
+              },
+              {
+                "text": "For Municipal Corporation Raipur",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+		"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  false
+                ],
+				"bold": false,
+				"alignment": "center"
               }
             ],
-		  [
+		[
               {
                 "text": "",
                 "border": [
@@ -486,7 +483,8 @@
                   false,
                   true
                 ],
-                "bold": false
+                "bold": false,
+		"alignment": "center"
               },
               {
                 "text": "",
@@ -497,9 +495,7 @@
                   true
                 ],
 		"bold": false,
-		  "colspan": 2
-		
-		
+                "alignment": "center"
               },
               {
                 "text": "Authorised Sign",
@@ -509,14 +505,81 @@
                   true,
                   true
                 ],
-		"bold": false,
+				"bold": false,
+				"alignment": "left"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
 		"alignment": "center"
-		
+              },
+              {
+                "text": "This is a Computer Generated Printout.",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+		"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
               }
             ]
           ]
         },
         "layout": {}
+      },
+      {
+        "style": "receipt-approver",
+        "columns": [
+          {
+            "text": [
+              {
+                "text": "{{generated_by}}: ",
+                "bold": true
+              },
+              {
+                "text": "{{user-name}}",
+                "bold": false
+              }
+            ],
+            "alignment": "left"
+          },
+          {
+            "text": [
+              {
+                "text": "{{commissioner/eo}}",
+                "bold": true
+              }
+            ],
+            "alignment": "right",
+            "margin": [
+                0,
+                0,
+               -10,
+                1
+            ]
+          }
+        ]
       },
       {
         "style": "no-signature",
