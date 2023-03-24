@@ -243,7 +243,7 @@
 				"alignment": "center"
               },
               {
-                "text": "Paid Amount",
+                "text": "Application Fees",
                 "border": [
                   true,
                   true,
@@ -266,75 +266,6 @@
               }
             ],
 			[
-              {
-                "text": "2",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "Transaction ID",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "{{transactionID}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],		
-			[
-              {
-                "text": "3",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "Service Type",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "{{serviceType}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
 			[
               {
                 "text": "",
@@ -405,7 +336,7 @@
 				"alignment": "center"
               }
             ],
-	     [
+	        [
               {
                 "text": "",
                 "border": [
@@ -439,7 +370,8 @@
 				"bold": true,
 				"alignment": "center"
               }
-            ],[
+            ],
+			[
               {
                 "text": "",
                 "border": [
@@ -449,7 +381,7 @@
                   false
                 ],
                 "bold": false,
-		"alignment": "center"
+		       "alignment": "center"
               },
               {
                 "text": "For Municipal Corporation Raipur",
@@ -459,7 +391,7 @@
                   false,
                   false
                 ],
-		"bold": false,
+		        "bold": false,
                 "alignment": "center"
               },
               {
@@ -474,7 +406,7 @@
 				"alignment": "center"
               }
             ],
-		[
+		    [
               {
                 "text": "",
                 "border": [
