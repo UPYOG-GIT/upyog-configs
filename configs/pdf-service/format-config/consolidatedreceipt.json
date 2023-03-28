@@ -324,7 +324,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{serviceType}}",
+                "text": "{{Rain_Water}}",
                 "border": [
                   true,
                   true,
@@ -359,7 +359,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{serviceType}}",
+                "text": "{{Road_Blockage}}",
                 "border": [
                   true,
                   true,
@@ -383,7 +383,7 @@
 				"alignment": "center"
               },
               {
-                "text": "Development Charges ",
+                "text": "Development Charges",
                 "border": [
                   true,
                   true,
@@ -394,7 +394,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{serviceType}}",
+                "text": "{{Dev_Charge}}",
                 "border": [
                   true,
                   true,
@@ -429,7 +429,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{serviceType}}",
+                "text": "{{Sub_Tax}}",
                 "border": [
                   true,
                   true,
