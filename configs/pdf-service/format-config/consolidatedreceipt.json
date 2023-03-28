@@ -404,6 +404,40 @@
 				"bold": false,
 				"alignment": "center"
               }
+            ],[
+              {
+                "text": "6",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Other Charges",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Sub_Tax}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
             ],
 			[
               {
