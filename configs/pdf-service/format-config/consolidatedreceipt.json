@@ -230,44 +230,9 @@
 				"alignment": "center"
               }
             ],
-			[
+		[
               {
                 "text": "1",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "Application Fees",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "₹ {{paidAmount}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
-			[
-              {
-                "text": "2",
                 "border": [
                   true,
                   true,
@@ -302,7 +267,7 @@
             ],		
 			[
               {
-                "text": "3",
+                "text": "2",
                 "border": [
                   true,
                   true,
@@ -337,7 +302,7 @@
             ],
 			[
               {
-                "text": "4",
+                "text": "3",
                 "border": [
                   true,
                   true,
@@ -372,7 +337,7 @@
             ],
 			[
               {
-                "text": "5",
+                "text": "4",
                 "border": [
                   true,
                   true,
