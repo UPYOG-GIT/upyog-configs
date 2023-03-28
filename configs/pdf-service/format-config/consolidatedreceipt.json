@@ -267,6 +267,76 @@
             ],
 			[
               {
+                "text": "2",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Post Fees - Building Permission Non High Rise New",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{charges_type_name}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],		
+			[
+              {
+                "text": "3",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Service Type",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{serviceType}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
                 "text": "",
                 "border": [
                   true,
