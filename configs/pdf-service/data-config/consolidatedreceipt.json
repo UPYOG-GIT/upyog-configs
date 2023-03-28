@@ -69,13 +69,13 @@
 			{
                 "variable": "Post Fees", 
                 "value": {
-                  "path": "$.paymentDetails[1].amount"
+                  "path": "$.paymentDetails[0].amount"
                 }
               },
 			  {
                 "variable": "Rain_Water", 
                 "value": {
-                  "path": "$.paymentDetails[0].amount[1]"
+                  "path": "$.paymentDetails[1].amount"
                 }
               },
 			  {
