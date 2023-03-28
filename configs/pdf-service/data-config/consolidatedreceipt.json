@@ -66,7 +66,13 @@
                   "path": "$.paymentDetails[0].totalAmountPaid"
                 }
               },
-			  {
+		 {
+                "variable": "charges_type_name", 
+                "value": {
+                  "path": "$.paymentDetails[0].charges_type_name"
+                }
+              },
+		  {
                 "variable": "totalAmount", 
                 "value": {
                   "path": "$.paymentDetails[0].totalAmountPaid"
