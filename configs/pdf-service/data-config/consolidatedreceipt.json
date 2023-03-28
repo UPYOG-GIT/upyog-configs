@@ -67,9 +67,9 @@
                 }
               },
 		 {
-                "variable": "charges_type_name", 
+                "variable": "Post Fees", 
                 "value": {
-                  "path": "$.paymentDetails[0].charges_type_name"
+                  "path": "$.paymentDetails[1].charges_type_name"
                 }
               },
 		  {
