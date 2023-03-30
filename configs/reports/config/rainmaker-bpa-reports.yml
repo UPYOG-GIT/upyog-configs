@@ -202,7 +202,7 @@ ReportDefinitions:
   query: select applicationno as Application_no, usr.name as name,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea, occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   orderby: order by bp.createdtime ASC
   
-  - reportName: MisPaymentReport
+- reportName: MisPaymentReport
   decryptionPathId: MisPaymentReport
   summary: Fetches payment data based on provided search parameters
   version: 1.0.0
@@ -289,79 +289,24 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: SELECT
-    application_no,
-    to_char(
-        To_timestamp(bp.createdtime / 1000),
-        'DD/MM/YYYY'
-    ) AS Application_date,
-    SUM(
-        CASE WHEN charges_type_name = 'Application Fees' THEN amount
-    END
-) AS Application_date,
-SUM(
-    CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount
-END
-) AS Road_Blockage_Charges,
-SUM(
-    CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount
-END
-) AS Rain_Water_Harvesting_Fee,
-SUM(
-    CASE WHEN charges_type_name = 'Development Charges' THEN amount
-END
-) AS Development_charges,
-SUM(
-    CASE WHEN charges_type_name = 'Sub-Tax (Labor Tax)' THEN amount
-END
-) AS Sub_Tax_(Labor Tax),
-SUM(
-    CASE WHEN charges_type_name = 'Sub-Tax(Karmakar)Fees' THEN amount
-END
-) AS Sub_Tax(Karmakar)Fees,
-SUM(
-    CASE WHEN charges_type_name = 'Saman Shulk' THEN amount
-END
-) AS Saman_Shulk,
-SUM(
-    CASE WHEN charges_type_name = 'Building Permission Fees(nhnew)' THEN amount
-END
-) AS Building_Permission_Fees(nhnew),
-SUM(
-    CASE WHEN charges_type_name = 'Post Fees - Building Permission Non High Rise New' THEN amount
-END
-) AS Post_Fees_Building_Permission_Non_High_Rise_New,
-SUM(
-    CASE WHEN charges_type_name = 'Boundry Wall' THEN amount
-END
-) AS Boundry_Wall,
-SUM(
-    CASE WHEN charges_type_name = 'Other Charges' THEN amount
-END
-) AS Other_Charges,
-SUM(
-    CASE WHEN charges_type_name = 'Building Permission Fees(Non High Rise New)' THEN amount
-END
-) AS Building_Permission_Fees(Non High Rise New),
-SUM(
-    CASE WHEN charges_type_name = 'Penalty' THEN amount
-END
-) AS Penalty,
-SUM(
-    CASE WHEN charges_type_name = 'Rain Water Harvesting Deposit' THEN amount
-END
-) AS Rain_Water_Harvesting_Deposit,
-SUM(amount) AS Total_Amount
-FROM
-    fee_details fd
-INNER JOIN eg_bpa_buildingplan bp ON
-    fd.application_no = bp.applicationno
-INNER JOIN eg_user usr ON
-    usr.uuid = bp.createdby
-WHERE
-    1 = 1
-  groupby: group by fd.application_no,bp.createdtime
-  orderby: order by application_no
+  query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,
+SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_date,
+SUM(CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount END) AS Road_Blockage_Charges,
+SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount END) AS Rain_Water_Harvesting_Fee,
+SUM(CASE WHEN charges_type_name = 'Development Charges' THEN amount END) AS Development_charges,
+SUM(CASE WHEN charges_type_name = 'Sub-Tax (Labor Tax)' THEN amount END) AS Sub_Tax_(Labor Tax),
+SUM(CASE WHEN charges_type_name = 'Sub-Tax(Karmakar)Fees' THEN amount END) AS Sub_Tax(Karmakar)Fees,
+SUM(CASE WHEN charges_type_name = 'Saman Shulk' THEN amount END) AS Saman_Shulk,
+SUM(CASE WHEN charges_type_name = 'Building Permission Fees(nhnew)' THEN amount END) AS Building_Permission_Fees(nhnew),
+SUM(CASE WHEN charges_type_name = 'Post Fees - Building Permission Non High Rise New' THEN amount END) AS Post_Fees_Building_Permission_Non_High_Rise_New,
+SUM(CASE WHEN charges_type_name = 'Boundry Wall' THEN amount END) AS Boundry_Wall,
+SUM(CASE WHEN charges_type_name = 'Other Charges' THEN amount END) AS Other_Charges,
+SUM(CASE WHEN charges_type_name = 'Building Permission Fees(Non High Rise New)' THEN amount END) AS Building_Permission_Fees(Non High Rise New),
+SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
+SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Deposit' THEN amount END) AS Rain_Water_Harvesting_Deposit,
+SUM(amount) AS Total_Amount FROM fee_details fd INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno INNER JOIN eg_user usr ON usr.uuid = bp.createdby WHERE 1 = 1
+groupby: group by fd.application_no,bp.createdtime
+orderby: order by application_no
 
   
 
