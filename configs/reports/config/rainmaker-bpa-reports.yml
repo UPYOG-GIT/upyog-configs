@@ -216,7 +216,7 @@ ReportDefinitions:
     label: Application Date
     type: string
     source: bpa
-  - name: Application_Fees
+  - name: Application_fee
     label: Application Fees
     type: string
     source: bpa
@@ -290,7 +290,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
   query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,
-    SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_date,
+    SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_fee,
     SUM(CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount END) AS Road_Blockage_Charges,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount END) AS Rain_Water_Harvesting_Fee,
     SUM(CASE WHEN charges_type_name = 'Development Charges' THEN amount END) AS Development_charges,
