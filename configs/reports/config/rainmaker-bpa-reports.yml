@@ -212,67 +212,67 @@ ReportDefinitions:
     label: Application No
     type: string
     source: bpa
-  - name: Application date
+  - name: "Application date"
     label: Application Date
     type: string
     source: bpa
-  - name: Application Fees
+  - name: "Application Fees"
     label: Application Fees
     type: string
     source: bpa
-  - name: Road Blockage Charges
+  - name: "Road Blockage Charges"
     label: Road Blockage Charges
     type: string
     source: bpa
-  - name: Rain Water Harvesting Fee
+  - name: "Rain Water Harvesting Fee"
     label: Rain Water Harvesting Fee
     type: string
     source: bpa
-  - name: Development charges
+  - name: "Development charges"
     label: Development charges
     type: string
     source: bpa
-  - name: Sub-Tax (Labor Tax)
+  - name: "Sub-Tax (Labor Tax)"
     label: Sub-Tax (Labor Tax)
     type: string
     source: bpa
-  - name: Sub-Tax(Karmakar)Fees
+  - name: "Sub-Tax(Karmakar)Fees"
     label: Sub-Tax(Karmakar)Fees
     type: string
     source: bpa
-  - name: Saman Shulk
+  - name: "Saman Shulk"
     label: Saman Shulk
     type: string
     source: bpa
-  - name: Building Permission Fees(nhnew)
+  - name: "Building Permission Fees(nhnew)"
     label: Building Permission Fees(nhnew)
     type: string
     source: bpa
-  - name: Post Fees - Building Permission Non High Rise New
+  - name: "Post Fees - Building Permission Non High Rise New"
     label: Post Fees - Building Permission Non High Rise New
     type: string
     source: bpa
-  - name: Boundry Wall
+  - name: "Boundry Wall"
     label: Boundry Wall
     type: string
     source: bpa
-  - name: Other Charges
+  - name: "Other Charges"
     label: Other Charges
     type: string
     source: bpa
-  - name: Building Permission Fees(Non High Rise New)
+  - name: "Building Permission Fees(Non High Rise New)"
     label: Building Permission Fees(Non High Rise New)
     type: string
     source: bpa
-  - name: Penalty
+  - name: "Penalty"
     label: Penalty
     type: string
     source: bpa
-  - name: Rain Water Harvesting Deposit
+  - name: "Rain Water Harvesting Deposit"
     label: Rain Water Harvesting Deposit
     type: string
     source: bpa
-  - name: Total Amount
+  - name: "Total Amount"
     label: Total Amount
     type: string
     source: bpa
