@@ -73,21 +73,21 @@
                 }
               },
 			  {
-                "variable": "SR No.", 
+                "variable": "Rain_Water", 
                 "value": {
-                  "path": "for(int i=0;i<$.paymentDetails[0].feeDetail.length;i++){$.paymentDetails[0].feeDetail[i].srNo;}"
+                  "path": "$.paymentDetails[1].amount"
                 }
               },
 			  {
-                "variable": "particulars", 
+                "variable": "Road_Blockage", 
                 "value": {
-                  "path": "for(int i=0;i<$.paymentDetails[0].feeDetail.length;i++){$.paymentDetails[0].feeDetail[i].chargesTypeName;}"
+                  "path": "$.paymentDetails[0].amount[2]"
                 }
               },
 			  {
-                "variable": "amount", 
+                "variable": "Dev_Charge", 
                 "value": {
-                  "path": "for(int i=0;i<$.paymentDetails[0].feeDetail.length;i++){$.paymentDetails[0].feeDetail[i].amount;}"
+                  "path": "$.paymentDetails[0].amount[3]"
                 }
               },
 			  {
