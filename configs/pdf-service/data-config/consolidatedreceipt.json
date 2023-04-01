@@ -75,19 +75,19 @@
 			  {
                 "variable": "SR No.", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[0].srNo"
+                  "path": "for(int i=0;i<$.paymentDetails[0].feeDetail.length;i++){$.paymentDetails[0].feeDetail[i].srNo;}"
                 }
               },
 			  {
                 "variable": "particulars", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[0].chargesTypeName"
+                  "path": "for(int i=0;i<$.paymentDetails[0].feeDetail.length;i++){$.paymentDetails[0].feeDetail[i].chargesTypeName;}"
                 }
               },
 			  {
                 "variable": "amount", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[0].amount"
+                  "path": "for(int i=0;i<$.paymentDetails[0].feeDetail.length;i++){$.paymentDetails[0].feeDetail[i].amount;}"
                 }
               },
 			  {
