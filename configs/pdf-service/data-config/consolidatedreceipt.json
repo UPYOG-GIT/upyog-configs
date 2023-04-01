@@ -73,21 +73,21 @@
                 }
               },
 			  {
-                "variable": "Rain_Water", 
+                "variable": "SR No.", 
                 "value": {
-                  "path": "$.paymentDetails[1].amount"
+                  "path": "$.paymentDetails[0].feeDetail[0].srNo"
                 }
               },
 			  {
-                "variable": "Road_Blockage", 
+                "variable": "particulars", 
                 "value": {
-                  "path": "$.paymentDetails[0].amount[2]"
+                  "path": "$.paymentDetails[0].feeDetail[0].chargesTypeName"
                 }
               },
 			  {
-                "variable": "Dev_Charge", 
+                "variable": "amount", 
                 "value": {
-                  "path": "$.paymentDetails[0].amount[3]"
+                  "path": "$.paymentDetails[0].feeDetail[0].amount"
                 }
               },
 			  {
