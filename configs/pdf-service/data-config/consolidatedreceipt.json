@@ -66,16 +66,40 @@
                   "path": "$.paymentDetails[0].totalAmountPaid"
                 }
               },
-			{
-                "variable": "Post Fees", 
+			  {
+                "variable": "ChargesType1", 
                 "value": {
-                  "path": "$.paymentDetails[0].amount"
+                  "path": "$.paymentDetails[0].feeDetail[0].chargesTypeName"
                 }
               },
 			  {
-                "variable": "Rain_Water", 
+                "variable": "Amount1", 
                 "value": {
-                  "path": "$.paymentDetails[1].amount"
+                  "path": "$.paymentDetails[0].feeDetail[0].amount"
+                }
+              },
+			  {
+                "variable": "ChargesType2", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[1].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount2", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[1].amount"
+                }
+              },
+			  {
+                "variable": "ChargesType3", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[2].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount3", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[2].amount"
                 }
               },
 			  {
