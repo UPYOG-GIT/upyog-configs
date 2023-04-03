@@ -230,7 +230,7 @@
 				"alignment": "center"
               }
             ],
-		[
+		    [
               {
                 "text": "1",
                 "border": [
@@ -243,7 +243,7 @@
 				"alignment": "center"
               },
               {
-                "text": "Post Fees - Building Permission Non High Rise New",
+                "text": "{{ChargesType1}}",
                 "border": [
                   true,
                   true,
@@ -254,7 +254,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Post Fees}}",
+                "text": "{{Amount1}}",
                 "border": [
                   true,
                   true,
@@ -278,7 +278,7 @@
 				"alignment": "center"
               },
               {
-                "text": "Rain Water Harvesting Fee",
+                "text": "{{ChargesType2}}",
                 "border": [
                   true,
                   true,
@@ -289,7 +289,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Rain_Water}}",
+                "text": "{{Amount2}}",
                 "border": [
                   true,
                   true,
@@ -313,7 +313,7 @@
 				"alignment": "center"
               },
               {
-                "text": "Road Blockage Charges",
+                "text": "{{ChargesType3}}",
                 "border": [
                   true,
                   true,
@@ -324,111 +324,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Road_Blockage}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
-			[
-              {
-                "text": "4",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "Development Charges",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "{{Dev_Charge}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
-			[
-              {
-                "text": "5",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "Sub-Tax (Labor Tax)",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "{{Sub_Tax}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],[
-              {
-                "text": "6",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-				"alignment": "center"
-              },
-              {
-                "text": "Other Charges",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "{{Sub_Tax}}",
+                "text": "{{Amount2}}",
                 "border": [
                   true,
                   true,
