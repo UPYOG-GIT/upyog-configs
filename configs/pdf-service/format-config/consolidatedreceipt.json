@@ -254,7 +254,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Amount1}}",
+                "text": " ₹ {{Amount1}}",
                 "border": [
                   true,
                   true,
@@ -289,7 +289,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Amount2}}",
+                "text": " ₹ {{Amount2}}",
                 "border": [
                   true,
                   true,
@@ -324,7 +324,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Amount3}}",
+                "text": " ₹ {{Amount3}}",
                 "border": [
                   true,
                   true,
@@ -359,7 +359,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Amount4}}",
+                "text": " ₹ {{Amount4}}",
                 "border": [
                   true,
                   true,
@@ -394,7 +394,7 @@
                 "alignment": "center"
               },
               {
-                "text": "{{Amount5}}",
+                "text": " ₹ {{Amount5}}",
                 "border": [
                   true,
                   true,
