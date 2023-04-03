@@ -523,7 +523,7 @@
 		       "alignment": "center"
               },
               {
-                "text": "For Municipal Corporation Raipur",
+                "text": "FOR {{logo-header}}",
                 "border": [
                   false,
                   true,
@@ -531,7 +531,7 @@
                   false
                 ],
 		        "bold": false,
-                "alignment": "center"
+                "alignment": "right"
               },
               {
                 "text": "",
