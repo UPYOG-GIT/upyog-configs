@@ -103,6 +103,30 @@
                 }
               },
 			  {
+                "variable": "ChargesType4", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[3].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount4", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[3].amount"
+                }
+              },
+			  {
+                "variable": "ChargesType5", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount5", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                }
+              },
+			  {
                 "variable": "Road_Blockage", 
                 "value": {
                   "path": "$.paymentDetails[0].amount[2]"
