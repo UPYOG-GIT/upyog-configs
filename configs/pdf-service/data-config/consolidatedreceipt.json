@@ -129,37 +129,37 @@
 		    {
                 "variable": "ChargesType6", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                  "path": "$.paymentDetails[0].feeDetail[5].chargesTypeName"
                 }
               },
 			  {
                 "variable": "Amount6", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                  "path": "$.paymentDetails[0].feeDetail[5].amount"
                 }
               },
 		    {
                 "variable": "ChargesType7", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                  "path": "$.paymentDetails[0].feeDetail[6].chargesTypeName"
                 }
               },
 			  {
                 "variable": "Amount7", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                  "path": "$.paymentDetails[0].feeDetail[6].amount"
                 }
               },
 		    {
                 "variable": "ChargesType8", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                  "path": "$.paymentDetails[0].feeDetail[7].chargesTypeName"
                 }
               },
 			  {
                 "variable": "Amount8", 
                 "value": {
-                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                  "path": "$.paymentDetails[0].feeDetail[7].amount"
                 }
               },
 			  {
