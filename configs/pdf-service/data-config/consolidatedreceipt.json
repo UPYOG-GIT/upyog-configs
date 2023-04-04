@@ -126,6 +126,42 @@
                   "path": "$.paymentDetails[0].feeDetail[4].amount"
                 }
               },
+		    {
+                "variable": "ChargesType6", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount6", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                }
+              },
+		    {
+                "variable": "ChargesType7", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount7", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                }
+              },
+		    {
+                "variable": "ChargesType8", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].chargesTypeName"
+                }
+              },
+			  {
+                "variable": "Amount8", 
+                "value": {
+                  "path": "$.paymentDetails[0].feeDetail[4].amount"
+                }
+              },
 			  {
                 "variable": "Road_Blockage", 
                 "value": {
