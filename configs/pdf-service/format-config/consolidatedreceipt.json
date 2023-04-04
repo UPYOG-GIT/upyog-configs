@@ -405,6 +405,111 @@
 				"alignment": "center"
               }
             ],
+		  [
+              {
+                "text": "6",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "{{ChargesType6}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": " ₹ {{Amount6}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+		  [
+              {
+                "text": "7",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "{{ChargesType7}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": " ₹ {{Amount7}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+		  [
+              {
+                "text": "8",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "{{ChargesType8}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": " ₹ {{Amount8}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
 			[
               {
                 "text": "",
