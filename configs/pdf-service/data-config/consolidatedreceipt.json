@@ -72,7 +72,7 @@
                   "path": "$.paymentDetails[0]"
                 },
                 "type":"function",
-		"format":"var x=$.paymentDetails[0].feeDetail[0];for(var i=0;i<x.length;i++){$.paymentDetails[0].x[i].chargesTypeName};"							
+		"format":"var x=paymentDetails[0].feeDetail[0];for(var i=0;i<x.length;i++){x[i].chargesTypeName};"							
                  				
             },
 			{
@@ -81,7 +81,7 @@
                   "path": "$.paymentDetails[0]"
                 },
                 "type":"function",
-		"format":"var y=$.paymentDetails[0].feeDetail[0]; for(var j=0;j<y.length;j++){$.paymentDetails[0].y[j].amount};"							
+		"format":"var y=paymentDetails[0].feeDetail[0]; for(var j=0;j<y.length;j++){y[j].amount};"							
                  				
             },
 	    {
