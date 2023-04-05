@@ -66,7 +66,31 @@
                   "path": "$.paymentDetails[0].totalAmountPaid"
                 }
               },
-			  {
+		    {
+                "variable": "ChargesType", 
+                "value": {
+                  "path": "$.paymentDetails[0]"
+                },
+                "type":"function",
+		"format":"var x=feeDetail[0];
+                          for(int i=0;i<x.length;i++){
+		                x[i].chargesTypeName
+                              };"							
+                 				
+            },
+			{
+                "variable": "Amount", 
+                "value": {
+                  "path": "$.paymentDetails[0]"
+                },
+                "type":"function",
+		"format":"var y=feeDetail[0];
+                           for(int j=0;j<y.length;j++){
+				x[j].amount
+                              };"							
+                 				
+            },
+	    {
                 "variable": "ChargesType1", 
                 "value": {
                   "path": "$.paymentDetails[0].feeDetail[0].chargesTypeName"
