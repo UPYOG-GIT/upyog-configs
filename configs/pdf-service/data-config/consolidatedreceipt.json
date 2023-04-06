@@ -72,7 +72,7 @@
                   "path": "$.paymentDetails[0]"
                 },
                 "type":"function",
-		"format":"var y = [],x=arguments[0];for(var i=0;i<x.length;i++){console.log(x[i].chargesTypeName);y.push({'ChargesType': x[i].chargesTypeName});}return y;"							
+		"format":"var y = [],x=arguments[0];for(var i=0;i<x.length;i++){y.push({'ChargesType': x[i].chargesTypeName});}return y;"							
                  				
             },
 		{
