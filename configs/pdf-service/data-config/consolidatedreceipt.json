@@ -69,7 +69,7 @@
 		{
                 "variable": "ChargesType", 
                 "value": {
-                  "path": "$.paymentDetails"
+                  "path": "$.paymentDetails.feeDetail"
                 },
                 "type":"function",
 		"format":"var y = [],x=arguments[0];for(var i=0;i<x.length;i++){y.push({'chargesTypeName': x[i].chargesTypeName});}return y;"							
@@ -78,7 +78,7 @@
 		{
                 "variable": "Amount", 
                 "value": {
-                  "path": "$.paymentDetails"
+                  "path": "$.paymentDetails.feeDetail"
                 },
                 "type":"function",
 		"format":"var y = [],x=arguments[0];for(var i=0;i<x.length;i++){y.push({'amount':x[i].amount});}return y;"							
