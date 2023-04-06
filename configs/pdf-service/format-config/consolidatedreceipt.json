@@ -242,8 +242,8 @@
                 "bold": false,
 		"alignment": "center"
               },
-		    {"{{#ChargesType}}[{
-                "text": "{{chargesTypeName}}",
+              {
+                "text": "{{ChargesType}}",
                 "border": [
                   true,
                   true,
@@ -252,9 +252,9 @@
                 ],
 		"bold": false,
                 "alignment": "center"
-              }]{{/ChargesType}}"},
-	      {"{{#Amount}}[{
-                "text": "{{amount}}",
+              },
+              {
+                "text": " ₹ {{Amount}}",
                 "border": [
                   true,
                   true,
@@ -262,8 +262,8 @@
                   true
                 ],
 		"bold": false,
-                "alignment": "center"
-              }]{{/Amount}}"}
+		"alignment": "center"
+              }
         ],
         [
               {
