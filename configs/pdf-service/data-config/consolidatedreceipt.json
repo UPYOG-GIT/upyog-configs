@@ -69,19 +69,19 @@
 		{
                 "variable": "ChargesType", 
                 "value": {
-                  "path": "$.paymentDetails[0]"
+                  "path": "$.paymentDetails[0].feeDetail"
                 },
                 "type":"function",
-		"format":"var y = [],x=arguments[14];for(var i=0;i<x.length;i++){y.push({'ChargesType': x[i].chargesTypeName});}return y;"							
+		"format":"var y = [],x=arguments[0];for(var i=0;i<x.length;i++){y.push({'ChargesType': x[i].chargesTypeName});}return y;"							
                  				
             },
 		{
                 "variable": "Amount", 
                 "value": {
-                  "path": "$.paymentDetails[0]"
+                  "path": "$.paymentDetails[0].feeDetail"
                 },
                 "type":"function",
-		"format":"var y = [],x=arguments[14];for(var i=0;i<x.length;i++){y.push({'Amount':x[i].amount});}return y;"							
+		"format":"var y = [],x=arguments[0];for(var i=0;i<x.length;i++){y.push({'Amount':x[i].amount});}return y;"							
                  				
             },
 	    
