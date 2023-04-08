@@ -338,7 +338,7 @@
                 }
               },
               {
-                "variable": "patwariHN",
+                "variable": "PATWARI_HN",
                 "value": {
                   "path": "BPA_PDF_PATWARIHN_TXT"
                 },
