@@ -231,17 +231,7 @@
               }
             ],
 	    [
-              {
-                "text": "",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-                "bold": false,
-		"alignment": "center"
-              },
+             
                      {{#ChargesType}}
     			{
       			"text": "{{ChargesType}}",
