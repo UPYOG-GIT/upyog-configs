@@ -156,25 +156,11 @@
             "text": "{{holdingNo}}",
             "bold": true
           },
-          {
-            "text": " {{SERVEY_NO}} "
+		  {
+            "text": "{{patwariHN}}"
           },
           {
-            "text": "{{reServeyPlotNo}}",
-            "bold": true
-          },
-          {
-            "text": " {{TOWNPLANNING_TXT}} "
-          },
-          {
-            "text": "{{townPlanningScheme}}",
-            "bold": true
-          },
-          {
-            "text": " {{PROPOSE_LAND}} "
-          },
-          {
-            "text": "{{proposedLandUse}}",
+            "text": "{{patwariHN}}",
             "bold": true
           },
           {
