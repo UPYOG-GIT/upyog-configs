@@ -242,7 +242,7 @@
                 "bold": false,
 		"alignment": "center"
               },
-                      {{{#ChargesType}}
+                      {{#ChargesType}}
   {
     "text": "{{ChargesType}}",
     "border": [
@@ -254,8 +254,8 @@
     "bold": false,
     "alignment": "center"
   },
-  {{/ChargesType}}},
-			  {{{#Amount}}
+  {{/ChargesType}},
+			  {{#Amount}}
   {
     "text": "{{Amount}}",
     "border": [
@@ -267,7 +267,7 @@
     "bold": false,
     "alignment": "center"
   }
-  {{/Amount}}}
+  {{/Amount}}
         ],
         
 			[
