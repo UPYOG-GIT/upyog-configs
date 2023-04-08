@@ -157,7 +157,7 @@
             "bold": true
           },
 		  {
-            "text": "{{patwariHN}}"
+            "text": "{{PATWARI_HN}}"
           },
           {
             "text": "{{patwariHN}}",
