@@ -231,23 +231,34 @@
               }
             ],
 	    [
+		    {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
              
-                     {{#ChargesType}}
+		    {"{{#ChargesType}}
     			{
       			"text": "{{ChargesType}}",
      			 "border": [true, true, true, true],
       			"bold": false,
       			"alignment": "center"
     	                }
-  		{{/ChargesType}},
-                 {{#Amount}}
+  		{{/ChargesType}}"},
+	      {"{{#Amount}}
     			{
       			"text": "{{Amount}}",
       			"border": [true, true, true, true],
       			"bold": false,
       			"alignment": "center"
     			}
-  		{{/Amount}}
+  		{{/Amount}}"}
         ],
         
 			[
