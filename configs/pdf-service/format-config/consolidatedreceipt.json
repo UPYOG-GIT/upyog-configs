@@ -245,18 +245,12 @@
              
 		    {"{{#ChargesType}}
     			{
-      			"text": "{{ChargesType}}",
-     			 "border": [true, true, true, true],
-      			"bold": false,
-      			"alignment": "center"
+      			var y = [],x=ChargesType;for(var i=0;i<x.length;i++){"text": "{{x[i].ChargesType}}","border": [true, true, true, true],"bold": false,"alignment": "center"};
     	                }
   		{{/ChargesType}}"},
 	      {"{{#Amount}}
     			{
-      			"text": "{{Amount}}",
-      			"border": [true, true, true, true],
-      			"bold": false,
-      			"alignment": "center"
+      			var y = [],x=Amount;for(var i=0;i<x.length;i++){"text": "{{x[i].Amount}}","border": [true, true, true, true],"bold": false,"alignment": "center"};
     			}
   		{{/Amount}}"}
         ],
