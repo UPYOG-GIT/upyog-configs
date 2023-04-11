@@ -242,22 +242,26 @@
                 "bold": false,
 		"alignment": "center"
               },
-               {"{{#ChargesType}}[
-    			{
-      			"text": "{{ChargesType}}",
-     			 "border": [true, true, true, true],
-      			"bold": false,
-      			"alignment": "center"
-    	                }]
-  		{{/ChargesType}}"},
-	      {"{{#Amount}}[
-    			{
-      			"text": "{{Amount}}",
-      			"border": [true, true, true, true],
-      			"bold": false,
-      			"alignment": "center"
-    			}]
-  		{{/Amount}}"}
+               {
+  "{{#ChargesType}}": [
+    {
+      "text": "{{ChargesType}}",
+      "border": [true, true, true, true],
+      "bold": false,
+      "alignment": "center"
+    }
+  ]
+},
+{
+  "{{#Amount}}": [
+    {
+      "text": "{{Amount}}",
+      "border": [true, true, true, true],
+      "bold": false,
+      "alignment": "center"
+    }
+  ]
+}
         ],
         
 			[
