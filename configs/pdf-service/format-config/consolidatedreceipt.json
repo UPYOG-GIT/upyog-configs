@@ -242,7 +242,7 @@
                 "bold": false,
 		"alignment": "center"
               },
-               {
+              {
   "{{#ChargesType}}": [
     {
       "text": "{{ChargesType}}",
@@ -251,6 +251,7 @@
       "alignment": "center"
     }
   ]
+  "{{/ChargesType}}"
 },
 {
   "{{#Amount}}": [
@@ -261,6 +262,7 @@
       "alignment": "center"
     }
   ]
+  "{{/Amount}}"
 }
         ],
         
