@@ -242,17 +242,9 @@
                 "bold": false,
 		"alignment": "center"
               },
-             
-		    {"{{#ChargesType}}
-    			{
-      			{"text":"{var y = [],x=ChargesType;for(var i=0;i<x.length;i++) {{x[i].ChargesType}}}","border": [true, true, true, true],"bold": false,"alignment": "center"};"
-    	                }
-  		{{/ChargesType}}"},
-	      {"{{#Amount}}
-    			{
-      			{"text":"{var y = [],x=Amount;for(var i=0;i<x.length;i++) {{x[i].Amount}}}","border": [true, true, true, true],"bold": false,"alignment": "center"};"
-    			}
-  		{{/Amount}}"}
+              {"text":"{var y = [],x=ChargesType;for(var i=0;i<x.length;i++) {{x[i].ChargesType}}}","border": [true, true, true, true],"bold": false,"alignment": "center"};",
+	      
+    	  	{"text":"{var y = [],x=Amount;for(var i=0;i<x.length;i++) {{x[i].Amount}}}","border": [true, true, true, true],"bold": false,"alignment": "center"};"
         ],
         
 			[
