@@ -244,12 +244,18 @@
               },
                {"{{#ChargesType}}[
     			{
-      			"var y = [],x=ChargesType;for(var i=0;i<x.length;i++){"text": "{{x[i].ChargesType}}","border": [true, true, true, true],"bold": false,"alignment": "center"};"
+      			"text": "{{ChargesType}}",
+     			 "border": [true, true, true, true],
+      			"bold": false,
+      			"alignment": "center"
     	                }]
   		{{/ChargesType}}"},
 	      {"{{#Amount}}[
     			{
-      			"var y = [],x=Amount;for(var i=0;i<x.length;i++){"text": "{{x[i].Amount}}","border": [true, true, true, true],"bold": false,"alignment": "center"};"
+      			"text": "{{Amount}}",
+      			"border": [true, true, true, true],
+      			"bold": false,
+      			"alignment": "center"
     			}]
   		{{/Amount}}"}
         ],
