@@ -245,7 +245,7 @@
               "{{#ChargesType}}"
     [
       {
-       "text": "{{ChargesType}}",
+       "text": "{{JSON.stringify(ChargesType)}}",
        "border": [true, true, true, true],
        "bold": false,
        "alignment": "center"
@@ -256,7 +256,7 @@
   "{{#Amount}}"
     [
       {
-       "text": "{{Amount}}",
+       "text": "{{JSON.stringify(Amount)}}",
        "border": [true, true, true, true],
        "bold": false,
        "alignment": "center"
