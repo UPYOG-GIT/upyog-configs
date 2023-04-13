@@ -222,9 +222,9 @@
               }
 			   
             ],
-		{\"text\":\"{{ChargesType}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"},
+		"{\"text\":\"{{ChargesType}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"}",
 
-	    	{\"text\":\"{{Amount}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"}
+	    	"{\"text\":\"{{Amount}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"}"
 				
         ]
         },
