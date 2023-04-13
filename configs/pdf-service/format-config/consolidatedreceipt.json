@@ -221,7 +221,10 @@
 				"alignment": "center"
               }
 			   
-            ]
+            ],
+		"{{#ChargesType}}[{\"text\":\"{{ChargesType}}\",\"border\":[false,true,false,true]\"}]{{/ChargesType}}",
+
+		"{{#Amount}}[{\"text\":\"{{Amount}}\",\"border\":[false,true,false,true]\"}]{{/Amount}}"
 				
         ]
         },
