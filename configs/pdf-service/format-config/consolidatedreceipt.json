@@ -222,9 +222,9 @@
               }
 			   
             ],
-		"{{#ChargesType}}[{\"text\":\"{{ChargesType}}\",\"border\":[false,true,false,true]\"}]{{/ChargesType}}",
+		"{{#ChargesType}}[{\"ChargesType\":\"{{ChargesType}}\",\"border\":[false,true,false,true]\"}]{{/ChargesType}}",
 
-		"{{#Amount}}[{\"text\":\"{{Amount}}\",\"border\":[false,true,false,true]\"}]{{/Amount}}"
+		"{{#Amount}}[{\"Amount\":\"{{Amount}}\",\"border\":[false,true,false,true]\"}]{{/Amount}}"
 				
         ]
         },
