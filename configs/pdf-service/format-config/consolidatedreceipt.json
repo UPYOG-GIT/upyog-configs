@@ -196,7 +196,7 @@
           "body": [
             [
               {
-                "text": "Particular",
+                "text": "{{ChargesType}}",
                 "border": [
                   true,
                   true,
@@ -206,8 +206,11 @@
 				"bold": true,
                 "alignment": "center"
               },
+			  
+
+	           
               {
-                "text": "Amount",
+                "text": "{{Amount}}",
                 "border": [
                   true,
                   true,
@@ -217,158 +220,12 @@
 				"bold": true,
 				"alignment": "center"
               }
-            ],
-			[
-              {
-                "text": "Gross Amount",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "right"
-              },
-              {
-                "text": "0",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
-			[
-              {
-                "text": "Service Tax",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-                "alignment": "right"
-              },
-              {
-                "text": "0",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
-	        [
-              
-              {
-                "text": "Total Amount",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": true,
-                "alignment": "right"
-              },
-              {
-                "text": "₹ {{totalAmount}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": true,
-				"alignment": "center"
-              }
-            ],
-			[
-              
-              {
-                "text": "FOR {{logo-header}}",
-                "border": [
-                  false,
-                  true,
-                  false,
-                  false
-                ],
-		        "bold": false,
-                "alignment": "right"
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  false
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
-            ],
-		    [
-              
-              {
-                "text": "",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  true
-                ],
-		       "bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "Authorised Sign",
-                "border": [
-                  false,
-                  false,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "left"
-              }
-            ],
-			[
-              
-              {
-                "text": "This is a Computer Generated Printout.",
-                "border": [
-                  false,
-                  true,
-                  false,
-                  true
-                ],
-			    "bold": false,
-                "alignment": "center"
-              },
-              {
-                "text": "",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  true
-                ],
-				"bold": false,
-				"alignment": "center"
-              }
+			   
             ],
 			"{{#ChargesType}}[{\"text\":\"{{ChargesType}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"}]{{/ChargesType}}",
-
-	            "{{#Amount}}[{\"text\":\"{{Amount}}\",\"border\":[true, true, true,true],\"bold\":false,\"alignment\":\"center\"}]{{/Amount}}"
+			"{{#Amount}}[{\"text\":\"{{Amount}}\",\"border\":[true, true, true,true],\"bold\":false,\"alignment\":\"center\"}]{{/Amount}}"
+			
+				
         ]
         },
         "layout": {}
