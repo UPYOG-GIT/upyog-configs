@@ -192,6 +192,9 @@ ReportDefinitions:
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: bpa
+    wrapper: true
+    isMandatory: true
+    searchClause: AND bp.tenantid = $ulb
   - name: fromDate
     label: FromDate
     type: epoch
@@ -204,7 +207,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate 
-  query: select applicationno as Application_no, usr.name as name,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea, occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
+  query: select applicationno as Application_no,bp.tenantid,usr.name as name,to_char(To_timestamp(bp.createdtime / 1000), 'DD/MM/YYYY') as Application_date, status, mobilenumber, khataNo, mauza as City, plotno, plotArea, occupancy from eg_bpa_buildingplan bp inner join eg_land_address adr on adr.landinfoid=bp.landid inner join eg_user usr on usr.uuid=bp.createdby where 1=1
   orderby: order by bp.createdtime ASC
   
 - reportName: MisPaymentReport
@@ -287,6 +290,9 @@ ReportDefinitions:
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: bpa
+    wrapper: true
+    isMandatory: true
+    searchClause: AND bp.tenantid = $ulb
   - name: fromDate
     label: FromDate
     type: epoch
@@ -299,7 +305,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,
+  query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,
     SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_fee,
     SUM(CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount END) AS Road_Blockage_Charges,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount END) AS Rain_Water_Harvesting_Fee,
@@ -315,7 +321,7 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Deposit' THEN amount END) AS Rain_Water_Harvesting_Deposit,
     SUM(amount) AS Total_Amount FROM fee_details fd INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno INNER JOIN eg_user usr ON usr.uuid = bp.createdby WHERE 1 = 1
-  groupby: group by fd.application_no,bp.createdtime
+  groupby: group by fd.application_no,bp.createdtime,bp.tenantid
   orderby: order by application_no
 
   
