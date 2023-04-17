@@ -225,7 +225,7 @@ ReportDefinitions:
     label: Application Date
     type: string
     source: bpa
-  - name: txn.txn_status
+  - name: tx_status
     label: Payment Status
     type: string
     source: bpa
@@ -310,7 +310,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,txn.txn_status,
+  query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,txn.txn_status as tx_status,
     SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_fee,
     SUM(CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount END) AS Road_Blockage_Charges,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount END) AS Rain_Water_Harvesting_Fee,
