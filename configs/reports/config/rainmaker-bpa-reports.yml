@@ -225,7 +225,7 @@ ReportDefinitions:
     label: Application Date
     type: string
     source: bpa
-  - name: payment_Status
+  - name: txn.txn_status
     label: Payment Status
     type: string
     source: bpa
@@ -311,7 +311,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
   query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,txn.txn_status as payment_Status,
-    SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_fee,
+SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_fee,
     SUM(CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount END) AS Road_Blockage_Charges,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount END) AS Rain_Water_Harvesting_Fee,
     SUM(CASE WHEN charges_type_name = 'Development Charges' THEN amount END) AS Development_charges,
@@ -325,7 +325,7 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name = 'Building Permission Fees(Non High Rise New)' THEN amount END) AS Building_Permission_Fees_Non_High_Rise_New,
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Deposit' THEN amount END) AS Rain_Water_Harvesting_Deposit,
-    SUM(amount) AS Total_Amount FROM fee_details fd INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno INNER JOIN eg_user usr ON usr.uuid = bp.createdby WHERE 1 = 1
+    SUM(amount) AS Total_Amount FROM fee_details fd INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno INNER JOIN eg_pg_transactions txn on txn.consumer_code=fd.application_no INNER JOIN eg_user usr ON usr.uuid = bp.createdby WHERE 1 = 1
   groupby: group by fd.application_no,bp.createdtime,bp.tenantid,txn.txn_status
   orderby: order by application_no
 
