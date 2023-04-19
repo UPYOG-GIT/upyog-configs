@@ -196,6 +196,7 @@ ReportDefinitions:
     source: bpa
     wrapper: true
     isMandatory: true
+    disabled: true
     searchClause: AND bp.tenantid = $ulb
   - name: fromDate
     label: FromDate
