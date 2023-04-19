@@ -111,6 +111,7 @@ ReportDefinitions:
     type: epoch
     source: bpa
     isMandatory: false
+    disabled: true
     searchClause: AND 1=1
   - name: toDate
     label: ToDate
