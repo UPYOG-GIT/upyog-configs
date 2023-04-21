@@ -31,7 +31,7 @@ ReportDefinitions:
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: occupancytype
+  - name: occupancy
     label: Occupancy Type
     type: string
     source: bpa
