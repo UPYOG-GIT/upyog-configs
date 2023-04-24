@@ -126,7 +126,7 @@ ReportDefinitions:
       COUNT(CASE WHEN status = 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 1 END) AS Pending_by_Builder,
       COUNT(CASE WHEN status = 'PENDINGAPPROVAL' THEN 1 END) AS Pending_by_commissioner,
       COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
-      FROM  eg_bpa_buildingplan WHERE createdtime >= $fromDate and tenantid=$tenantId) as t WHERE 1=1
+      FROM  eg_bpa_buildingplan WHERE createdtime >= $fromDate) as t WHERE 1=1
   
 - reportName: HistoryMisReport
   decryptionPathId: HistoryMisReport
