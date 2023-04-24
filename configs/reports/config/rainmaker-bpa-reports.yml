@@ -227,7 +227,7 @@ ReportDefinitions:
     label: Application Date
     type: string
     source: bpa
-  - name: tx_status
+  - name: status
     label: Payment Status
     type: string
     source: bpa
