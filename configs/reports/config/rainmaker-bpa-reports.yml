@@ -312,7 +312,15 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: SELECT application_no,to_char(To_timestamp(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,txn.txn_status as tx_status,
+  query: SELECT
+    application_no,
+    TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,
+    bp.tenantid,
+    CASE 
+        WHEN status = 'APPROVED' THEN 'Approved'
+        WHEN status IN ('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_BUILDER','APPROVAL_INPROGRESS','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT') THEN 'Post Fee Pending'
+        WHEN status = 'PENDING_APPL_FEE' THEN 'Pre Fees Pending'
+    END AS status,
     SUM(CASE WHEN charges_type_name = 'Application Fees' THEN amount END) AS Application_fee,
     SUM(CASE WHEN charges_type_name = 'Road Blockage Charges' THEN amount END) AS Road_Blockage_Charges,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Fee' THEN amount END) AS Rain_Water_Harvesting_Fee,
@@ -327,8 +335,12 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name = 'Building Permission Fees(Non High Rise New)' THEN amount END) AS Building_Permission_Fees_Non_High_Rise_New,
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Deposit' THEN amount END) AS Rain_Water_Harvesting_Deposit,
-    SUM(amount) AS Total_Amount FROM fee_details fd INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno INNER JOIN eg_pg_transactions txn on txn.consumer_code=fd.application_no INNER JOIN eg_user usr ON usr.uuid = bp.createdby WHERE 1 = 1
-  groupby: group by fd.application_no,bp.createdtime,bp.tenantid,txn.txn_status
+    SUM(amount) AS Total_Amount
+FROM fee_details fd
+INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno
+INNER JOIN eg_user usr ON usr.uuid = bp.createdby
+WHERE 1 = 1 AND  status IN ('APPROVED','PENDING_APPL_FEE','DOC_VERIFICATION_PENDING_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT')
+  groupby: group by fd.application_no,bp.createdtime,bp.tenantid,bp.status;
   orderby: order by application_no
 
   
