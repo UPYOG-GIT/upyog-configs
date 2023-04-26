@@ -5,7 +5,7 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   sourceColumns:
-  - name: billdetail.consumercode
+  - name: applicationno
     label: Application No
     type: string
     source: bpa
@@ -25,30 +25,30 @@ ReportDefinitions:
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
-  - name: Architectuser.mobilenumber
+  - name: archContactno
     label: Applicant Contact No.
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: Architectuser.emailid
+  - name: emailid
     label: Applicant Emailid
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: Citizenuser.name
+  - name: CitName
     label: Owner Name
     type: string
     source: bpa
     showColumn: true
     isLocalisationRequired: true
-  - name: Citizenuser.mobilenumber
+  - name: CitMob
     label: Owner Contact No.
     type: string
     source: bpa
     showColumn: true
-  - name: adr.khataNo
+  - name: khatano
     label: Khasra No
     type: string
     source: bpa
@@ -56,11 +56,11 @@ ReportDefinitions:
     label: City
     type: string
     source: bpa
-  - name: adr.plotno
+  - name: plotno
     label: Plot No
     type: string
     source: bpa
-  - name: adr.plotArea
+  - name: plotarea
     label: Plot Area
     type: string
     source: bpa
@@ -109,7 +109,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
-  query: SELECT billdetail.consumercode,bp.tenantid,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,Architectuser.name AS applicantname,Architectuser.mobilenumber,Architectuser.emailid,Citizenuser.name,Citizenuser.mobilenumber,adr.khataNo,adr.mauza AS city,adr.plotno,adr.plotArea,adr.occupancy AS occupancy_type,adr.patwarihn AS patwari_halka_no,
+  query: SELECT billdetail.consumercode as applicationno,bp.tenantid,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,Architectuser.name AS applicantname,Architectuser.mobilenumber as archContactno,Architectuser.emailid as emailid,Citizenuser.name as CitName,Citizenuser.mobilenumber as CitMob,adr.khataNo as khatano,adr.mauza AS city,adr.plotno as plotno,adr.plotArea as plotarea,adr.occupancy AS occupancy_type,adr.patwarihn AS patwari_halka_no,
         SUM(CASE WHEN billdetail.businessservice = 'BPA.NC_APP_FEE' THEN billdetail.totalamount ELSE 0 END) AS prefees,
         SUM(CASE WHEN billdetail.businessservice = 'BPA.NC_SAN_FEE' THEN billdetail.totalamount ELSE 0 END) AS postfees,
      CASE
