@@ -145,21 +145,7 @@ INNER JOIN
     eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
 WHERE 1=1 AND
     bp.status IN ('APPROVED','REJECTED','PENDING_APPL_FEE','DOC_VERIFICATION_PENDING_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT')
-  group by: GROUP BY billdetail.consumercode,
-    bp.createdtime,
-    bp.approvaldate,
-    Architectuser.name,
-	Architectuser.mobilenumber,
-	 Architectuser.emailid,
-	 Citizenuser.name,
-    Citizenuser.mobilenumber,
-	adr.khataNo,
-	adr.plotno,
-    adr.plotArea,
-	occupancy_type,
-    patwari_halka_no,
-	adr.mauza,
-	bp.status
+  group by: GROUP BY billdetail.consumercode,bp.createdtime,bp.approvaldate, Architectuser.name,Architectuser.mobilenumber,Architectuser.emailid,Citizenuser.name,Citizenuser.mobilenumber,adr.khataNo,adr.plotno,adr.plotArea,occupancy_type, patwari_halka_no,adr.mauza,bp.status
   orderby: order by billdetail.consumercode
   
 - reportName: MisPendencyReport
