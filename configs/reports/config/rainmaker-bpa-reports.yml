@@ -19,13 +19,13 @@ ReportDefinitions:
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: name
+  - name: Aname
     label: Applicant Name
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
-  - name: mobilenumber
+  - name: Amobilenumber
     label: Applicant Contact No.
     type: string
     source: bpa
@@ -37,13 +37,13 @@ ReportDefinitions:
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: ownername
+  - name: name
     label: Owner Name
     type: string
     source: bpa
     showColumn: true
     isLocalisationRequired: true
-  - name: citmobilenumber
+  - name: mobilenumber
     label: Owner Contact No.
     type: string
     source: bpa
