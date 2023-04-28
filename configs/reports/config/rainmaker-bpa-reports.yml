@@ -387,7 +387,7 @@ ReportDefinitions:
   groupby: group by fd.application_no,bp.createdtime,bp.tenantid,bp.status
   orderby: order by application_no
 
-  - reportName: DirectBhavanAnugyaReport
+- reportName: DirectBhavanAnugyaReport
   decryptionPathId: DirectBhavanAnugyaReport
   summary: Fetches Direct Bhavan Anugya Report data based on provided search parameters
   version: 1.0.0
