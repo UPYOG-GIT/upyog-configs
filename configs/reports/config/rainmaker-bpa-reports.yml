@@ -25,6 +25,11 @@ ReportDefinitions:
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
+  - name: uuid
+    label: uuid
+    type: string
+    source: bpa
+    showColumn: false
   - name: altContactNumber
     label: Applicant Contact No.
     type: string
