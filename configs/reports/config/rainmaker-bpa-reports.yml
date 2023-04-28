@@ -440,7 +440,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate 
   query: select ms.message as Name_of_ULB,bp.tenantid,bp.createdtime,count(case when bp.status='APPROVED'then 1 end) as BPC_issued, count(case when bp.status='POST_FEE_APPROVAL_INPROGRESS'then 1 end) as Document_verification,count(case when bp.status='PENDING_SANC_FEE_PAYMENT'then 1 end) as Post_Fee_verified,count(case when bp.status='APPROVED'then 1 end) as Post_Fee_paid from eg_bpa_buildingplan bp inner join message ms on bp.tenantid=ms.code where 1=1
-  groupby: group by bp.tenantid,ms.message
+  groupby: group by bp.tenantid,ms.message,bp.createdtime
   orderby: order by bp.tenantid
 
  
