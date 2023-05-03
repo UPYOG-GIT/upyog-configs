@@ -29,13 +29,13 @@ ReportDefinitions:
     label: uuid
     type: string
     source: bpa
-  - name: altContactNumber
+  - name: altcontactnumber
     label: Applicant Contact No.
     type: string
     source: bpa
     isLocalisationRequired: true
     localisationPrefix:
-  - name: emailId
+  - name: emailid
     label: Applicant Emailid
     type: string
     source: bpa
@@ -113,7 +113,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
-  query: SELECT billdetail.consumercode as applicationno,bp.tenantid,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,Architectuser.uuid as uuid,Citizenuser.uuid as Cuuid,Architectuser.name AS username,Architectuser.mobilenumber as altContactNumber,Architectuser.emailid as emailId,Citizenuser.name as name,Citizenuser.mobilenumber as mobilenumber,adr.khataNo as khatano,adr.mauza AS city,adr.plotno as plotno,adr.plotArea as plotarea,adr.occupancy AS occupancy_type,adr.patwarihn AS patwari_halka_no,
+  query: SELECT billdetail.consumercode as applicationno,bp.tenantid,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,Architectuser.uuid as uuid,Citizenuser.uuid as Cuuid,Architectuser.name AS username,Architectuser.mobilenumber as altcontactnumber,Architectuser.emailid as emailid,Citizenuser.name as name,Citizenuser.mobilenumber as mobilenumber,adr.khataNo as khatano,adr.mauza AS city,adr.plotno as plotno,adr.plotArea as plotarea,adr.occupancy AS occupancy_type,adr.patwarihn AS patwari_halka_no,
         SUM(CASE WHEN billdetail.businessservice = 'BPA.NC_APP_FEE' THEN billdetail.totalamount ELSE 0 END) AS prefees,
         SUM(CASE WHEN billdetail.businessservice = 'BPA.NC_SAN_FEE' THEN billdetail.totalamount ELSE 0 END) AS postfees,
      CASE
