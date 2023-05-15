@@ -3,24 +3,24 @@ ReportDefinitions:
   decryptionPathId: ArchitectMisReport
   summary: Fetches Architect Details Report data based on provided search parameters
   version: 1.0.0
-  moduleName: rainmaker-bpa
+  moduleName: rainmaker-obps
   sourceColumns:
   - name: Architectname
     label: Architect Name
     type: string
-    source: bpa
+    source: obps
   - name: contactno
     label: Contact No
     type: string
-    source: bpa
+    source: obps
   - name: emailid
     label: Email Id
     type: string
-    source: bpa
+    source: obps
   - name: validity
     label: Validity
     type: string
-    source: bpa 
+    source: obps 
   searchParams:
   - name: ulb
     label: ULB
