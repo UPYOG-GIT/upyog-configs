@@ -397,6 +397,10 @@ ReportDefinitions:
     label: Name Of ULB
     type: string
     source: bpa
+  - name: Direct_Bhawan_Anugya
+    label: Direct Bhawan Anugya
+    type: string
+    source: bpa
   - name: BPC_issued
     label: Building Permit Certificate Issued
     type: string
@@ -457,7 +461,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate 
-  query: select ms.message as Name_of_ULB, bp.tenantid, count(case when bp.status = 'APPROVED' then 1 end) as BPC_issued, count( case when bp.status = 'POST_FEE_APPROVAL_INPROGRESS' then 1 end ) as Document_verification, count( case when bp.status = 'PENDING_SANC_FEE_PAYMENT' then 1 end ) as Post_Fee_verified, count(case when bp.status = 'APPROVED' then 1 end) as Post_Fee_paid, count(case when bp.status = 'REJECTED' then 1 end) as Rejected, count(case when bp.status = 'REASSIGN' then 1 end ) as Reassign, 'NA' as Plinth_Level_Site_Inspection from eg_bpa_buildingplan bp inner join message ms on bp.tenantid = ms.code inner join eg_user usr on bp.createdby = usr.uuid where 1 = 1 
+  query: select ms.message as Name_of_ULB, bp.tenantid, COUNT(CASE WHEN (bp.status != 'INITIATED' and txn_status='SUCCESS' and txn_amount=1.00) THEN 1 END) AS Direct_Bhawan_Anugya, count(case when bp.status = 'APPROVED' then 1 end) as BPC_issued, count( case when bp.status = 'POST_FEE_APPROVAL_INPROGRESS' then 1 end ) as Document_verification, count( case when bp.status = 'PENDING_SANC_FEE_PAYMENT' then 1 end ) as Post_Fee_verified, count(case when bp.status = 'APPROVED' then 1 end) as Post_Fee_paid, count(case when bp.status = 'REJECTED' then 1 end) as Rejected, count(case when bp.status = 'REASSIGN' then 1 end ) as Reassign, 'NA' as Plinth_Level_Site_Inspection from eg_bpa_buildingplan bp inner join message ms on bp.tenantid = ms.code inner join eg_user usr on bp.createdby = usr.uuid JOIN eg_pg_transactions bd ON bp.applicationno = bd.consumer_code  where 1 = 1 
   groupby: group by bp.tenantid,ms.message
   orderby: order by bp.tenantid,ms.message
 
