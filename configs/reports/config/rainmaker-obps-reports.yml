@@ -31,7 +31,7 @@ ReportDefinitions:
     isMandatory: true
     disabled: true
     searchClause: AND usr.usertenantid = $ulb
-  query: select usr.username as architectname,usr.usertenantid,usr.mobilenumber as contactno,usr.emailid as emailid,usr.validitydate as validity from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code='BPA_ARCHITECT'
+  query: select usr.username as name,usr.usertenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code='BPA_ARCHITECT'
  
     
     
