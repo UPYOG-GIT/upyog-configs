@@ -28,10 +28,10 @@ ReportDefinitions:
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: obps
     wrapper: true
-    isMandatory: true
+    isMandatory: false
     disabled: true
     searchClause: AND usr.tenantid = $ulb
-  query: select usr.name as name,usr.usertenantid,usr.uuid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code='BPA_ARCHITECT'
+  query: select usr.name as name,usr.usertenantid,usr.uuid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code='BPA_ARCHITECT' and usr.tenantid='cg'
  
     
     
