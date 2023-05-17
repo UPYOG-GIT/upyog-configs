@@ -30,7 +30,7 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     disabled: true
-    searchClause: AND CASE WHEN $ulb='All' THEN usr.tenantid in('cg.birgaon','cg.dhamtari','cg.bhilaicharoda') WHEN $ulb='Birgaon' THEN usr.tenantid in('cg.birgaon') WHEN $ulb='Bhilai_Charoda' THEN usr.tenantid in('cg.bhilaicharoda') WHEN $ulb='Dhamtari' THEN usr.tenantid in('cg.dhamtari')ELSE 1=1 END
+    searchClause: and usr.tenantid=$ulb
   query: select usr.name as name,usr.tenantid,usr.uuid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code='BPA_ARCHITECT'
  
     
