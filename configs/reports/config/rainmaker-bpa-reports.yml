@@ -295,10 +295,6 @@ ReportDefinitions:
     type: string
     source: bpa
   - name: Sub_Tax_Labor_Tax
-    label: Sub-Tax (Labor Tax)
-    type: string
-    source: bpa
-  - name: Sub_Tax_Karmakar_Fees
     label: Sub-Tax(Karmakar)Fees
     type: string
     source: bpa
