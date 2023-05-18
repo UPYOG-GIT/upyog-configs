@@ -385,7 +385,7 @@ ReportDefinitions:
     INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid 
     INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
     INNER JOIN eg_user usr ON usr.uuid = bp.createdby
-    WHERE 1 = 1 AND  status IN ('APPROVED','PENDING_APPL_FEE','DOC_VERIFICATION_PENDING_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT')
+    WHERE 1 = 1 AND  bp.status IN ('APPROVED','PENDING_APPL_FEE','DOC_VERIFICATION_PENDING_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT')
   groupby: group by Citizenuser.name, fd.application_no,bp.createdtime,bp.tenantid,bp.status
   orderby: order by application_no
 
