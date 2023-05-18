@@ -31,7 +31,12 @@ ReportDefinitions:
     isMandatory: false
     disabled: true
     searchClause: and usr.tenantid=$ulb
-  query: select usr.name as name,usr.tenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code='BPA_ARCHITECT'
+  query: select usr.name as name,usr.tenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity,CASE
+    WHEN rolev1.role_code='BPA_ARCHITECT' THEN 'Architect'
+    WHEN rolev1.role_code='BPA_SUPERVISOR' THEN 'Supervisor'
+	  WHEN rolev1.role_code='BPA_STRUCTURALENGINEER' THEN 'Structural Engineer'
+	  WHEN rolev1.role_code='BPA_BUILDER' THEN 'Builder'
+  END AS Designation from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code in ('BPA_ARCHITECT','BPA_SUPERVISOR','BPA_STRUCTURALENGINEER','BPA_BUILDER')
  
     
     
