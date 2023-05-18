@@ -20,6 +20,10 @@ ReportDefinitions:
   - name: validity
     label: Validity
     type: string
+    source: obps
+  - name: Designation
+    label: Designation
+    type: string
     source: obps 
   searchParams:
   - name: ulb
