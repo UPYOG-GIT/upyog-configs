@@ -270,6 +270,10 @@ ReportDefinitions:
     label: Application No
     type: string
     source: bpa
+  - name: usr.username
+    label: Owner Name
+    type: string
+    source: bpa
   - name: Application_date
     label: Application Date
     type: string
