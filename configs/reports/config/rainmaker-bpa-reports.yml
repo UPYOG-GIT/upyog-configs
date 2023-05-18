@@ -359,7 +359,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: SELECT application_no,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,
+  query: SELECT application_no, usr.username, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,
     CASE 
         WHEN status = 'APPROVED' THEN 'Approved'
         WHEN status IN ('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_BUILDER','APPROVAL_INPROGRESS','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT') THEN 'Post Fee Pending'
@@ -384,7 +384,7 @@ ReportDefinitions:
     INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno
     INNER JOIN eg_user usr ON usr.uuid = bp.createdby
     WHERE 1 = 1 AND  status IN ('APPROVED','PENDING_APPL_FEE','DOC_VERIFICATION_PENDING_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT')
-  groupby: group by fd.application_no,bp.createdtime,bp.tenantid,bp.status
+  groupby: group by usr.username, fd.application_no,bp.createdtime,bp.tenantid,bp.status
   orderby: order by application_no
 
 - reportName: DirectBhavanAnugyaReport
