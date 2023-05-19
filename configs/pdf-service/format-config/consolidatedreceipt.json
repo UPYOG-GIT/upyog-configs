@@ -186,17 +186,29 @@
         },
         "layout": {}
       },
-    {
+      {
         "style": "next-noc-table",
         "table": {
           "widths": [
-           "30%",
-		   "70%"
-		  ],
+           "10%",
+		   "70%",
+		   "20%"
+          ],
           "body": [
             [
               {
-                "text": "ChargesType",
+                "text": "S.NO",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": true,
+				"alignment": "center"
+              },
+              {
+                "text": "Particular",
                 "border": [
                   true,
                   true,
@@ -206,9 +218,6 @@
 				"bold": true,
                 "alignment": "center"
               },
-			  
-
-	           
               {
                 "text": "Amount",
                 "border": [
@@ -220,16 +229,430 @@
 				"bold": true,
 				"alignment": "center"
               }
-			   
             ],
-		
-		"{{#ChargesType}}[{\"text\":\"{{ChargesType}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"}]{{/ChargesType}}",
-		"{{#Amount}}[{\"text\":\"{{ChargesType}}\",\"border\":[true, true, true, true],\"bold\":false,\"alignment\":\"center\"}]{{/Amount}}"
-				
-        ]
+		[
+              {
+                "text": "1",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Post Fees - Building Permission Non High Rise New",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Post Fees}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],		
+			[
+              {
+                "text": "2",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Rain Water Harvesting Fee",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Rain_Water}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "3",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Road Blockage Charges",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Road_Blockage}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "4",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Development Charges",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Dev_Charge}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "5",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Sub-Tax (Labor Tax)",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Sub_Tax}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],[
+              {
+                "text": "6",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Other Charges",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "{{Sub_Tax}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Gross Amount",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "right"
+              },
+              {
+                "text": "0",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Service Tax",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+                "alignment": "right"
+              },
+              {
+                "text": "0",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+	        [
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Total Amount",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": true,
+                "alignment": "right"
+              },
+              {
+                "text": "₹ {{totalAmount}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": true,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  false
+                ],
+                "bold": false,
+		       "alignment": "center"
+              },
+              {
+                "text": "For Municipal Corporation Raipur",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+		        "bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  false
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+		    [
+              {
+                "text": "",
+                "border": [
+                  true,
+                  false,
+                  false,
+                  true
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  true
+                ],
+		"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "Authorised Sign",
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "left"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
+              {
+                "text": "This is a Computer Generated Printout.",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+		"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ]
+          ]
         },
         "layout": {}
-    },
+      },
       {
         "style": "receipt-approver",
         "columns": [
