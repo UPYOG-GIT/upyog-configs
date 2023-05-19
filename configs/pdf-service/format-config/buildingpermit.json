@@ -110,7 +110,7 @@
             "text": " {{dated}}"
           },
           {
-            "text": " {{applicationDate}}"
+            "text": " {{createdDate}}"
           },
           {
             "text": ", {{PERMISSION_GRANT_TXT}} : "
