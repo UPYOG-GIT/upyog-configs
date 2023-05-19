@@ -110,7 +110,8 @@
             "text": " {{dated}}"
           },
           {
-            "text": " {{createdDate}}"
+            "text": " {{createdDate}}",
+	     "bold": true
           },
           {
             "text": ", {{PERMISSION_GRANT_TXT}} : "
