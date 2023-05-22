@@ -75,27 +75,6 @@
         ],
         "style": "top-margin"
       },
-	  {
-        "columns": [
-          {
-            "text": [
-			
-			  {
-                "text": "{{PLAN_PERMISION_NO}} : ",
-                "bold": true
-              },
-              {
-                "text": "{{planPermissionNo}}",
-                "bold": true,
-                "font": "Roboto"
-              }
-            ],
-            "alignment": "left",
-            "width": "*"
-          }
-        ],
-        "style": "top-margin"
-      },
       {
         "text": [
           {
