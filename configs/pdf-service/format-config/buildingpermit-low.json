@@ -13,7 +13,7 @@
         }
       },
       {
-        "text" : " {{orderGeneratedOn}}",
+        "text" : " {{reportrunDate}}",
         "absolutePosition" : {
            "x" : 490,
            "y" : 5
