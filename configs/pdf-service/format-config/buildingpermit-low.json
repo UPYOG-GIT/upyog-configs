@@ -1,5 +1,5 @@
 {
-  "key": "buildingpermit",
+  "key": "buildingpermit-low",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -215,26 +215,6 @@
               },
               {
                 "text": "{{appFee}}",
-                "alignment": "center"
-              }
-            ],
-            [
-              {
-                "text": "{{sanHeadCode}}"
-              },
-              {
-                "text": "{{sanFee}}",
-                "alignment": "center"
-              }
-            ],
-            [
-              {
-                "text": "Total",
-                "bold": true
-              },
-              {
-                "text": "{{totalDue}}",
-                "bold": true,
                 "alignment": "center"
               }
             ]
