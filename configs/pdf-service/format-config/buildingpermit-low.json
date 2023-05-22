@@ -1,5 +1,5 @@
 {
-  "key": "buildingpermit-low",
+  "key": "buildingpermit",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -23,8 +23,8 @@
         "columns": [
           {
             "image": "{{logoImage}}",
-            "width": 50,
-            "height": 61.25,
+            "width": 70,
+            "height": 75,
             "alignment": "left"
           },
           {
@@ -34,7 +34,7 @@
                 "style": "header"
               },
               {
-                "text": "{{BPA_FORM}}",
+                "text": "{{APPENDIX}}",
                 "style": "sub-header"
               },
               {
@@ -42,15 +42,15 @@
                 "style": "header"
               },
               {
-                "text": "{{BPA_BYELAWS}}",
+                "text": "{{BPA_HEADER_RULE}}",
                 "style": "sub-header"
               }
             ]
           },
           {
-            "image": "{{logoImage}}",
-            "width": 50,
-            "height": 61.25,
+            "image": "{{logoImage1}}",
+            "width": 70,
+            "height": 75,
             "alignment": "right"
           }
         ]
@@ -59,7 +59,28 @@
         "columns": [
           {
             "text": [
-              {
+			
+			  {
+                "text": "{{BPA_LAND_RULE}}",
+                "bold": false
+              },
+			  {
+                "text": "{{BPA_CERTIFICATE_INTRODUCTION}}",
+                "bold": false
+              }
+            ],
+            "alignment": "left",
+            "width": "*"
+          }
+        ],
+        "style": "top-margin"
+      },
+	  {
+        "columns": [
+          {
+            "text": [
+			
+			  {
                 "text": "{{PLAN_PERMISION_NO}} : ",
                 "bold": true
               },
@@ -81,19 +102,20 @@
             "text": "{{WRT_TXT}}"
           },
           {
-            "text" : " {{applicationNo}}",
-            "bold" : true,
+            "text": " {{applicationNo}}",
+            "bold": true,
             "font": "Roboto"
           },
           {
-            "text" : " {{dated}}"
+            "text": " {{dated}}"
           },
           {
-            "text" : " {{applicationDate}}"
+            "text": " {{createdDate}}",
+	     "bold": true
           },
           {
-            "text" : ", {{PERMISSION_GRANT_TXT}} : "
-          }
+            "text": ", {{PERMISSION_GRANT_TXT}} : "
+          }    
         ],
         "style": "top-margin"
       },
@@ -135,26 +157,12 @@
             "text": "{{holdingNo}}",
             "bold": true
           },
-          {
-             "text" : " {{SERVEY_NO}} "
+		  {
+            "text": "{{PATWARI_HN}}"
           },
           {
-            "text" : "{{reServeyPlotNo}}",
-            "bold" : true
-          },          
-          {
-            "text" : " {{TOWNPLANNING_TXT}} "
-         },
-         {
-           "text" : "{{townPlanningScheme}}",
-           "bold" : true
-         },         
-          {
-          "text" : " {{PROPOSE_LAND}} "
-          },
-          {
-            "text" : "{{proposedLandUse}}",
-            "bold" : true
+            "text": "{{patwariHN}}",
+            "bold": true
           },
           {
             "text": " {{OF}} "
@@ -170,7 +178,9 @@
       },
       {
         "separator": ")",
-        "ol": ["{{conditions}}"]
+        "ol": [
+          "{{conditions}}"
+        ]
       },
       {
         "stack": [
@@ -184,8 +194,8 @@
       {
         "table": {
           "widths": [
-            "auto",
-            "auto"
+            "50%",
+            "50%"
           ],
           "body": [
             [
@@ -207,9 +217,30 @@
                 "text": "{{appFee}}",
                 "alignment": "center"
               }
+            ],
+            [
+              {
+                "text": "{{sanHeadCode}}"
+              },
+              {
+                "text": "{{sanFee}}",
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "Total",
+                "bold": true
+              },
+              {
+                "text": "{{totalDue}}",
+                "bold": true,
+                "alignment": "center"
+              }
             ]
           ]
         },
+		"alignment": "center",
         "margin": [
           0,
           5,
@@ -228,19 +259,12 @@
             "margin": 2
           },
           {
-            "text": "{{tenantName}}",
+            "text": "{{approvedBy}}",
             "margin": 2
           }
         ],
         "alignment": "right",
         "style": "top-margin"
-      },
-      {
-        "text" : [
-          {
-            "text" : "{{AUTH_DSCR}}"
-          }
-        ]
       },
       {
         "text": [
@@ -258,23 +282,28 @@
         "bold": true
       },
       {
-        "text": "{{NOTE}} : ",
+        "text": "{{HEADING_FOR_NEW_RULES}} ",
         "bold": true,
-        "style": "top-margin"
+        "style": "header"
       },
       {
-        "text": [
-          {
-            "text" : "{{SUMMARY1}}"
-          },
-          {
-            "text" : " {{Bihar_Tenant}} "
-          },
-          {
-            "text" : "{{SUMMARY2}}."
-          }
-        ],
-        "style": "top-margin"
+        "separator": ")",
+        "ol": [
+		  "{{RULE_1}}",
+		  "{{RULE_2}}",
+		  "{{RULE_3}}",
+		  "{{RULE_4}}",
+		  "{{RULE_5}}",
+		  "{{RULE_6}}",
+		  "{{RULE_7}}",
+		  "{{RULE_8}}",
+		  "{{RULE_9}}",
+		  "{{RULE_10}}",
+		  "{{RULE_11}}",
+		  "{{RULE_12}}",
+		  "{{RULE_13}}",
+		  "{{RULE_14}}"
+        ]
       },
       {
         "image": "{{qrCode}}",
@@ -286,13 +315,13 @@
         "stack":[
           {
             "text" : "{{REPORT_RUNDATE}} : {{reportrunDate}}",
-            "alignment" : "right" 
+            "alignment" : "right"              
           }
         ]
       }
     ],
-    "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
-    "styles": {
+  "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
+	"styles": {
       "header": {
         "bold": true,
         "alignment": "center"
