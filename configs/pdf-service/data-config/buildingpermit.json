@@ -172,7 +172,7 @@
               {
                 "variable": "BPA_FORM_APPROVAL",
                 "value": {
-                  "path": "BPA_PDF_FORM_APPROVAL_TXT"
+                  "path": "BPA_PDF_FORM_APPROVAL_TXT_POST"
                 },
                 "type": "label",
                 "localisation": {
