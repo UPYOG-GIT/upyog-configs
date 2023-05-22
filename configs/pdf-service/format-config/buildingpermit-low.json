@@ -214,7 +214,7 @@
                 "text": "{{appHeadCode}}"
               },
               {
-                "text": "{{appFee}}",
+                "text": "₹ {{appFee}}",
                 "alignment": "center"
               }
             ]
