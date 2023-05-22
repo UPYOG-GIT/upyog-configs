@@ -212,18 +212,6 @@
                 }
               },
               {
-                "variable": "PLAN_PERMISION_NO",
-                "value": {
-                  "path": "BPA_PDF_PLANPERMISSION_NO"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-bpa"
-                }
-              },
-              {
                 "variable": "Dated",
                 "value": {
                   "path": "BPA_PDF_DATED"
