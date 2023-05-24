@@ -66,42 +66,6 @@
                   "path": "$.paymentDetails[0].totalAmountPaid"
                 }
               },
-			{
-                "variable": "Post Fees", 
-                "value": {
-                  "path": "$.paymentDetails[0].amount"
-                }
-              },
-			  {
-                "variable": "Rain_Water", 
-                "value": {
-                  "path": "$.paymentDetails[1].amount"
-                }
-              },
-			  {
-                "variable": "Road_Blockage", 
-                "value": {
-                  "path": "$.paymentDetails[0].amount[2]"
-                }
-              },
-			  {
-                "variable": "Dev_Charge", 
-                "value": {
-                  "path": "$.paymentDetails[0].amount[3]"
-                }
-              },
-			  {
-                "variable": "Sub_Tax", 
-                "value": {
-                  "path": "$.paymentDetails[0].amount[4]"
-                }
-              },
-			{
-                "variable": "totalAmount", 
-                "value": {
-                  "path": "$.paymentDetails[0].totalAmountPaid"
-                }
-              },
               {
                 "variable": "fromPeriod", 
                 "value": {
@@ -519,7 +483,7 @@
             "externalAPI": [     
               { 
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
-                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=cg&filter=%5B?(@.code=='{$.tenantId}')%5D",
+                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
                     {             
@@ -540,7 +504,7 @@
                     },
                     {
                       "variable": "logoImage",                        
-                      "value":"$.MdmsRes.tenant.tenants[0].logoId2",
+                      "value":"$.MdmsRes.tenant.tenants[0].logoId",
                       "type":"image"      
                     },
                     {
@@ -556,7 +520,7 @@
               },
               { 
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
-                "queryParam": "moduleName=tenant&masterName=footer&tenantId=cg&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
+                "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
                 "apiRequest": null,
                 "responseMapping":[
                   {
