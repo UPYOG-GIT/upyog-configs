@@ -66,6 +66,12 @@
                   "path": "$.paymentDetails[0].totalAmountPaid"
                 }
               },
+			{
+                "variable": "totalAmount", 
+                "value": {
+                  "path": "$.paymentDetails[0].totalAmountPaid"
+                }
+              },
               {
                 "variable": "fromPeriod", 
                 "value": {
@@ -483,7 +489,7 @@
             "externalAPI": [     
               { 
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
-                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pg&filter=%5B?(@.code=='{$.tenantId}')%5D",
+                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=cg&filter=%5B?(@.code=='{$.tenantId}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
                     {             
@@ -504,7 +510,7 @@
                     },
                     {
                       "variable": "logoImage",                        
-                      "value":"$.MdmsRes.tenant.tenants[0].logoId",
+                      "value":"$.MdmsRes.tenant.tenants[0].logoId2",
                       "type":"image"      
                     },
                     {
@@ -520,7 +526,7 @@
               },
               { 
                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
-                "queryParam": "moduleName=tenant&masterName=footer&tenantId=pg&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
+                "queryParam": "moduleName=tenant&masterName=footer&tenantId=cg&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
                 "apiRequest": null,
                 "responseMapping":[
                   {
