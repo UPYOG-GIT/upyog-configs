@@ -23,11 +23,11 @@
               {
                 "stack": [
                   {
-                    "text": "{{logo-header}} {{Municipal_Corporation}}",
+                    "text": "{{logo-header}}",
                     "style": "receipt-logo-header"
                   },
                   {
-                    "text": "{{serviceType}} {{payment_receipt}}",
+                    "text": "{{payment_receipt}}",
                     "style": "receipt-logo-sub-header"
                   }
                 ],
@@ -36,30 +36,6 @@
                   0,
                   10,
                   0,
-                  0
-                ]
-              },
-              {
-                "stack": [
-                  {
-                    "text": "{{address}}"
-                  },
-                  {
-                    "text": "{{phoneNumber}}"
-                  },
-                  {
-                    "text": "{{website}}"
-                  },
-                  {
-                    "text": "{{email}}"
-                  }
-                ],
-                "alignment": "right",
-                "color": "#484848",
-                "margin": [
-                  -100,
-                  0,
-                  -25,
                   0
                 ]
               }
@@ -85,7 +61,7 @@
                   true,
                   true,
                   false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -94,8 +70,8 @@
                 "border": [
                   false,
                   true,
-                  false,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table",
                 "font": "Roboto"
@@ -106,7 +82,7 @@
                   false,
                   true,
                   false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -116,7 +92,7 @@
                   false,
                   true,
                   true,
-                  false
+                  true
                 ],
                 "style": "receipt-table",
                 "font": "Roboto"
@@ -129,7 +105,7 @@
                   true,
                   false,
                   false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -138,8 +114,8 @@
                 "border": [
                   false,
                   false,
-                  false,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               },
@@ -147,9 +123,9 @@
                 "text": "{{payer_name}}",
                 "border": [
                   false,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
                 "style": "receipt-table-value"
               },
@@ -157,9 +133,9 @@
                 "text": "{{payerName}}",
                 "border": [
                   false,
-                  false,
                   true,
-                  false
+                  true,
+                  true
                 ],
                 "style": "receipt-table"
               }
@@ -180,7 +156,7 @@
                 "border": [
                   false,
                   false,
-                  false,
+                  true,
                   true
                 ],
                 "style": "receipt-table"
@@ -199,7 +175,7 @@
                 "text" : "{{paymentStatus}}",
                 "border": [
                   false,
-                  false,
+                  true,
                   true,
                   true
                 ],
@@ -214,286 +190,294 @@
         "style": "next-noc-table",
         "table": {
           "widths": [
-            "25%",
-            "25%",
-            "25%",
-            "25%"
+           "10%",
+		   "70%",
+		   "20%"
           ],
           "body": [
             [
+              {
+                "text": "S.NO",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": true,
+				"alignment": "center"
+              },
+              {
+                "text": "Particular",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": true,
+                "alignment": "center"
+              },
+              {
+                "text": "Amount",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": true,
+				"alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "1",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
               {
                 "text": "{{service_type}}",
                 "border": [
                   true,
                   true,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value"
-              },
-              {
-                "text": "{{serviceType}}",
-                "border": [
-                  false,
                   true,
-                  false,
-                  false
+                  true
                 ],
-                "style": "receipt-table"
-              },
-              {
-                "text": "{{billing_period}}",
-                "border": [
-                  false,
-                  true,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value"
-              },
-              {
-                "text": "{{fromPeriod}} {{to}} {{toPeriod}}",
-                "border": [
-                  false,
-                  true,
-                  true,
-                  false
-                ],
-                "style": "receipt-table"
-              }
-            ],
-            [
-              {
-                "text": "{{total_bill_amount}}",
-                "border": [
-                  true,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value"
-              },
-              {
-                "text": "₹ {{dueAmount}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table"
-              },
-              {
-                "text": "{{paid_amount}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value"
+				"bold": false,
+                "alignment": "center"
               },
               {
                 "text": "₹ {{paidAmount}}",
                 "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],		
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
                   false,
+                  true
+                ],
+                "bold": false,
+				"alignment": "center"
+              },
+              {
+                "text": "Gross Amount",
+                "border": [
                   false,
                   true,
-                  false
+                  true,
+                  true
                 ],
-                "style": "receipt-table"
+				"bold": false,
+                "alignment": "right"
+              },
+              {
+                "text": "₹ {{paidAmount}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
               }
             ],
-            [
+			[
               {
-                "text": "{{pending_amount}}",
+                "text": "",
                 "border": [
                   true,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
-                "style": "receipt-table-value"
+                "bold": false,
+				"alignment": "center"
               },
               {
-                "text": "₹ {{pendingAmount}}",
+                "text": "Service Tax",
                 "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table"
-              },
-              {
-                "text": "{{excess_amount_paid}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value"
-              },
-              {
-                "text": "₹ {{excessAmountPaid}}",
-                "border": [
-                  false,
                   false,
                   true,
-                  false
+                  true,
+                  true
                 ],
-                "style": "receipt-table"
+				"bold": false,
+                "alignment": "right"
+              },
+              {
+                "text": "0",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
               }
             ],
-            [
+	        [
               {
-                "text": "{{payment_mode}}",
+                "text": "",
                 "border": [
                   true,
+                  true,
                   false,
-                  false,
-                  false
+                  true
                 ],
-                "style": "receipt-table-value"
+                "bold": false,
+				"alignment": "center"
               },
               {
-                "text": "{{paymentMode}}",
+                "text": "Total Amount",
                 "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table"
-              },
-              {
-                "text": "{{transaction_id}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value"
-              },
-              {
-                "text": "{{transactionID}}",
-                "border": [
-                  false,
                   false,
                   true,
-                  false
+                  true,
+                  true
                 ],
-                "style": "receipt-table",
-                "font": "Roboto"
+				"bold": true,
+                "alignment": "right"
+              },
+              {
+                "text": "₹ {{paidAmount}}",
+                "border": [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": true,
+				"alignment": "center"
               }
             ],
-            [
+			[
               {
-                "text": "{{g8_receipt_no}}.",
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  false
+                ],
+                "bold": false,
+		       "alignment": "center"
+              },
+              {
+                "text": "For {{logo-header}}",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+		        "bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  false
+                ],
+				"bold": false,
+				"alignment": "center"
+              }
+            ],
+		    [
+              {
+                "text": "",
                 "border": [
                   true,
                   false,
                   false,
                   true
                 ],
-                "style": "receipt-table-value"
+                "bold": false,
+		"alignment": "center"
               },
               {
-                "text": "{{G8ReceiptNo}}",
+                "text": "",
                 "border": [
                   false,
                   false,
                   false,
                   true
                 ],
-                "style": "receipt-table"
+		"bold": false,
+                "alignment": "center"
               },
               {
-                "text": "{{g8_receipt_date}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  true
-                ],
-                "style": "receipt-table-value"
-              },
-              {
-                "text": "{{G8ReceiptDate}}",
+                "text": "Authorised Sign",
                 "border": [
                   false,
                   false,
                   true,
                   true
                 ],
-                "style": "receipt-table"
+				"bold": false,
+				"alignment": "left"
+              }
+            ],
+			[
+              {
+                "text": "",
+                "border": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bold": false,
+		"alignment": "center"
+              },
+              {
+                "text": "This is a Computer Generated Printout.",
+                "border": [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+		"bold": false,
+                "alignment": "center"
+              },
+              {
+                "text": "",
+                "border": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+				"bold": false,
+				"alignment": "center"
               }
             ]
           ]
         },
         "layout": {}
-      },
-      {
-        "style": "receipt-approver",
-        "columns": [
-          {
-            "text": [
-              {
-                "text": "{{generated_by}}: ",
-                "bold": true
-              },
-              {
-                "text": "{{user-name}}",
-                "bold": false
-              }
-            ],
-            "alignment": "left"
-          },
-          {
-            "text": [
-              {
-                "text": "{{commissioner/eo}}",
-                "bold": true
-              }
-            ],
-            "alignment": "right",
-            "margin": [
-                0,
-                0,
-               -10,
-                1
-            ]
-          }
-        ]
-      },
-      {
-        "style": "no-signature",
-        "text": "{{no_signature}}"
-      },
-      {
-        "style": "pt-disclaimer",
-        "stack": [
-          {
-            "text": "{{disclamer}}",
-            "bold": true,
-            "style": "pt-disclaimer-value"
-          },
-          {
-            "style": "pt-disclaimer-value",
-            "table": {
-              "widths": [
-                "120%",
-                "*",
-                "*",
-                "*"
-              ],
-              "body": ["{{#variable11}}[{\"text\":\"{{disclaimerContent}}\",\"border\":[false,false,false,false],\"style\":\"pt-disclaimer-value\"}]{{/variable11}}"]
-            },
-            "layout": {}
-          }
-        ]
       }
     ],
     "styles": {
