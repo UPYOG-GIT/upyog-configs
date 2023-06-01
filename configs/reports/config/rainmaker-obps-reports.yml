@@ -95,7 +95,7 @@ ReportDefinitions:
     source: obps
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
-  query: SELECT applicationno as Applicationno, bp.tenantid, Architectuser.name as name,Citizenuser.name as 				username,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,
+  query: SELECT applicationno as Applicationno, bp.tenantid, Architectuser.name as name,Citizenuser.name as username,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,
     CASE 
         WHEN bp.status='DOC_VERIFICATION_PENDING_BY_ENGINEER' OR bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 'Pending at Sub-Engineer'
         WHEN bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER' THEN 'Pending at Building Officer'
