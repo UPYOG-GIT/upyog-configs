@@ -103,9 +103,8 @@ ReportDefinitions:
         WHEN bp.status='APPROVAL_INPROGRESS' THEN 'Pending at final authority'
         WHEN bp.status='PENDING_SANC_FEE_PAYMENT' THEN 'Approved by final Authority and pending post fee'
         WHEN bp.status='APPROVED' THEN 'Post fee paid and issued permit order'
-    END AS status
-	FROM eg_bpa_buildingplan bp INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
-	where bp.status in('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER','POST_FEE_APPROVAL_INPROGRESS','APPROVAL_INPROGRESS','PENDING_SANC_FEE_PAYMENT','APPROVED')
+    END AS status FROM eg_bpa_buildingplan bp INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
+where bp.status in('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER','POST_FEE_APPROVAL_INPROGRESS','APPROVAL_INPROGRESS','PENDING_SANC_FEE_PAYMENT','APPROVED')
      
     
 
