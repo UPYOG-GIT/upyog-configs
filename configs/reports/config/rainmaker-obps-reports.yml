@@ -42,8 +42,8 @@ ReportDefinitions:
          WHEN rolev1.role_code='BPA_BUILDER' THEN 'Builder'
          END AS Designation from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code in ('BPA_ARCHITECT','BPA_SUPERVISOR','BPA_STRUCTURALENGINEER','BPA_BUILDER')
  
-- reportName: applicationStatusReport
-  decryptionPathId: applicationStatusReport
+- reportName: ApplicationStatusReport
+  decryptionPathId: ApplicationStatusReport
   summary: Fetches application data based on provided search parameters
   version: 1.0.0
   moduleName: rainmaker-obps
