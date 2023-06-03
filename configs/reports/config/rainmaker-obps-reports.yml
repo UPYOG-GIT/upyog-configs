@@ -62,7 +62,7 @@ ReportDefinitions:
     source: obps
     isLocalisationRequired: true
     localisationPrefix:
-  - name: approval_date
+  - name: approvaldate
     label: Approval Date
     type: string
     source: obps
@@ -95,13 +95,17 @@ ReportDefinitions:
     source: obps
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
-  query: SELECT applicationno as Applicationno, bp.tenantid, Architectuser.name as name,Citizenuser.name as username,Architectuser.uuid as uuid,Citizenuser.uuid as Cuuid,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,CASE 
+  query: SELECT applicationno as Applicationno, bp.tenantid, Architectuser.name as name,Citizenuser.name as username,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,CASE WHEN bp.approvaldate = 0 THEN NULL ELSE TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') END AS approvaldate,
+        CASE 
         WHEN bp.status='DOC_VERIFICATION_PENDING_BY_ENGINEER' OR bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 'Pending at Sub-Engineer'
-        WHEN bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER' THEN 'Pending at Building Officer' WHEN bp.status='POST_FEE_APPROVAL_INPROGRESS' THEN 'Approved by Building officer'
+        WHEN bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER' THEN 'Pending at Building Officer'
+        WHEN bp.status='POST_FEE_APPROVAL_INPROGRESS' THEN 'Approved by Building officer'
         WHEN bp.status='APPROVAL_INPROGRESS' THEN 'Pending at final authority'
-        WHEN bp.status='PENDING_SANC_FEE_PAYMENT' THEN 'Approved by final Authority and pending post fee' WHEN bp.status='APPROVED' THEN 'Post fee paid and issued permit order'
-        END AS status FROM eg_bpa_buildingplan bp INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
-        where bp.status in('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER','POST_FEE_APPROVAL_INPROGRESS','APPROVAL_INPROGRESS','PENDING_SANC_FEE_PAYMENT','APPROVED')
+        WHEN bp.status='PENDING_SANC_FEE_PAYMENT' THEN 'Approved by final Authority and pending post fee'
+        WHEN bp.status='APPROVED' THEN 'Post fee paid and issued permit order'
+    END AS status
+    FROM eg_bpa_buildingplan bp INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
+    where bp.status in('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER','POST_FEE_APPROVAL_INPROGRESS','APPROVAL_INPROGRESS','PENDING_SANC_FEE_PAYMENT','APPROVED')
      
     
 
