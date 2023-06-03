@@ -35,7 +35,8 @@ ReportDefinitions:
     isMandatory: false
     disabled: true
     searchClause: and usr.tenantid=$ulb
-  query: select usr.name as name,usr.tenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,usr.validitydate as validity,CASE
+  query: select usr.name as name,usr.tenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,TO_CHAR(TO_TIMESTAMP(usr.validitydate / 1000), 'DD/MM/YYYY') as validity,
+        CASE
          WHEN rolev1.role_code='BPA_ARCHITECT' THEN 'Architect'
          WHEN rolev1.role_code='BPA_SUPERVISOR' THEN 'Supervisor'
          WHEN rolev1.role_code='BPA_STRUCTURALENGINEER' THEN 'Structural Engineer'
