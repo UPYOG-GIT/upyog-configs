@@ -62,6 +62,12 @@ ReportDefinitions:
     source: obps
     isLocalisationRequired: true
     localisationPrefix:
+  - name: applicationdate
+    label: Application Date
+    type: string
+    source: obps
+    isLocalisationRequired: true
+    localisationPrefix:
   - name: approvaldate
     label: Approval Date
     type: string
