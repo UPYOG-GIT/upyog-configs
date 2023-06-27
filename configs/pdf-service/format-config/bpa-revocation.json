@@ -108,22 +108,7 @@
           }
         ]
     },
-            {
-                "text": [
-                    {
-                        "text": "{{revocationReasonIs}}"
-                    },
-                    {
-                        "text": " {{revocationReason}}.",
-                        "bold": true
-                    },
-                    {
-                        "text": " {{noAuthText}}."
-                    }
-                ],
-                "style": "top-low-margin"
-            },
-            {
+{
                 "text": [
                     {
                         "text": "{{contactULB}}."
