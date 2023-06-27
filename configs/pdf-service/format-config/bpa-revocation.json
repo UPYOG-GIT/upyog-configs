@@ -66,37 +66,41 @@
                 ],
                 "style": "top-margin"
             },
-            {
-                "text": [
-                    {
-                        "text": "{{Permision_Issued}}  "
-                    },
-                    {
-                        "text": "{{planPermissionNo}}",
-                        "bold": true,
-                        "font": "Roboto"
-                    },
-                    {
-                        "text": " {{WRT_APPNO}} "
-                    },
-                    {
-                        "text": "{{applicationNo}}",
-                        "bold": true,
-                        "font": "Roboto"
-                    },
-                    {   
-                        "text": " {{dated}} "
-                    },
-                    {
-                        "text": "{{createdDate}}",
-                        "bold": true
-                    },
-                    {
-                        "text": " {{isRevocated}}. "
-                    }
-                ],
-                "style": "top-low-margin"
-            },
+           {
+        "text": [
+          {
+            "text": "{{PLOT_NO}}"
+          },
+          {
+            "text": " {{plotNo}}",
+            "bold": true
+          },
+          {
+            "text": " {{KHATA_NO}} "
+          },
+          {
+            "text": "{{khataNo}}",
+            "bold": true
+          },
+          {
+            "text": " {{HOLDING_NO}} "
+          },
+          {
+            "text": "{{holdingNo}}",
+            "bold": true
+          },
+		  {
+            "text": "{{PATWARI_HN}}"
+          },
+          {
+            "text": "{{patwariHN}}",
+            "bold": true
+          },
+          {
+            "text": "  {{CERTIFICATE_CONTENT2}}"
+          }
+        ]
+    },
             {
                 "text": [
                     {
