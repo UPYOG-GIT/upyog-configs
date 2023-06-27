@@ -180,6 +180,24 @@
                 }
             },
                             {
+                "variable": "plotNo",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.planInformation.plotNo"
+                }
+            },
+            {
+                "variable": "khataNo",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.planInformation.khataNo"
+                }
+            },
+			{
+                "variable": "patwariHN",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.planInformation.patwariHN"
+                }
+            },
+                            {
                               "variable": "WRT_APPNO",
                               "value": {
                                 "path": "BPA_PDF_WRT_APPNO"
