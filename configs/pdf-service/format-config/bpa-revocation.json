@@ -97,7 +97,7 @@
             "bold": true
           },
           {
-            "text": "  {{CERTIFICATE_CONTENT2}}"
+            "text": "  {{Certificate_content2}}"
           }
         ]
     },
