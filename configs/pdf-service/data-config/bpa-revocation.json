@@ -108,6 +108,18 @@
                               }
                             },
                             {
+                              "variable": "Certificate_content1",
+                              "value": {
+                                "path": "CERTIFICATE_CONTENT1"
+                              },
+                              "type" : "label",
+                              "localisation": {
+                                "required": true,
+                                "prefix": null,
+                                "module": "rainmaker-bpa"
+                              }
+                            },
+                            {
                               "variable": "WRT_APPNO",
                               "value": {
                                 "path": "BPA_PDF_WRT_APPNO"
