@@ -60,9 +60,9 @@
                               }
                             },
                             {
-                              "variable": "Revocation_Title",
+                              "variable": "Certificate_title",
                               "value": {
-                                "path": "BPA_PDF_BPA_REVOCATION_TITLE"
+                                "path": "CERTIFICATE_HEADER"
                               },
                               "type" : "label",
                               "localisation": {
