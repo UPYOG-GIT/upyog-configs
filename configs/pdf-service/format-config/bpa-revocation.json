@@ -102,6 +102,9 @@
 	  {
             "text": "56",
 	     "bold": true
+          },
+        {
+            "text": "  {{Certificate_content3}}"
           }
         ]
     },
