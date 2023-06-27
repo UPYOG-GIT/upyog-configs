@@ -108,6 +108,84 @@
           }
         ]
     },
+		{
+        "table": {
+          "widths": [
+            "20%",
+            "50%",
+		"30%"
+          ],
+          "body": [
+            [
+              {
+                "text": "Sr.No",
+                "bold": true
+              },
+              {
+                "text": "Matters of Regularisation",
+                "bold": true,
+                "alignment": "center"
+              },
+			  {
+                "text": "Area in Sq.mt.",
+                "bold": true,
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "1"
+              },
+              {
+                "text": "Marginal Open Space",
+                "alignment": "center"
+              },
+			  {
+                "text": "",
+                "bold": true,
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "2"
+              },
+              {
+                "text": "Floor Area Ratio",
+                "alignment": "center"
+              },
+			  {
+                "text": "",
+                "bold": true,
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "3",
+                "bold": true
+              },
+              {
+                "text": "Change in Land use",
+                "bold": true,
+                "alignment": "center"
+              },
+			  {
+                "text": "",
+                "bold": true,
+                "alignment": "center"
+              }
+            ]
+          ]
+        },
+		"alignment": "center",
+        "margin": [
+          0,
+          5,
+          0,
+          0
+        ]
+    },
 {
                 "text": [
                     {
