@@ -16,11 +16,11 @@
                     {
                         "stack": [
                             {
-                                "text": "{{tenantName}} {{Muncipal_Council}}",
+                                "text": "{{Certificate_title}}",
                                 "style": "header"
                             },
                             {
-                                "text": "{{Certificate_title}}",
+                                "text": "",
                                 "style": "sub-header"
                             }
                         ]
