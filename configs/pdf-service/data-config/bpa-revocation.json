@@ -132,6 +132,54 @@
                               }
                             },
                             {
+                "variable": "PLOT_NO",
+                "value": {
+                  "path": "BPA_PDF_PLOTNO_TXT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+              {
+                "variable": "KHATA_NO",
+                "value": {
+                  "path": "BPA_PDF_KHATANO_TXT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+              {
+                "variable": "HOLDING_NO",
+                "value": {
+                  "path": "BPA_PDF_HOLDINGNO_TXT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+              {
+                "variable": "PATWARI_HN",
+                "value": {
+                  "path": "BPA_PDF_PATWARIHN_TXT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+                            {
                               "variable": "WRT_APPNO",
                               "value": {
                                 "path": "BPA_PDF_WRT_APPNO"
