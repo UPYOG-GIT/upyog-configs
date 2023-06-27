@@ -20,7 +20,7 @@
                                 "style": "header"
                             },
                             {
-                                "text": "{{Revocation_Title}}",
+                                "text": "{{Certificate_title}}",
                                 "style": "sub-header"
                             }
                         ]
