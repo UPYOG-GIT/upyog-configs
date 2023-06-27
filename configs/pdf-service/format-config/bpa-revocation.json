@@ -142,7 +142,7 @@
               },
 			  {
                 "text": "",
-                "bold": true,
+                "bold": false,
                 "alignment": "center"
               }
             ],
@@ -156,7 +156,7 @@
               },
 			  {
                 "text": "",
-                "bold": true,
+                "bold": false,
                 "alignment": "center"
               }
             ],
@@ -167,12 +167,12 @@
               },
               {
                 "text": "Change in Land use",
-                "bold": true,
+                "bold": false,
                 "alignment": "center"
               },
 			  {
                 "text": "",
-                "bold": true,
+                "bold": false,
                 "alignment": "center"
               }
             ]
