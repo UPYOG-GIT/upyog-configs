@@ -106,6 +106,7 @@
         {
             "text": "  {{Certificate_content3}}"
           }
+	  "alignment": "justify"
         ]
     },
 		{
