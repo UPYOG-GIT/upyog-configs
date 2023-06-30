@@ -295,6 +295,18 @@
                   "module": "rainmaker-bpa"
                 }
               },
+		    {
+                "variable": "PLOTAREA",
+                "value": {
+                  "path": "BPA_PDF_PLOTAREA_TXT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                },
+		    
               {
                 "variable": "KHATA_NO",
                 "value": {
@@ -698,6 +710,12 @@
                   "path": "$.edcrDetail[0].planDetail.planInformation.plotNo"
                 }
               },
+		    {
+                "variable": "plotArea",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.planInformation.plotArea"
+                }
+            },
               {
                 "variable": "khataNo",
                 "value": {
