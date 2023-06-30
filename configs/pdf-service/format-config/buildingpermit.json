@@ -143,6 +143,13 @@
             "text": " {{plotNo}}",
             "bold": true
           },
+	{
+            "text": " {{PLOTAREA}} "
+        },
+        {
+            "text": "{{plotArea}}",
+            "bold": true
+        },
           {
             "text": " {{KHATA_NO}} "
           },
