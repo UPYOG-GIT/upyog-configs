@@ -109,7 +109,8 @@
 	  
         ],
 	   "alignment": "justify",
-	    "lineHeight": 1.5
+	    "lineHeight": 1.5,
+	"fontSize": 16
     },
 		{
         "table": {
