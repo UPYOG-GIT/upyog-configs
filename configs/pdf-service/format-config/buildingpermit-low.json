@@ -251,7 +251,7 @@
             "text": "{{VALIDITY_DSCR}} "
           },
           {
-            "text": "{{validityDate}}"
+            "text": "{{validityDateForPre}}"
           },
           {
             "text": " {{ONLY}}."
