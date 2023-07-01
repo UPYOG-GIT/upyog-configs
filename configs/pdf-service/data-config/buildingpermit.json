@@ -300,7 +300,19 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
+            },
+			{
+                "variable": "DSCR2",
+                "value": {
+                  "path": "BPA_PDF_DSCR1"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
               {
                 "variable": "PLOT_NO",
                 "value": {
