@@ -305,7 +305,8 @@
                   "required": true,
                   "prefix": null,
                   "module": "rainmaker-bpa"
-                },    
+                }
+	    },     
               {
                 "variable": "KHATA_NO",
                 "value": {
