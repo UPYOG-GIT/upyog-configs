@@ -159,6 +159,13 @@
             "text": "{{plotArea}}",
             "bold": true
         },
+		{
+            "text": " {{TOTAL_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{totalBuitUpArea}} "
+        },
           {
             "text": " {{KHATA_NO}} "
           },
