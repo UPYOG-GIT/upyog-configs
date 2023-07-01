@@ -160,11 +160,12 @@
             "bold": true
         },
 		{
-            "text": " {{TOTAL_BUILTUP_AREA}}",
-            "bold": true
+            "text": " {{TOTAL_BUILTUP_AREA}}"
+            
         },
 		{
-            "text": " {{totalBuitUpArea}} "
+            "text": " {{totalBuitUpArea}} ",
+	     "bold": true	
         },
           {
             "text": " {{KHATA_NO}} "
