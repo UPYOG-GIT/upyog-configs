@@ -157,6 +157,18 @@
                   "module": "rainmaker-bpa"
                 }
               },
+		    {
+                "variable": "TOTAL_BUILTUP_AREA",
+                "value": {
+                  "path": "BPA_PDF_TOTAL_BUILTUP_AREA"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
               {
                 "variable": "APPENDIX",
                 "value": {
@@ -740,6 +752,12 @@
                   "path": "$.edcrDetail[0].planDetail.planInformation.plotNo"
                 }
               },
+		    {
+                "variable": "totalBuitUpArea",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.virtualBuilding.totalBuitUpArea"
+                }
+            },
 		    {
                 "variable": "occupancy",
                 "value": {
