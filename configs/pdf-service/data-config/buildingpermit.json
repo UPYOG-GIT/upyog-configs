@@ -741,6 +741,12 @@
                 }
               },
 		    {
+                "variable": "occupancy",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.planInformation.occupancy"
+                }
+            },
+		    {
                 "variable": "plotArea",
                 "value": {
                   "path": "$.edcrDetail[0].planDetail.planInformation.plotArea"
