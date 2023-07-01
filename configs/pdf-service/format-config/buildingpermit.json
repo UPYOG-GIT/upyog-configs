@@ -136,8 +136,17 @@
       },
       {
         "text": [
+	  {
+            "text": "{{DSCR1}}"
+          },
+	  {
+            "text": "{{occupancy}}"
+          },
+	  {
+            "text": "{{DSCR2}}"
+          },
           {
-            "text": "{{DSCR1}} {{PLOT_NO}}"
+            "text": "{{PLOT_NO}}"
           },
           {
             "text": " {{plotNo}}",
