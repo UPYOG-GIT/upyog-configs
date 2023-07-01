@@ -43,9 +43,9 @@
                 }
               },
               {
-                "variable": "validityDate",
+                "variable": "validityDateForPre",
                 "value": {
-                  "path": "$.additionalDetails.validityDate"
+                  "path": "$.additionalDetails.validityDateForPre"
                 },
                 "type": "date"
               },
