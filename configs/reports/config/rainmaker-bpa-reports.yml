@@ -334,6 +334,10 @@ ReportDefinitions:
     label: Rain Water Harvesting Deposit
     type: string
     source: bpa
+  - name: Electricity_Connection
+    label: Electricity Connection
+    type: string
+    source: bpa
   - name: Total_Amount
     label: Total Amount
     type: string
@@ -378,6 +382,7 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name = 'Building Permission Fees(Non High Rise New)' THEN amount END) AS Building_Permission_Fees_Non_High_Rise_New,
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
     SUM(CASE WHEN charges_type_name = 'Rain Water Harvesting Deposit' THEN amount END) AS Rain_Water_Harvesting_Deposit,
+    SUM(CASE WHEN charges_type_name = 'Electricity Connection' THEN amount END) AS Electricity_Connection,
     SUM(amount) AS Total_Amount
     FROM fee_details fd
     INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno
