@@ -36,6 +36,12 @@
                   "path": "$.landInfo.address.wardNo"
                 }
               },
+		    {
+                "variable": "name",
+                "value": {
+                  "path": "$.landInfo.address.locality.name"
+                }
+            },
               {
                 "variable": "favourOf",
                 "value": {
@@ -197,6 +203,18 @@
                 "variable": "BPA_HEADER_RULE",
                 "value": {
                   "path": "BPA_PDF_VIKAS_RULE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+		    {
+                "variable": "WARD_NAME",
+                "value": {
+                  "path": "BPA_PDF_WARD_NAME"
                 },
                 "type": "label",
                 "localisation": {
