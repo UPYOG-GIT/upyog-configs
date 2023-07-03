@@ -96,7 +96,9 @@
             "text": ", {{PERMISSION_GRANT_TXT}} : "
           }    
         ],
-        "style": "top-margin"
+        "style": "top-margin",
+	"alignment": "justify",
+	"lineHeight": 1.5
       },
       {
         "text": [
@@ -179,8 +181,8 @@
           }
         ],
 	"alignment": "justify",
-	"lineHeight": 1.5,
-	"fontSize": 16
+	"lineHeight": 1.5
+	
       },
       {
         "separator": ")",
@@ -285,7 +287,9 @@
 		  "{{RULE_12}}",
 		  "{{RULE_13}}",
 		  "{{RULE_14}}"
-        ]
+        ],
+	 "alignment": "justify",
+	"lineHeight": 1.5
       },
       {
         "image": "{{qrCode}}",
