@@ -178,6 +178,9 @@
             "text": "  {{CONDNS_TXT}}"
           }
         ]
+	"alignment": "justify",
+	"lineHeight": 1.5,
+	"fontSize": 16
       },
       {
         "separator": ")",
