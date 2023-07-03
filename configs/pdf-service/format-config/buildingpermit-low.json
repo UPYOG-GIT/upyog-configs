@@ -157,14 +157,7 @@
             "text": "{{khataNo}}",
             "bold": true
           },
-          {
-            "text": " {{HOLDING_NO}} "
-          },
-          {
-            "text": "{{holdingNo}}",
-            "bold": true
-          },
-		  {
+	 {
             "text": "{{PATWARI_HN}}"
           },
           {
@@ -292,12 +285,6 @@
         ],
 	 "alignment": "justify",
 	"lineHeight": 1.25
-      },
-      {
-        "image": "{{qrCode}}",
-        "alignment": "right",
-        "width": 100,
-        "height": 100
       },
       {
         "stack":[
