@@ -180,14 +180,7 @@
             "text": "{{khataNo}}",
             "bold": true
           },
-          {
-            "text": " {{HOLDING_NO}} "
-          },
-          {
-            "text": "{{holdingNo}}",
-            "bold": true
-          },
-		  {
+	 {
             "text": "{{PATWARI_HN}}"
           },
           {
