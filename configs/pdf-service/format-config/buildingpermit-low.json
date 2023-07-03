@@ -288,6 +288,10 @@
       },
       {
         "stack":[
+		 {
+            "text" : "This is Computer Generated Certificate",
+            "alignment" : "center"              
+          },
           {
             "text" : "{{REPORT_RUNDATE}} : {{reportrunDate}}",
             "alignment" : "right"              
