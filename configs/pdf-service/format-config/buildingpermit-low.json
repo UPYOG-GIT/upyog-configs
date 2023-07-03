@@ -70,7 +70,9 @@
               }
             ],
             "alignment": "left",
-            "width": "*"
+            "width": "*",
+	"alignment": "justify",
+	"lineHeight": 1.25
           }
         ],
         "style": "top-margin"
@@ -98,7 +100,7 @@
         ],
         "style": "top-margin",
 	"alignment": "justify",
-	"lineHeight": 1.5
+	"lineHeight": 1.25
       },
       {
         "text": [
@@ -181,7 +183,7 @@
           }
         ],
 	"alignment": "justify",
-	"lineHeight": 1.5
+	"lineHeight": 1.25
 	
       },
       {
@@ -289,7 +291,7 @@
 		  "{{RULE_14}}"
         ],
 	 "alignment": "justify",
-	"lineHeight": 1.5
+	"lineHeight": 1.25
       },
       {
         "image": "{{qrCode}}",
