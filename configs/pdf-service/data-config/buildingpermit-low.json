@@ -23,12 +23,18 @@
                   "path": "$.edcrNumber"
                 }
               },
-              {
+		    {
                 "variable": "createdDate",
                 "value": {
                   "path": "$.auditDetails.createdTime"
                 },
                 "type": "date"
+              },
+              {
+                "variable": "wardNo",
+                "value": {
+                  "path": "$.landInfo.address.wardNo"
+                }
               },
               {
                 "variable": "favourOf",
@@ -167,6 +173,18 @@
                 "variable": "BPA_FORM_APPROVAL",
                 "value": {
                   "path": "BPA_PDF_FORM_APPROVAL_TXT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+		    {
+                "variable": "WARD_NO",
+                "value": {
+                  "path": "BPA_PDF_WARD_NO"
                 },
                 "type": "label",
                 "localisation": {
