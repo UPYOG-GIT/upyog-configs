@@ -70,7 +70,9 @@
               }
             ],
             "alignment": "left",
-            "width": "*"
+            "width": "*",
+	"alignment": "justify",
+	"lineHeight": 1.25
           }
         ],
         "style": "top-margin"
@@ -117,7 +119,9 @@
             "text": ", {{PERMISSION_GRANT_TXT}} : "
           }    
         ],
-        "style": "top-margin"
+        "style": "top-margin",
+	  "alignment": "justify",
+	"lineHeight": 1.25
       },
       {
         "text": [
@@ -132,7 +136,9 @@
             "text": " {{FOR}} "
           }
         ],
-        "style": "top-margin"
+        "style": "top-margin",
+	 "alignment": "justify",
+	"lineHeight": 1.25
       },
       {
         "text": [
@@ -198,7 +204,9 @@
           {
             "text": "  {{CONDNS_TXT}}"
           }
-        ]
+        ],
+	  "alignment": "justify",
+	"lineHeight": 1.25
       },
       {
         "separator": ")",
@@ -327,7 +335,9 @@
 		  "{{RULE_12}}",
 		  "{{RULE_13}}",
 		  "{{RULE_14}}"
-        ]
+        ],
+	  "alignment": "justify",
+	"lineHeight": 1.25
       },
       {
         "image": "{{qrCode}}",
