@@ -164,6 +164,13 @@
             "text": "{{patwariHN}}",
             "bold": true
           },
+	  {
+            "text": "{{WARD_NO}}"
+          },
+          {
+            "text": "{{wardNo}}",
+            "bold": true
+          },
           {
             "text": " {{OF}} "
           },
