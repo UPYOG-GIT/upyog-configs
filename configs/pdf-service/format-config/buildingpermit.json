@@ -187,6 +187,20 @@
             "text": "{{patwariHN}}",
             "bold": true
           },
+	 {
+            "text": "{{WARD_NO}}"
+          },
+          {
+            "text": "{{wardNo}}",
+            "bold": true
+          },
+		{
+            "text": "{{WARD_NAME}}"
+          },
+          {
+            "text": "{{name}}",
+            "bold": true
+          },
           {
             "text": " {{OF}} "
           },
