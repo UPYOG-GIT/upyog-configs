@@ -36,6 +36,18 @@
                 },
                 "type": "date"
               },
+		     {
+                "variable": "wardNo",
+                "value": {
+                  "path": "$.landInfo.address.wardNo"
+                }
+              },
+		    {
+                "variable": "name",
+                "value": {
+                  "path": "$.landInfo.address.locality.name"
+                }
+            },
               {
                 "variable": "favourOf",
                 "value": {
@@ -149,6 +161,30 @@
                 "variable": "Muncipal_Council",
                 "value": {
                   "path": "BPA_PDF_MUNCIPAL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+		    {
+                "variable": "WARD_NO",
+                "value": {
+                  "path": "BPA_PDF_WARD_NO"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+              },
+		    {
+                "variable": "WARD_NAME",
+                "value": {
+                  "path": "BPA_PDF_WARD_NAME"
                 },
                 "type": "label",
                 "localisation": {
