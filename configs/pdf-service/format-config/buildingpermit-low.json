@@ -172,10 +172,10 @@
             "bold": true
           },
 		{
-            "text": "{{WARD_NO}}"
+            "text": "{{WARD_NAME}}"
           },
           {
-            "text": "{{wardNo}}",
+            "text": "{{name}}",
             "bold": true
           },
           {
