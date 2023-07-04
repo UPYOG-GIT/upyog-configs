@@ -29,6 +29,12 @@
                   "path": "$.edcrNumber"
                 }
               },
+		    {
+                "variable": "address",
+                "value": {
+                  "path": "$.landInfo.address.address"
+                }
+            },
               {
                 "variable": "createdDate",
                 "value": {
@@ -126,7 +132,19 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              }, 
+              },
+		    {
+                "variable": "ADDRESS",
+                "value": {
+                  "path": "BPA_PDF_ADDRESS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
               {
                 "variable": "tenantName",
                 "value": {
