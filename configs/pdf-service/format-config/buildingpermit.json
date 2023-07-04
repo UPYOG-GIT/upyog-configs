@@ -296,10 +296,6 @@
           {
             "text": "{{AUTH_OFFICER}}",
             "margin": 2
-          },
-          {
-            "text": "{{approvedBy}}",
-            "margin": 2
           }
         ],
         "alignment": "right",
