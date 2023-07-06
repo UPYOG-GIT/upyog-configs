@@ -97,6 +97,12 @@
                   "path": "$.additionalDetails.reSurveyPlotNo"
                 }
               },
+		    {
+                "variable": "address",
+                "value": {
+                  "path": "$.landInfo.address.address"
+                }
+            },
               {
                 "variable": "townPlanningScheme",
                 "value": {
@@ -151,6 +157,18 @@
                 },
                 "type": "date"
               },
+		    {
+                "variable": "ADDRESS",
+                "value": {
+                  "path": "BPA_PDF_ADDRESS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
               {
                 "variable": "Muncipal_Council",
                 "value": {
