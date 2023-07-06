@@ -151,33 +151,12 @@
 	     "bold": true	
         },
           {
-            "text": " {{KHATA_NO}} "
-          },
-          {
-            "text": "{{khataNo}}",
+            "text": " {{ADDRESS}} "
+        },
+        {
+            "text": "{{address}}",
             "bold": true
-          },
-	 {
-            "text": "{{PATWARI_HN}}"
-          },
-          {
-            "text": "{{patwariHN}}",
-            "bold": true
-          },
-	  {
-            "text": "{{WARD_NO}}"
-          },
-          {
-            "text": "{{wardNo}}",
-            "bold": true
-          },
-		{
-            "text": "{{WARD_NAME}}"
-          },
-          {
-            "text": "{{name}}",
-            "bold": true
-          },
+        },
           {
             "text": " {{OF}} "
           },
