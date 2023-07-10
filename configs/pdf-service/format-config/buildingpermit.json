@@ -173,19 +173,46 @@
             "text": " {{totalBuitUpArea}} ",
 	     "bold": true	
         },
+	{
+            "text": "{{chargesTypeName1}}"
+          },
+	  {
+            "text": "{{amount1}}",
+            "bold": true
+          },
+		{
+            "text": "{{chargesTypeName2}}"
+          },
+	  {
+            "text": "{{amount2}}",
+            "bold": true
+          },
+		{
+            "text": "{{chargesTypeName3}}"
+          },
+	  {
+            "text": "{{amount3}}",
+            "bold": true
+          },
+		{
+            "text": "{{chargesTypeName4}}"
+          },
+	  {
+            "text": "{{amount4}}",
+            "bold": true
+          },
+		{
+            "text": "{{chargesTypeName5}}"
+          },
+	  {
+            "text": "{{amount5}}",
+            "bold": true
+          },
           {
             "text": " {{ADDRESS}} "
           },
           {
             "text": "{{address}}",
-            "bold": true
-          },
-		{
-            "text": "{{chargesTypeName}}",
-            "bold": true
-          },
-		{
-            "text": "{{amount}}",
             "bold": true
           },
           {
