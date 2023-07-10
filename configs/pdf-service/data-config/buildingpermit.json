@@ -60,6 +60,14 @@
                   "path": "$.landInfo.owners.*.name"
                 }
               },
+		    {
+                    "variable": "chargesTypeName",
+                    "value": "$.Payments[0].paymentDetails[0].FeeDetail[0].chargesTypeName"
+                },
+				{
+                    "variable": "amount",
+                    "value": "$.Payments[0].paymentDetails[0].FeeDetail[0].amount"
+                },
               {
                 "variable": "holdingNo",
                 "value": {
