@@ -883,35 +883,35 @@
                 },
 			{
                     "variable": "chargesTypeName2",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[1].chargesTypeName"
                 },
 		{
                     "variable": "amount2",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].amount"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[1].amount"
                 },
 			{
                     "variable": "chargesTypeName3",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[2].chargesTypeName"
                 },
 		{
                     "variable": "amount3",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].amount"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[2].amount"
                 },
 			{
                     "variable": "chargesTypeName4",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[3].chargesTypeName"
                 },
 		{
                     "variable": "amount4",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].amount"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[3].amount"
                 },
 			{
                     "variable": "chargesTypeName5",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[4].chargesTypeName"
                 },
 		{
                     "variable": "amount5",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].amount"
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[4].amount"
                 },
                   {
                     "variable": "sanFee",
