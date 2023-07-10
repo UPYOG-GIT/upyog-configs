@@ -60,14 +60,6 @@
                   "path": "$.landInfo.owners.*.name"
                 }
               },
-		    {
-                    "variable": "chargesTypeName",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
-                },
-				{
-                    "variable": "amount",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].amount"
-                },
               {
                 "variable": "holdingNo",
                 "value": {
@@ -881,6 +873,14 @@
                       "module": "rainmaker-bpa"
                     }
                   },
+		    {
+                    "variable": "chargesTypeName",
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
+                },
+		{
+                    "variable": "amount",
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].amount"
+                },
                   {
                     "variable": "sanFee",
                     "value": "$.Payments[0].paymentDetails[0].bill.billDetails[0].billAccountDetails[0].amount"
