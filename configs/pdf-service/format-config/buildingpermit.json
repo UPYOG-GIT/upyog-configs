@@ -180,6 +180,14 @@
             "text": "{{address}}",
             "bold": true
           },
+		{
+            "text": "{{chargesTypeName}}",
+            "bold": true
+          },
+		{
+            "text": "{{amount}}",
+            "bold": true
+          },
           {
             "text": " {{OF}} "
           },
