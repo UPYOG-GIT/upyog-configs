@@ -60,6 +60,42 @@
                   "path": "$.landInfo.owners.*.name"
                 }
               },
+			  {
+                "variable": "providedFar",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.farDetails.providedFar"
+                }
+            },
+			{
+                "variable": "coverage",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.coverage"
+                }
+            },
+			{
+                "variable": "G_BUILTUP_AREA",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.blocks[0].building.floors[0].occupancies[0].builtUpArea"
+                }
+            },
+			{
+                "variable": "F_BUILTUP_AREA",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.blocks[0].building.floors[1].occupancies[0].builtUpArea"
+                }
+            },
+			{
+                "variable": "S_BUILTUP_AREA",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.blocks[0].building.floors[2].occupancies[0].builtUpArea"
+                }
+            },
+			{
+                "variable": "T_BUILTUP_AREA",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.blocks[0].building.floors[3].occupancies[0].builtUpArea"
+                }
+            },
               {
                 "variable": "holdingNo",
                 "value": {
