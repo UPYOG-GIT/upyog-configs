@@ -307,12 +307,21 @@
                 "alignment": "center"
             }
             ],
-			[
+	    [
             {
                 "text": "{{T_FLOOR}}"
             },
             {
                 "text": "{{T_BUILTUP_AREA}}",
+                "alignment": "center"
+            }
+            ],
+	    [
+            {
+                "text": "Fifth Floor"
+            },
+            {
+                "text": "",
                 "alignment": "center"
             }
             ]
