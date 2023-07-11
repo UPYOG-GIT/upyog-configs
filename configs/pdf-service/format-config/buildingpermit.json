@@ -244,6 +244,88 @@
         "bold": true,
         "style": "top-margin"
       },
+	  {
+        "table": {
+          "widths": [
+            "50%",
+            "50%"
+          ],
+          "body": [
+            [
+              {
+                "text": "Area Statement",
+                "bold": true
+              },
+              {
+                "text": "Value",
+                "bold": true,
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "{{FAR}}"
+            },
+            {
+                "text": "{{providedFar}}",
+                "alignment": "center"
+            }
+            ],
+            [
+              {
+                "text": "{{COVERAGE}}"
+            },
+            {
+                "text": "{{coverage}}",
+                "alignment": "center"
+            }
+            ],
+            [
+              {
+                "text": "{{G_FLOOR}}"
+            },
+            {
+                "text": "{{G_BUILTUP_AREA}}",
+                "alignment": "center"
+            }
+            ],
+			[
+              {
+                "text": "{{F_FLOOR}}"
+            },
+            {
+                "text": "{{F_BUILTUP_AREA}}",
+                "alignment": "center"
+            }
+            ],
+			[
+              {
+                "text": "{{S_FLOOR}}"
+            },
+            {
+                "text": "{{S_BUILTUP_AREA}}",
+                "alignment": "center"
+            }
+            ],
+			[
+            {
+                "text": "{{T_FLOOR}}"
+            },
+            {
+                "text": "{{T_BUILTUP_AREA}}",
+                "alignment": "center"
+            }
+            ]
+          ]
+        },
+		"alignment": "center",
+        "margin": [
+          0,
+          5,
+          0,
+          0
+        ]
+      },
       {
         "table": {
           "widths": [
