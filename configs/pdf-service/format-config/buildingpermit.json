@@ -235,16 +235,7 @@
           "{{conditions}}"
         ]
       },
-      {
-        "stack": [
-          {
-            "text": "{{PERMIT_DETAILS_TXT}},"
-          }
-        ],
-        "bold": true,
-        "style": "top-margin"
-      },
-	  {
+	 {
         "table": {
           "widths": [
             "50%",
@@ -334,6 +325,15 @@
           0,
           0
         ]
+      },
+	    {
+        "stack": [
+          {
+            "text": "{{PERMIT_DETAILS_TXT}},"
+          }
+        ],
+        "bold": true,
+        "style": "top-margin"
       },
       {
         "table": {
