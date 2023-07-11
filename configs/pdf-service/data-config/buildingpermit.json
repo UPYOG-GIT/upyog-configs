@@ -181,6 +181,90 @@
                   "module": "rainmaker-bpa"
                 }
             },
+		    {
+                "variable": "FAR",
+                "value": {
+                  "path": "BPA_PDF_FAR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "COVERAGE",
+                "value": {
+                  "path": "BPA_PDF_COVERAGE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "G_FLOOR",
+                "value": {
+                  "path": "BPA_PDF_GROUNDFLOOR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "F_FLOOR",
+                "value": {
+                  "path": "BPA_PDF_FIRSTFLOOR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "S_FLOOR",
+                "value": {
+                  "path": "BPA_PDF_SECONDFLOOR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "T_FLOOR",
+                "value": {
+                  "path": "BPA_PDF_THIRDFLOOR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "F_FLOOR",
+                "value": {
+                  "path": "BPA_PDF_FOURTHFLOOR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
               {
                 "variable": "tenantName",
                 "value": {
