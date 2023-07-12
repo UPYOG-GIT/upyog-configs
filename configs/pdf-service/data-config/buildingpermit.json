@@ -117,20 +117,30 @@
               },
               {
                 "variable": [
-				            "RULE_1",
-				            "RULE_2",
-							"RULE_3",
-							"RULE_4",
-							"RULE_5",
-							"RULE_6",
-							"RULE_7",
-							"RULE_8",
-							"RULE_9",
-							"RULE_10",
-							"RULE_11",
-							"RULE_12",
-							"RULE_13",
-							"RULE_14"
+				           		"RULEF_1",
+				            		"RULEF_2",
+							"RULEF_3",
+							"RULEF_4",
+							"RULEF_5",
+							"RULEF_6",
+							"RULEF_7",
+							"RULEF_8",
+							"RULEF_9",
+							"RULEF_10",
+							"RULEF_11",
+							"RULEF_12",
+							"RULEF_13",
+							"RULEF_14",
+			                                "RULEF_15",
+				            		"RULEF_16",
+							"RULEF_17",
+							"RULEF_18",
+							"RULEF_19",
+							"RULEF_20",
+							"RULEF_21",
+							"RULEF_22",
+							"RULEF_23",
+							"RULEF_24"
 						    ],
                 "value": {
                   "path": "$.additionalDetails"
@@ -710,9 +720,9 @@
                 }
               },
               {
-                "variable": "HEADING_FOR_NEW_RULES",
+                "variable": "HEADING_FOR_FINAL_RULES",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_NEW_HEADING"
+                  "path": "BPA_PDF_CONSTRUCTION_FINAL_HEADING"
                 },
                 "type": "label",
                 "localisation": {
@@ -721,10 +731,10 @@
                   "module": "rainmaker-bpa"
                 }
               },
-              {
-                "variable": "RULE_1",
+			{
+                "variable": "RULEF_1",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_ONE"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_ONE"
                 },
                 "type": "label",
                 "localisation": {
@@ -732,11 +742,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_2",
+            },
+			{
+                "variable": "RULEF_2",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_TWO"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWO"
                 },
                 "type": "label",
                 "localisation": {
@@ -744,11 +754,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_3",
+            },
+			{
+                "variable": "RULEF_3",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_THREE"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_THREE"
                 },
                 "type": "label",
                 "localisation": {
@@ -756,11 +766,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_4",
+            },
+			{
+                "variable": "RULEF_4",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_FOUR"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_FOUR"
                 },
                 "type": "label",
                 "localisation": {
@@ -768,11 +778,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_5",
+            },
+			{
+                "variable": "RULEF_5",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_FIVE"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_FIVE"
                 },
                 "type": "label",
                 "localisation": {
@@ -780,11 +790,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_6",
+            },
+			{
+                "variable": "RULEF_6",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_SIX"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_SIX"
                 },
                 "type": "label",
                 "localisation": {
@@ -792,11 +802,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_7",
+            },
+			{
+                "variable": "RULEF_7",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_SEVEN"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_SEVEN"
                 },
                 "type": "label",
                 "localisation": {
@@ -804,11 +814,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_8",
+            },
+			{
+                "variable": "RULEF_8",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_EIGHT"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_EIGHT"
                 },
                 "type": "label",
                 "localisation": {
@@ -816,11 +826,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_9",
+            },
+			{
+                "variable": "RULEF_9",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_NINE"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_NINE"
                 },
                 "type": "label",
                 "localisation": {
@@ -828,11 +838,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_10",
+            },
+			{
+                "variable": "RULEF_10",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_TEN"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TEN"
                 },
                 "type": "label",
                 "localisation": {
@@ -840,11 +850,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_11",
+            },
+			{
+                "variable": "RULEF_11",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_ELEVEN"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_ELEVEN"
                 },
                 "type": "label",
                 "localisation": {
@@ -852,11 +862,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_12",
+            },
+			{
+                "variable": "RULEF_12",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_TWELVE"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWELVE"
                 },
                 "type": "label",
                 "localisation": {
@@ -864,11 +874,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_13",
+            },
+			{
+                "variable": "RULEF_13",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_THIRTEEN"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_THIRTEEN"
                 },
                 "type": "label",
                 "localisation": {
@@ -876,11 +886,11 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
-			  {
-                "variable": "RULE_14",
+            },
+			{
+                "variable": "RULEF_14",
                 "value": {
-                  "path": "BPA_PDF_CONSTRUCTION_WORK_NEW_SPECIFICATIONS_LINE_FOURTEEN"
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_FOURTEEN"
                 },
                 "type": "label",
                 "localisation": {
@@ -888,7 +898,127 @@
                   "prefix": null,
                   "module": "rainmaker-bpa"
                 }
-              },
+            },
+			{
+                "variable": "RULEF_15",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_FIFTEEN"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_16",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_SIXTEEN"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_17",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_SEVENTEEN"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_18",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_EIGHTEEN"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_19",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_NINETEEN"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_20",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWENTY"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_21",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWENTYONE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_22",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWENTYTWO"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_23",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWENTYTHREE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
+			{
+                "variable": "RULEF_24",
+                "value": {
+                  "path": "BPA_PDF_CONSTRUCTION_WORK_FINAL_SPECIFICATIONS_LINE_TWENTYFOUR"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-bpa"
+                }
+            },
               {
                 "variable": "AUTH_DSCR",
                 "value": {
