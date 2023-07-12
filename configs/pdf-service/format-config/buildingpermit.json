@@ -308,7 +308,8 @@
           }
         ],
         "bold": true,
-        "style": "top-margin"
+        "style": "top-margin",
+	"pageBreak": "before"
       },
      {
         "table": {
