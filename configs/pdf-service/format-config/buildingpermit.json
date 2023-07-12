@@ -307,7 +307,7 @@
           }
         ],
         "bold": true,
-        "style": "top-margin"
+        "style": "page-break-before: always;"
       },
      {
         "table": {
