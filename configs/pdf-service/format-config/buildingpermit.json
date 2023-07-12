@@ -169,45 +169,10 @@
             "text": " {{TOTAL_BUILTUP_AREA}}"
             
         },
-		{
+	{
             "text": " {{totalBuitUpArea}} ",
 	     "bold": true	
         },
-	{
-            "text": "{{chargesTypeName1}}"
-          },
-	  {
-            "text": "{{amount1}}",
-            "bold": true
-          },
-		{
-            "text": "{{chargesTypeName2}}"
-          },
-	  {
-            "text": "{{amount2}}",
-            "bold": true
-          },
-		{
-            "text": "{{chargesTypeName3}}"
-          },
-	  {
-            "text": "{{amount3}}",
-            "bold": true
-          },
-		{
-            "text": "{{chargesTypeName4}}"
-          },
-	  {
-            "text": "{{amount4}}",
-            "bold": true
-          },
-		{
-            "text": "{{chargesTypeName5}}"
-          },
-	  {
-            "text": "{{amount5}}",
-            "bold": true
-          },
           {
             "text": " {{ADDRESS}} "
           },
@@ -344,7 +309,7 @@
         "bold": true,
         "style": "top-margin"
       },
-      {
+     {
         "table": {
           "widths": [
             "50%",
@@ -373,10 +338,46 @@
             ],
             [
               {
-                "text": "{{sanHeadCode}}"
+                "text": "{{chargesTypeName1}}"
               },
               {
-                "text": "{{sanFee}}",
+                "text": "{{amount1}}",
+                "alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "{{chargesTypeName2}}"
+              },
+              {
+                "text": "{{amount2}}",
+                "alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "{{chargesTypeName3}}"
+              },
+              {
+                "text": "{{amount3}}",
+                "alignment": "center"
+              }
+            ],
+	    [
+              {
+                "text": "{{chargesTypeName4}}"
+              },
+              {
+                "text": "{{amount4}}",
+                "alignment": "center"
+              }
+            ],
+	    [
+              {
+                "text": "{{chargesTypeName5}}"
+              },
+              {
+                "text": "{{amount5}}",
                 "alignment": "center"
               }
             ],
@@ -393,7 +394,7 @@
             ]
           ]
         },
-		"alignment": "center",
+        "alignment": "center",
         "margin": [
           0,
           5,
