@@ -309,6 +309,15 @@
             ],
 	    [
             {
+                "text": "{{FOU_FLOOR}}"
+            },
+            {
+                "text": "{{FOU_BUILTUP_AREA}}",
+                "alignment": "center"
+            }
+            ],
+	    [
+            {
                 "text": "Fifth Floor"
             },
             {
