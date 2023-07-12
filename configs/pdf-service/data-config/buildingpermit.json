@@ -96,6 +96,12 @@
                   "path": "$.edcrDetail[0].planDetail.blocks[0].building.floors[3].occupancies[0].builtUpArea"
                 }
             },
+		    {
+                "variable": "FOU_BUILTUP_AREA",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.blocks[0].building.floors[3].occupancies[0].builtUpArea"
+                }
+            },
               {
                 "variable": "holdingNo",
                 "value": {
