@@ -365,7 +365,7 @@
 		  "{{RULEF_24}}"
         ],
 	  "alignment": "justify",
-	"lineHeight": 1
+	"lineHeight": 0.5
       },
       {
         "stack":[
