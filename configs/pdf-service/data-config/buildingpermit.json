@@ -1181,7 +1181,7 @@
                 "apiRequest": null,
                 "responseMapping": [
                   {
-                    "variable": "appHeadCode",
+                    "variable": "preChargesTypeName",
                     "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName",
                     "localisation": {
                       "required": true,
