@@ -1182,12 +1182,7 @@
                 "responseMapping": [
                   {
                     "variable": "preChargesTypeName",
-                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName",
-                    "localisation": {
-                      "required": true,
-                      "prefix": "BPA",
-                      "module": "rainmaker-bpa"
-                    }
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[0].chargesTypeName"
                   },
                   {
                     "variable": "appFee",
