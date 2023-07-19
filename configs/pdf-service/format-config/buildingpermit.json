@@ -166,6 +166,34 @@
             "bold": true
         },
 		{
+            "text": " {{G_FLOOR}} "
+        },
+        {
+            "text": "{{G_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{F_FLOOR}} "
+        },
+        {
+            "text": "{{F_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{S_FLOOR}} "
+        },
+        {
+            "text": "{{S_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{T_FLOOR}} "
+        },
+        {
+            "text": "{{T_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
             "text": " {{TOTAL_BUILTUP_AREA}}"
             
         },
