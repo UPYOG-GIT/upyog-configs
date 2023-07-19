@@ -72,7 +72,7 @@
             "alignment": "left",
             "width": "*",
 	"alignment": "justify",
-	"lineHeight": 1
+	"lineHeight": 0.85
           }
         ],
         "style": "top-margin"
@@ -121,7 +121,7 @@
         ],
         "style": "top-margin",
 	  "alignment": "justify",
-	"lineHeight": 1
+	"lineHeight": 0.85
       },
       {
         "text": [
@@ -138,7 +138,7 @@
         ],
         "style": "top-margin",
 	 "alignment": "justify",
-	"lineHeight": 1
+	"lineHeight": 0.85
       },
       {
         "text": [
@@ -220,7 +220,7 @@
           }
         ],
 	  "alignment": "justify",
-	"lineHeight": 1
+	"lineHeight": 0.85
       },
       {
         "separator": ")",
