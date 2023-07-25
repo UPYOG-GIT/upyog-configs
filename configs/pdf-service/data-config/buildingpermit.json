@@ -17,6 +17,12 @@
                   "path": "$.applicationNo"
                 }
               },
+		    {
+                "variable": "roadWidth",
+                "value": {
+                  "path": "$.edcrDetail[0].planDetail.planInformation.roadWidth"
+                }
+            },
               {
                 "variable": "planPermissionNo",
                 "value": {
