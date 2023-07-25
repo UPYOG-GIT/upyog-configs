@@ -371,6 +371,7 @@
 		  "{{RULEF_2}}",
 		  "{{RULEF_3}}",
 		  "{{RULEF_4}}",
+		  "The boundary line will be {{roadWidth}} meters away from the center of the road.",
 		  "{{RULEF_5}}",
 		  "{{RULEF_6}}",
 		  "{{RULEF_7}}",
