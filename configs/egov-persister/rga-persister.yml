@@ -1,0 +1,231 @@
+serviceMaps:
+ serviceName: rga-services
+ mappings:
+ - version: 1.0
+   description: Persists buildingplan details in EG_RGA_BuildingPlan  table
+   fromTopic: save-rga-buildingplan
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_rga_buildingplan(id, applicationNo, landId, risktype, accountId, edcrNumber, tenantId, status, approvalDate, businessService, additionalDetails, createdBy, lastmodifiedBy, createdTime, lastmodifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
+         basePath: RGA
+         jsonMaps:
+          - jsonPath: $.RGA.id
+
+          - jsonPath: $.RGA.applicationNo
+          
+          - jsonPath: $.RGA.landId
+          
+          - jsonPath: $.RGA.riskType
+          
+          - jsonPath: $.RGA.accountId
+
+          - jsonPath: $.RGA.edcrNumber
+          
+          - jsonPath: $.RGA.tenantId
+          
+          - jsonPath: $.RGA.status
+          
+          - jsonPath: $.RGA.approvalDate
+          
+          - jsonPath: $.RGA.businessService
+
+          - jsonPath: $.RGA.additionalDetails
+            type: JSON
+            dbType: JSONB
+
+          - jsonPath: $.RGA.auditDetails.createdBy
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedBy
+
+          - jsonPath: $.RGA.auditDetails.createdTime
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedTime
+
+
+       - query: INSERT INTO eg_rga_document( id, documenttype, fileStoreId, buildingplanid, documentuid, additionalDetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: RGA.documents.*
+         jsonMaps:
+          - jsonPath: $.RGA.documents.*.id
+
+          - jsonPath: $.RGA.documents.*.documentType
+
+          - jsonPath: $.RGA.documents.*.fileStoreId
+
+          - jsonPath: $.RGA.id
+
+          - jsonPath: $.RGA.documents.*.documentUid
+
+          - jsonPath: $.RGA.documents.*.additionalDetails
+            type: JSON
+            dbType: JSONB
+
+          - jsonPath: $.RGA.auditDetails.createdBy
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedBy
+
+          - jsonPath: $.RGA.auditDetails.createdTime
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedTime
+
+
+
+       - query: INSERT INTO eg_rga_auditdetails SELECT * FROM eg_rga_buildingplan WHERE id =?;
+         basePath: RGA
+         jsonMaps:
+
+          - jsonPath: $.RGA.id
+  
+
+
+
+ - version: 1.0
+   description: update buildingplan details in EG_RGA_BuildingPlan  table
+   fromTopic: update-rga-buildingplan
+   isTransaction: true
+   queryMaps:
+
+       - query: UPDATE eg_rga_buildingplan SET applicationno=?, approvalNo=?, applicationDate=?, status=?, additionaldetails=?, lastmodifiedby=?, lastmodifiedtime=?, approvalDate=? WHERE id=?;
+         basePath: RGA
+         jsonMaps:
+          - jsonPath: $.RGA.applicationNo
+          
+          - jsonPath: $.RGA.approvalNo
+          
+          - jsonPath: $.RGA.applicationDate
+
+          - jsonPath: $.RGA.status
+
+          - jsonPath: $.RGA.additionalDetails
+            type: JSON
+            dbType: JSONB
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedBy
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedTime
+
+          - jsonPath: $.RGA.approvalDate
+
+          - jsonPath: $.RGA.id
+
+
+       - query: INSERT INTO eg_rga_auditdetails SELECT * FROM eg_rga_buildingplan WHERE id =?;
+         basePath: RGA
+         jsonMaps:
+
+           - jsonPath: $.RGA.id
+
+        
+       - query: INSERT INTO eg_rga_document(id, documenttype, fileStoreId, buildingplanid, documentuid, additionalDetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET documenttype =?,  fileStoreId =?, additionalDetails=?, lastmodifiedby =?, lastmodifiedtime =?;
+         basePath: RGA.documents.*
+         jsonMaps:
+          
+           - jsonPath: $.RGA.documents.*.id
+  
+           - jsonPath: $.RGA.documents.*.documentType
+  
+           - jsonPath: $.RGA.documents.*.fileStoreId
+  
+           - jsonPath: $.RGA.id
+  
+           - jsonPath: $.RGA.documents.*.documentUid
+  
+           - jsonPath: $.RGA.documents.*.additionalDetails
+             type: JSON
+             dbType: JSONB
+  
+           - jsonPath: $.RGA.auditDetails.createdBy
+  
+           - jsonPath: $.RGA.auditDetails.lastModifiedBy
+  
+           - jsonPath: $.RGA.auditDetails.createdTime
+
+           - jsonPath: $.RGA.auditDetails.lastModifiedTime
+
+           - jsonPath: $.RGA.documents.*.documentType
+
+           - jsonPath: $.RGA.documents.*.fileStoreId
+  
+           - jsonPath: $.RGA.documents.*.additionalDetails
+             type: JSON
+             dbType: JSONB
+
+           - jsonPath: $.RGA.auditDetails.lastModifiedBy
+
+           - jsonPath: $.RGA.auditDetails.lastModifiedTime
+          
+ - version: 1.0
+   description: update buildingplan details in EG_RGA_BuildingPlan  table
+   fromTopic: update-rga-workflow
+   isTransaction: true
+   queryMaps:
+   
+          
+       - query: INSERT INTO eg_rga_document(id, documentType, fileStoreId, buildingplanid, documentUid, additionalDetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET documenttype =?,  fileStoreId =?, additionalDetails=?, lastmodifiedby =?, lastmodifiedtime =?;
+         basePath: RGA.documents.*
+         jsonMaps:
+          
+           - jsonPath: $.RGA.documents.*.id
+  
+           - jsonPath: $.RGA.documents.*.documentType
+  
+           - jsonPath: $.RGA.documents.*.fileStoreId
+  
+           - jsonPath: $.RGA.id
+  
+           - jsonPath: $.RGA.documents.*.documentUid
+  
+           - jsonPath: $.RGA.documents.*.additionalDetails
+             type: JSON
+             dbType: JSONB
+  
+           - jsonPath: $.RGA.auditDetails.createdBy
+  
+           - jsonPath: $.RGA.auditDetails.lastModifiedBy
+  
+           - jsonPath: $.RGA.auditDetails.createdTime
+
+           - jsonPath: $.RGA.auditDetails.lastModifiedTime
+
+           - jsonPath: $.RGA.documents.*.documentType
+
+           - jsonPath: $.RGA.documents.*.fileStoreId
+  
+           - jsonPath: $.RGA.documents.*.additionalDetails
+             type: JSON
+             dbType: JSONB
+
+           - jsonPath: $.RGA.auditDetails.lastModifiedBy
+
+           - jsonPath: $.RGA.auditDetails.lastModifiedTime
+           
+           
+       - query: INSERT INTO eg_rga_auditdetails SELECT * FROM eg_rga_buildingplan WHERE id =?;
+         basePath: RGA
+         jsonMaps:
+
+           - jsonPath: $.RGA.id
+
+
+       - query: UPDATE eg_rga_buildingplan SET applicationno=?, approvalNo=?, applicationDate=?, status=?, additionaldetails=?, lastmodifiedby=?, lastmodifiedtime=?, approvalDate=? WHERE id=?;
+         basePath: RGA
+         jsonMaps:
+          - jsonPath: $.RGA.applicationNo
+          
+          - jsonPath: $.RGA.approvalNo
+          
+          - jsonPath: $.RGA.applicationDate
+
+          - jsonPath: $.RGA.status
+
+          - jsonPath: $.RGA.additionalDetails
+            type: JSON
+            dbType: JSONB
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedBy
+
+          - jsonPath: $.RGA.auditDetails.lastModifiedTime
+
+          - jsonPath: $.RGA.approvalDate
+
+          - jsonPath: $.RGA.id
