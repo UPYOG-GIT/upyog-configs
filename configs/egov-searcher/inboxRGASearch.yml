@@ -1,0 +1,441 @@
+SearchDefinitions:
+ moduleName: rga-services
+ summary: Building Plan Approval Services Inbox API
+ version: 1.0.0
+ definitions:
+ - name: inboxrgacitizensearch
+   query:
+    baseQuery: Select row_to_json(result) from
+          (
+          select DISTINCT(rga.applicationno) as applicationno,rga.createdtime as createdtime from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_land_ownerInfo ownerinfo ON landinfo.id = ownerinfo.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          LEFT JOIN eg_wf_assignee_v2 assg ON pi.id = assg.processinstanceid
+          $where
+          AND pi.createdtime IN (select max(createdtime) from eg_wf_processinstance_v2 wf where wf.businessid = rga.applicationno GROUP BY wf.businessid)
+          order by rga.createdtime asc $pagination
+          ) result
+    groupBy:
+    orderBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.applicationNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationNo
+    - name: rga.edcrNumber
+      isMandatory: false
+      jsonPath: $.searchCriteria.edcrNumber
+    - name: rga.approvalNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.approvalNo
+    - name: landaddress.locality
+      isMandatory: false
+      jsonPath: $.searchCriteria.locality
+    - name: assg.assignee
+      isMandatory: false
+      jsonPath: $.searchCriteria.assignee
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+    - name: ownerinfo.uuid
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: rga.additionaldetails->>'applicationType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationType
+    - name: rga.additionaldetails->>'serviceType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.serviceType
+    pagination:
+      noOfRecords: $.searchCriteria.noOfRecords
+      offset: $.searchCriteria.offset
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"RGAs": []}
+    outJsonPath: $.RGAs
+    responseInfoPath: $.ResponseInfo
+    
+ - name: inboxbpastakeholdersearch
+   query:
+    baseQuery: Select row_to_json(result) from
+          (
+          select DISTINCT(rga.applicationno) as applicationno,rga.createdtime as createdtime from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          LEFT JOIN eg_wf_assignee_v2 assg ON pi.id = assg.processinstanceid
+          $where
+          AND pi.createdtime IN (select max(createdtime) from eg_wf_processinstance_v2 wf where wf.businessid = rga.applicationno GROUP BY wf.businessid)
+          order by rga.createdtime asc $pagination
+          ) result
+    groupBy:
+    orderBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.applicationNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationNo
+    - name: rga.edcrNumber
+      isMandatory: false
+      jsonPath: $.searchCriteria.edcrNumber
+    - name: rga.approvalNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.approvalNo
+    - name: landaddress.locality
+      isMandatory: false
+      jsonPath: $.searchCriteria.locality
+    - name: assg.assignee
+      isMandatory: false
+      jsonPath: $.searchCriteria.assignee
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+    - name: rga.accountId
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: rga.additionaldetails->>'applicationType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationType
+    - name: rga.additionaldetails->>'serviceType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.serviceType
+    pagination:
+      noOfRecords: $.searchCriteria.noOfRecords
+      offset: $.searchCriteria.offset
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"RGAs": []}
+    outJsonPath: $.RGAs
+    responseInfoPath: $.ResponseInfo  
+
+ - name: inboxbpacitizensearchcount
+   query:
+    baseQuery: SELECT row_to_json(TotalCount) from (SELECT COUNT(result) from
+          (
+          select DISTINCT(rga.applicationno) as applicationno,rga.createdtime as createdtime from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_land_ownerInfo ownerinfo ON landinfo.id = ownerinfo.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          LEFT JOIN eg_wf_assignee_v2 assg ON pi.id = assg.processinstanceid
+          $where
+          AND pi.createdtime IN (select max(createdtime) from eg_wf_processinstance_v2 wf where wf.businessid = rga.applicationno GROUP BY wf.businessid)
+          order by rga.createdtime asc
+          ) result) TotalCount
+    groupBy:
+    orderBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.applicationNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationNo
+    - name: rga.edcrNumber
+      isMandatory: false
+      jsonPath: $.searchCriteria.edcrNumber
+    - name: rga.approvalNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.approvalNo
+    - name: landaddress.locality
+      isMandatory: false
+      jsonPath: $.searchCriteria.locality
+    - name: assg.assignee
+      isMandatory: false
+      jsonPath: $.searchCriteria.assignee
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+    - name: ownerinfo.uuid
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: rga.additionaldetails->>'applicationType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationType
+    - name: rga.additionaldetails->>'serviceType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.serviceType
+    pagination:
+      noOfRecords: $.searchCriteria.noOfRecords
+      offset: $.searchCriteria.offset
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"TotalCount": {}}
+    outJsonPath: $.TotalCount
+    responseInfoPath: $.ResponseInfo
+
+ - name: inboxrgastakeholdersearchcount
+   query:
+    baseQuery: SELECT row_to_json(TotalCount) from (SELECT COUNT(result) from
+          (
+          select DISTINCT(rga.applicationno) as applicationno,rga.createdtime as createdtime from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          LEFT JOIN eg_wf_assignee_v2 assg ON pi.id = assg.processinstanceid
+          $where
+          AND pi.createdtime IN (select max(createdtime) from eg_wf_processinstance_v2 wf where wf.businessid = rga.applicationno GROUP BY wf.businessid)
+          order by rga.createdtime asc
+          ) result) TotalCount
+    groupBy:
+    orderBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.applicationNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationNo
+    - name: rga.edcrNumber
+      isMandatory: false
+      jsonPath: $.searchCriteria.edcrNumber
+    - name: rga.approvalNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.approvalNo
+    - name: landaddress.locality
+      isMandatory: false
+      jsonPath: $.searchCriteria.locality
+    - name: assg.assignee
+      isMandatory: false
+      jsonPath: $.searchCriteria.assignee
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+    - name: rga.accountId
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: rga.additionaldetails->>'applicationType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationType
+    - name: rga.additionaldetails->>'serviceType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.serviceType
+    pagination:
+      noOfRecords: $.searchCriteria.noOfRecords
+      offset: $.searchCriteria.offset
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"TotalCount": {}}
+    outJsonPath: $.TotalCount
+    responseInfoPath: $.ResponseInfo
+    
+ - name: inboxrgacitizensearchdesc
+   query:
+    baseQuery: Select row_to_json(result) from
+          (
+          select DISTINCT(rga.applicationno) as applicationno,rga.createdtime as createdtime from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_land_ownerInfo ownerinfo ON landinfo.id = ownerinfo.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          LEFT JOIN eg_wf_assignee_v2 assg ON pi.id = assg.processinstanceid
+          $where
+          AND pi.createdtime IN (select max(createdtime) from eg_wf_processinstance_v2 wf where wf.businessid = rga.applicationno GROUP BY wf.businessid)
+          order by rga.createdtime desc $pagination
+          ) result
+    groupBy:
+    orderBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.applicationNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationNo
+    - name: rga.edcrNumber
+      isMandatory: false
+      jsonPath: $.searchCriteria.edcrNumber
+    - name: rga.approvalNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.approvalNo
+    - name: landaddress.locality
+      isMandatory: false
+      jsonPath: $.searchCriteria.locality
+    - name: assg.assignee
+      isMandatory: false
+      jsonPath: $.searchCriteria.assignee
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+    - name: ownerinfo.uuid
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: rga.additionaldetails->>'applicationType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationType
+    - name: rga.additionaldetails->>'serviceType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.serviceType
+    pagination:
+      noOfRecords: $.searchCriteria.noOfRecords
+      offset: $.searchCriteria.offset
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"RGAs": []}
+    outJsonPath: $.RGAs
+    responseInfoPath: $.ResponseInfo
+    
+ - name: inboxrgastakeholdersearchdesc
+   query:
+    baseQuery: Select row_to_json(result) from
+          (
+          select DISTINCT(rga.applicationno) as applicationno,rga.createdtime as createdtime from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          LEFT JOIN eg_wf_assignee_v2 assg ON pi.id = assg.processinstanceid
+          $where
+          AND pi.createdtime IN (select max(createdtime) from eg_wf_processinstance_v2 wf where wf.businessid = rga.applicationno GROUP BY wf.businessid)
+          order by rga.createdtime desc $pagination
+          ) result
+    groupBy:
+    orderBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.applicationNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationNo
+    - name: rga.edcrNumber
+      isMandatory: false
+      jsonPath: $.searchCriteria.edcrNumber
+    - name: rga.approvalNo
+      isMandatory: false
+      jsonPath: $.searchCriteria.approvalNo
+    - name: landaddress.locality
+      isMandatory: false
+      jsonPath: $.searchCriteria.locality
+    - name: assg.assignee
+      isMandatory: false
+      jsonPath: $.searchCriteria.assignee
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+    - name: rga.accountId
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: rga.additionaldetails->>'applicationType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.applicationType
+    - name: rga.additionaldetails->>'serviceType'
+      isMandatory: false
+      jsonPath: $.searchCriteria.serviceType
+    pagination:
+      noOfRecords: $.searchCriteria.noOfRecords
+      offset: $.searchCriteria.offset
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"RGAs": []}
+    outJsonPath: $.RGAs
+    responseInfoPath: $.ResponseInfo
+    
+ - name: inboxrgastakeholdertenantwiseapplnsearch
+   query:
+    baseQuery: Select row_to_json(result) from
+          (
+          select rga.tenantId, rga.applicationno from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          $where GROUP BY rga.tenantId, rga.applicationno
+          ) result
+    groupBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: rga.accountId
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status
+
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"RGA": []}
+    outJsonPath: $.RGA
+    responseInfoPath: $.ResponseInfo
+    
+ - name: inboxrgacitizentenantwiseapplnsearch
+   query:
+    baseQuery: Select row_to_json(result) from
+          (
+          select rga.tenantId, rga.applicationno from eg_rga_buildingplan as rga
+          INNER JOIN eg_land_landInfo landinfo ON rga.landId = landinfo.id
+          INNER JOIN eg_land_ownerInfo ownerinfo ON landinfo.id = ownerinfo.landInfoId
+          INNER JOIN eg_land_Address landaddress ON landinfo.id = landaddress.landInfoId
+          INNER JOIN eg_wf_processinstance_v2 pi ON pi.businessid = rga.applicationno
+          $where GROUP BY rga.tenantId, rga.applicationno
+          ) result
+    groupBy:
+   searchParams:
+    condition: AND
+    params:
+    - name: rga.tenantId
+      isMandatory: true
+      operator: ILIKE
+      jsonPath: $.searchCriteria.tenantId
+    - name: ownerinfo.uuid
+      isMandatory: false
+      jsonPath: $.searchCriteria.userid
+    - name: pi.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businessservice
+    - name: pi.status
+      isMandatory: false
+      jsonPath: $.searchCriteria.status 
+
+   output:
+    jsonFormat: {"ResponseInfo": {},"RGA": {}}
+    outJsonPath: $.RGA
+    responseInfoPath: $.ResponseInfo
