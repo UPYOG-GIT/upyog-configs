@@ -290,10 +290,6 @@ ReportDefinitions:
     label: Road Blockage Charges
     type: string
     source: bpa
-  - name: Rain_Water_Harvesting_Fee
-    label: Rain Water Harvesting Fee
-    type: string
-    source: bpa
   - name: Development_charges
     label: Development charges
     type: string
