@@ -121,11 +121,11 @@ ReportDefinitions:
       'DD/MM/YYYY'
       ) AS approval_date, 
         Architectuser.uuid as uuid, 
-        Architectuser.name AS usernames,  -- Merge Architectuser names with commas
-        Architectuser.mobilenumber AS altcontactnumbers,  -- Merge Architectuser phone numbers with commas
+        Architectuser.name AS usernames,
+        Architectuser.mobilenumber AS altcontactnumbers,
         Architectuser.emailid as emailid, 
-        STRING_AGG(DISTINCT Citizenuser.name, ', ') AS names,  -- Merge and make Citizenuser names unique
-        STRING_AGG(DISTINCT Citizenuser.mobilenumber, ', ') AS mobilenumbers,  -- Merge and make Citizenuser phone numbers unique
+        STRING_AGG(DISTINCT Citizenuser.name, ', ') AS names, 
+        STRING_AGG(DISTINCT Citizenuser.mobilenumber, ', ') AS mobilenumbers, 
         adr.khataNo as khatano, 
         adr.mauza AS city, 
         adr.plotno as plotno, 
