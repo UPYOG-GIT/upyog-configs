@@ -43,23 +43,23 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
   query: SELECT
-    bp.applicationno,
-    MAX(CASE WHEN rn = 1 THEN Citizenuser.name END) AS owner_1,
-    MAX(CASE WHEN rn = 2 THEN Citizenuser.name END) AS owner_2,
-FROM
-    eg_bpa_buildingplan bp
-    INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
-    INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
-    LEFT JOIN (
-        SELECT
-            bp.applicationno,
-            Citizenuser.name,
-            ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn
+          bp.applicationno,
+          MAX(CASE WHEN rn = 1 THEN Citizenuser.name END) AS owner_1,
+          MAX(CASE WHEN rn = 2 THEN Citizenuser.name END) AS owner_2,
         FROM
-            eg_bpa_buildingplan bp
-            INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
-            INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
-    ) AS subquery ON bp.applicationno = subquery.applicationno
+          eg_bpa_buildingplan bp
+          INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+          INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+        LEFT JOIN (
+          SELECT
+              bp.applicationno,
+              Citizenuser.name,
+              ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn
+          FROM
+              eg_bpa_buildingplan bp
+              INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+              INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+            ) AS subquery ON bp.applicationno = subquery.applicationno
   groupby: GROUP BY  bp.applicationno
   
 - reportName: MisPendencyReport
