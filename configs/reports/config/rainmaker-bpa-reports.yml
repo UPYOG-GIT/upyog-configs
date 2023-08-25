@@ -45,7 +45,7 @@ ReportDefinitions:
   query: SELECT
           bp.applicationno,
           MAX(CASE WHEN rn = 1 THEN Citizenuser.name END) AS owner_1,
-          MAX(CASE WHEN rn = 2 THEN Citizenuser.name END) AS owner_2,
+          MAX(CASE WHEN rn = 2 THEN Citizenuser.name END) AS owner_2
         FROM
           eg_bpa_buildingplan bp
           INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
