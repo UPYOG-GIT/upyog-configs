@@ -9,14 +9,20 @@ ReportDefinitions:
     label: Application No
     type: string
     source: bpa
-  - name: name
-    label: Owner Name
+  - name: owner_1
+    label: Owner Name1
     type: string
     source: bpa
     showColumn: true
     isLocalisationRequired: true
-  - name: name
-    label: Owner Name
+  - name: owner_2
+    label: Owner Name2
+    type: string
+    source: bpa
+    showColumn: true
+    isLocalisationRequired: true
+  - name: owner_3
+    label: Owner Name3
     type: string
     source: bpa
     showColumn: true
