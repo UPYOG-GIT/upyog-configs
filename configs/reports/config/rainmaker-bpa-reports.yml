@@ -9,85 +9,18 @@ ReportDefinitions:
     label: Application No
     type: string
     source: bpa
-  - name: applicationdate
-    label: Application Date
-    type: string
-    source: bpa 
-  - name: approval_date
-    label: Approval Date
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: username
-    label: Applicant Name
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: 
-  - name: altcontactnumber
-    label: Applicant Contact No.
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: emailid
-    label: Applicant Emailid
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix:
   - name: name
     label: Owner Name
     type: string
     source: bpa
     showColumn: true
     isLocalisationRequired: true
-  - name: mobilenumber
-    label: Owner Contact No.
+  - name: name
+    label: Owner Name
     type: string
     source: bpa
     showColumn: true
-  - name: khatano
-    label: Khasra No
-    type: string
-    source: bpa
-  - name: city
-    label: City
-    type: string
-    source: bpa
-  - name: plotno
-    label: Plot No
-    type: string
-    source: bpa
-  - name: plotarea
-    label: Plot Area
-    type: string
-    source: bpa
-  - name: occupancy_type
-    label: Occupancy Type
-    type: string
-    source: bpa
-  - name: patwari_halka_no
-    label: Patwari Halka No.
-    type: string
-    source: bpa
-  - name: prefees
-    label: Pre payment Amount
-    type: string
-    source: bpa
-  - name: postfees
-    label: Post Payment Amount
-    type: string
-    source: bpa
-  - name: status
-    label: Application Status
-    type: string
-    source: bpa
-  - name: Building_permission_certificate
-    label: Building permission Certificate Issued date
-    type: string
-    source: bpa	
+    isLocalisationRequired: true	
   searchParams:
   - name: ulb
     label: ULB
@@ -109,82 +42,28 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
-  query: SELECT 
-        billdetail.consumercode as applicationno, 
-        bp.tenantid, 
-        TO_CHAR(
-        TO_TIMESTAMP(bp.createdtime / 1000), 
-        'DD/MM/YYYY'
-        ) AS applicationdate, 
-        TO_CHAR(
-        TO_TIMESTAMP(bp.approvaldate / 1000), 
-      'DD/MM/YYYY'
-      ) AS approval_date, 
-        Architectuser.uuid as uuid, 
-        Architectuser.name AS username,
-        Architectuser.mobilenumber AS altcontactnumber,
-        Architectuser.emailid as emailid, 
-        STRING_AGG(DISTINCT Citizenuser.name, ', ') AS name, 
-        STRING_AGG(DISTINCT Citizenuser.mobilenumber, ', ') AS mobilenumber, 
-        adr.khataNo as khatano, 
-        adr.mauza AS city, 
-        adr.plotno as plotno, 
-        adr.plotArea as plotarea, 
-        adr.occupancy AS occupancy_type, 
-        adr.patwarihn AS patwari_halka_no, 
-        SUM(
-          CASE WHEN billdetail.businessservice = 'BPA.NC_APP_FEE' THEN billdetail.totalamount ELSE 0 END
-        ) AS prefees, 
-        SUM(
-          CASE WHEN billdetail.businessservice = 'BPA.NC_SAN_FEE' THEN billdetail.totalamount ELSE 0 END
-        ) AS postfees, 
-        CASE WHEN bp.status = 'APPROVED' THEN 'Approved' WHEN bp.status IN(
-          'PENDING_APPL_FEE', 'DOC_VERIFICATION_PENDING_BY_ENGINEER', 
-          'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 
-          'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 
-          'POST_FEE_APPROVAL_INPROGRESS', 
-          'PENDING_SANC_FEE_PAYMENT', 'CITIZEN_ACTION_PENDING_AT_DOC_VERIF'
-        ) THEN 'Pending' WHEN bp.status = 'REJECTED' THEN 'Rejected' END AS status, 
-        TO_CHAR(
-          TO_TIMESTAMP(bp.approvaldate / 1000), 
-          'DD/MM/YYYY'
-        ) AS Building_permission_certificate 
-        FROM 
-          egbs_billdetail_v1 billdetail 
-          INNER JOIN eg_bpa_buildingplan bp ON billdetail.consumercode = bp.applicationno 
-          INNER JOIN eg_pg_transactions txn on billdetail.billid = txn.bill_id 
-          INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid 
-          INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid 
-          INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid 
-          INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
-        WHERE 
-          1 = 1 
-          AND bp.status IN (
-            'APPROVED', 'REJECTED', 'PENDING_APPL_FEE', 
-            'DOC_VERIFICATION_PENDING_BY_ENGINEER', 
-            'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 
-            'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 
-            'POST_FEE_APPROVAL_INPROGRESS', 
-            'PENDING_SANC_FEE_PAYMENT', 'CITIZEN_ACTION_PENDING_AT_DOC_VERIF'
-          ) 
-          AND txn.txn_status = 'SUCCESS'
-  groupby: GROUP BY 
-            billdetail.consumercode, 
-            bp.createdtime, 
-            bp.approvaldate, 
-            Architectuser.emailid, 
-            adr.khataNo, 
-            adr.plotno, 
-            adr.plotArea, 
-            occupancy_type, 
-            patwari_halka_no, 
-            adr.mauza, 
-            bp.status, 
-            bp.tenantid, 
-            Architectuser.uuid,
-            Architectuser.name,
-            Architectuser.mobilenumber
-  orderby: order by billdetail.consumercode
+  query: WITH DistinctNames AS (
+          SELECT DISTINCT
+            bp.applicationno,
+            Citizenuser.name AS distinct_name,
+            ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn
+        FROM
+            eg_bpa_buildingplan bp
+            INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+            INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+          )
+
+      SELECT
+        bp.applicationno,
+        MAX(CASE WHEN rn = 1 THEN dn.distinct_name END) AS owner_1,
+        MAX(CASE WHEN rn = 2 THEN dn.distinct_name END) AS owner_2,
+        MAX(CASE WHEN rn = 3 THEN dn.distinct_name END) AS owner_3
+    FROM
+        eg_bpa_buildingplan bp
+        INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+        INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+        LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
+  groupby: GROUP BY bp.applicationno
   
 - reportName: MisPendencyReport
   decryptionPathId: MisPendencyReport
