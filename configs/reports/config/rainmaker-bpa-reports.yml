@@ -105,12 +105,12 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
   query: WITH DistinctNames AS (
-			  SELECT DISTINCT
-  			bp.applicationno,
-  			Citizenuser.name AS distinct_name,
-  			ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn,
-  			Citizenuser.mobilenumber AS distinct_no,
-  			ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.mobilenumber) AS rnn
+	 SELECT DISTINCT
+  	 bp.applicationno,
+	 Citizenuser.name AS distinct_name,
+  	ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn,
+	Citizenuser.mobilenumber AS distinct_no,
+	ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.mobilenumber) AS rnn
   		FROM
   			eg_bpa_buildingplan bp
   			INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
