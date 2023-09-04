@@ -1,10 +1,10 @@
 ReportDefinitions:
-reportName: bpaApplicationStatusReport
-decryptionPathId: bpaApplicationStatusReport
-summary: Fetches BPA data based on provided search parameters
-version: 1.0.0
-moduleName: rainmaker-bpa
-sourceColumns:
+- reportName: bpaApplicationStatusReport
+  decryptionPathId: bpaApplicationStatusReport
+  summary: Fetches BPA data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-bpa
+  sourceColumns:
   - name: applicationno
     label: Application No
     type: string
