@@ -105,7 +105,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate  
   query: WITH DistinctNames AS (
-  SELECT 
+          SELECT 
     DISTINCT bp.applicationno, 
     Citizenuser.name AS distinct_name, 
     ROW_NUMBER() OVER (
