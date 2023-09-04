@@ -136,13 +136,15 @@ ReportDefinitions:
           adr.plotArea AS plotarea, 
           adr.occupancy AS occupancy_type, 
           adr.patwarihn AS patwari_halka_no, 
-          CASE WHEN bp.status = 'APPROVED' THEN 'Approved' WHEN bp.status IN (
+          CASE WHEN bp.status = 'APPROVED' THEN 'Approved'
+                WHEN bp.status IN (
                                 'PENDING_APPL_FEE', 'DOC_VERIFICATION_PENDING_BY_ENGINEER', 
                                 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 
                                 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 
                                 'POST_FEE_APPROVAL_INPROGRESS', 
                                 'PENDING_SANC_FEE_PAYMENT', 'CITIZEN_ACTION_PENDING_AT_DOC_VERIF'
-                                  ) THEN 'Pending' WHEN bp.status = 'REJECTED' THEN 'Rejected' END AS status 
+                                  ) THEN 'Pending'
+                WHEN bp.status = 'REJECTED' THEN 'Rejected' END AS status 
             FROM 
               eg_bpa_buildingplan bp 
           INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid 
