@@ -132,11 +132,11 @@ SELECT bp.applicationno,bp.tenantid, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000)
     END AS status
 FROM
     eg_bpa_buildingplan bp
-		INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
-		INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
-		INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid
-		INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
-		LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
+   INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+   INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+   INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid
+   INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
+   LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
 groupby: GROUP BY bp.applicationno, bp.tenantid, adr.khataNo, adr.mauza, adr.plotno, adr.plotArea, adr.occupancy, adr.patwarihn, Architectuser.name, Architectuser.mobilenumber, Architectuser.emailid, bp.createdtime, bp.approvaldate, bp.status
 orderby: ORDER BY bp.applicationno
   
