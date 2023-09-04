@@ -152,8 +152,8 @@ ReportDefinitions:
     INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid
     INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
     LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
-groupby: GROUP BY bp.applicationno, bp.tenantid, adr.khataNo, adr.mauza, adr.plotno, adr.plotArea, adr.occupancy, adr.patwarihn, Architectuser.name, Architectuser.mobilenumber, Architectuser.emailid, bp.createdtime, bp.approvaldate, bp.status
-orderby: ORDER BY bp.applicationno
+  groupby: GROUP BY bp.applicationno, bp.tenantid, adr.khataNo, adr.mauza, adr.plotno, adr.plotArea, adr.occupancy, adr.patwarihn, Architectuser.name, Architectuser.mobilenumber, Architectuser.emailid, bp.createdtime, bp.approvaldate, bp.status
+  orderby: ORDER BY bp.applicationno
   
 - reportName: MisPendencyReport
   decryptionPathId: MisPendencyReport
