@@ -83,7 +83,7 @@ ReportDefinitions:
     label: Patwari Halka No.
     type: string
     source: bpa
-searchParams:
+  searchParams:
   - name: ulb
     label: ULB
     type: singlevaluelist
@@ -104,17 +104,17 @@ searchParams:
     source: bpa
     isMandatory: false
     searchClause: "AND bp.createdtime  <= $toDate"  
-query: |
-  WITH DistinctNames AS (
-    SELECT DISTINCT bp.applicationno, Citizenuser.name AS distinct_name,
-    ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn,
-    Citizenuser.mobilenumber AS distinct_no,
-    ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.mobilenumber) AS rnn
-    FROM eg_bpa_buildingplan bp
-    INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
-    INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
-  )
-  SELECT
+  query: |
+    WITH DistinctNames AS (
+     SELECT DISTINCT bp.applicationno, Citizenuser.name AS distinct_name,
+     ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn,
+     Citizenuser.mobilenumber AS distinct_no,
+     ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.mobilenumber) AS rnn
+     FROM eg_bpa_buildingplan bp
+     INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+     INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+    )
+   SELECT
     bp.applicationno,
     bp.tenantid,
     TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,
@@ -145,7 +145,7 @@ query: |
       ) THEN 'Pending'
       WHEN bp.status = 'REJECTED' THEN 'Rejected'
     END AS status
-  FROM
+   FROM
     eg_bpa_buildingplan bp
     INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
     INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
