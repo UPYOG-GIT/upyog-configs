@@ -110,7 +110,7 @@ ReportDefinitions:
         eg_bpa_buildingplan bp
         INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
         INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid)
-SELECT bp.applicationno,bp.tenantid, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000),'DD/MM/YYYY') AS approval_date, Architectuser.name AS username,
+   SELECT bp.applicationno,bp.tenantid, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS applicationdate,TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000),'DD/MM/YYYY') AS approval_date, Architectuser.name AS username,
     Architectuser.mobilenumber AS altcontactnumber, Architectuser.emailid AS emailid,
     MAX(CASE WHEN rn = 1 THEN dn.distinct_name END) AS owner_1,
     MAX(CASE WHEN rn = 2 THEN dn.distinct_name END) AS owner_2,
