@@ -1,110 +1,110 @@
 ReportDefinitions:
-  - reportName: bpaApplicationStatusReport
-    decryptionPathId: bpaApplicationStatusReport
-    summary: Fetches BPA data based on provided search parameters
-    version: 1.0.0
-    moduleName: rainmaker-bpa
-    sourceColumns:
-      - name: applicationno
-        label: Application No
-        type: string
-        source: bpa
-      - name: applicationdate
-        label: Application Date
-        type: string
-        source: bpa
-      - name: approval_date
-        label: Approval Date
-        type: string
-        source: bpa
-      - name: username
-        label: Architect Name
-        type: string
-        source: bpa
-      - name: altcontactnumber
-        label: Architect Contact No.
-        type: string
-        source: bpa
-      - name: emailid
-        label: Architect Mail ID.
-        type: string
-        source: bpa
-      - name: owner_1
-        label: Owner Name1
-        type: string
-        source: bpa
-        showColumn: true
-        isLocalisationRequired: true
-      - name: owner_2
-        label: Owner Name2
-        type: string
-        source: bpa
-        showColumn: true
-        isLocalisationRequired: true
-      - name: owner_3
-        label: Owner Name3
-        type: string
-        source: bpa
-        showColumn: true
-        isLocalisationRequired: true
-      - name: owner_1_no
-        label: Owner 1 Contact no.
-        type: string
-        source: bpa
-      - name: owner_2_no
-        label: Owner 2 Contact no.
-        type: string
-        source: bpa
-      - name: owner_3_no
-        label: Owner 3 Contact no.
-        type: string
-        source: bpa
-      - name: khatano
-        label: Khata No
-        type: string
-        source: bpa
-      - name: city
-        label: City
-        type: string
-        source: bpa
-      - name: plotno
-        label: Plot No
-        type: string
-        source: bpa
-      - name: plotarea
-        label: Plot Area
-        type: string
-        source: bpa
-      - name: occupancy_type
-        label: Occupancy Type
-        type: string
-        source: bpa
-      - name: patwari_halka_no
-        label: Patwari Halka No.
-        type: string
-        source: bpa
-    searchParams:
-      - name: ulb
-        label: ULB
-        type: singlevaluelist
-        pattern: "http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name"
-        source: bpa
-        wrapper: true
-        isMandatory: true
-        searchClause: "AND bp.tenantid = $ulb"
-      - name: fromDate
-        label: FromDate
-        type: epoch
-        source: bpa
-        isMandatory: false
-        searchClause: "AND bp.createdtime >= $fromDate"
-      - name: toDate
-        label: ToDate
-        type: epoch
-        source: bpa
-        isMandatory: false
-        searchClause: "AND bp.createdtime  <= $toDate"  
-    query: |
+- reportName: bpaApplicationStatusReport
+  decryptionPathId: bpaApplicationStatusReport
+  summary: Fetches BPA data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-bpa
+  sourceColumns:
+  - name: applicationno
+    label: Application No
+    type: string
+    source: bpa
+  - name: applicationdate
+    label: Application Date
+    type: string
+    source: bpa
+  - name: approval_date
+    label: Approval Date
+    type: string
+    source: bpa
+  - name: username
+    label: Architect Name
+    type: string
+    source: bpa
+  - name: altcontactnumber
+    label: Architect Contact No.
+    type: string
+    source: bpa
+  - name: emailid
+    label: Architect Mail ID.
+    type: string
+    source: bpa
+  - name: owner_1
+    label: Owner Name1
+    type: string
+    source: bpa
+    showColumn: true
+    isLocalisationRequired: true
+  - name: owner_2
+    label: Owner Name2
+    type: string
+    source: bpa
+    showColumn: true
+    isLocalisationRequired: true
+  - name: owner_3
+    label: Owner Name3
+    type: string
+    source: bpa
+    showColumn: true
+    isLocalisationRequired: true
+  - name: owner_1_no
+    label: Owner 1 Contact no.
+    type: string
+    source: bpa
+  - name: owner_2_no
+    label: Owner 2 Contact no.
+    type: string
+    source: bpa
+  - name: owner_3_no
+    label: Owner 3 Contact no.
+    type: string
+    source: bpa
+  - name: khatano
+    label: Khata No
+    type: string
+    source: bpa
+  - name: city
+    label: City
+    type: string
+    source: bpa
+  - name: plotno
+    label: Plot No
+    type: string
+    source: bpa
+  - name: plotarea
+    label: Plot Area
+    type: string
+    source: bpa
+  - name: occupancy_type
+    label: Occupancy Type
+    type: string
+    source: bpa
+  - name: patwari_halka_no
+    label: Patwari Halka No.
+    type: string
+    source: bpa
+  searchParams:
+  - name: ulb
+    label: ULB
+    type: singlevaluelist
+    pattern: "http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name"
+    source: bpa
+    wrapper: true
+    isMandatory: true
+    searchClause: "AND bp.tenantid = $ulb"
+  - name: fromDate
+    label: FromDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: "AND bp.createdtime >= $fromDate"
+  - name: toDate
+    label: ToDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: "AND bp.createdtime  <= $toDate"  
+  query: |
       WITH DistinctNames AS (
        SELECT DISTINCT bp.applicationno, Citizenuser.name AS distinct_name,
        ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn,
@@ -152,8 +152,8 @@ ReportDefinitions:
       INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid
       INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
       LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
-    groupby: GROUP BY bp.applicationno, bp.tenantid, adr.khataNo, adr.mauza, adr.plotno, adr.plotArea, adr.occupancy, adr.patwarihn, Architectuser.name, Architectuser.mobilenumber, Architectuser.emailid, bp.createdtime, bp.approvaldate, bp.status
-    orderby: ORDER BY bp.applicationno
+  groupby: GROUP BY bp.applicationno, bp.tenantid, adr.khataNo, adr.mauza, adr.plotno, adr.plotArea, adr.occupancy, adr.patwarihn, Architectuser.name, Architectuser.mobilenumber, Architectuser.emailid, bp.createdtime, bp.approvaldate, bp.status
+  orderby: ORDER BY bp.applicationno
   
 - reportName: MisPendencyReport
   decryptionPathId: MisPendencyReport
