@@ -193,6 +193,10 @@ ReportDefinitions:
     label: Patwari Halka No.
     type: string
     source: obps
+  - name: bp.status
+    label: Status
+    type: string
+    source: obps
   searchParams:
   - name: ulb
     label: ULB
