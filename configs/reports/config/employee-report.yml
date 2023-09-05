@@ -138,20 +138,20 @@ ReportDefinitions:
       INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
       LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
   groupby: GROUP BY 
-			bp.applicationno, 
-			bp.tenantid, 
-			adr.khataNo, 
-			adr.mauza, 
-			adr.plotno, 
-			adr.plotArea, 
-			adr.occupancy, 
-			adr.patwarihn, 
-			Architectuser.name, 
-			Architectuser.mobilenumber, 
-			Architectuser.emailid, 
-			bp.createdtime, 
-			bp.approvaldate, 
-			bp.status
+           bp.applicationno, 
+           bp.tenantid, 
+           adr.khataNo, 
+           adr.mauza, 
+          adr.plotno, 
+          adr.plotArea, 
+          adr.occupancy, 
+          adr.patwarihn, 
+          Architectuser.name, 
+          Architectuser.mobilenumber, 
+          Architectuser.emailid, 
+          bp.createdtime, 
+          bp.approvaldate, 
+          bp.status
   order by: ORDER BY bp.applicationno 
   
 
