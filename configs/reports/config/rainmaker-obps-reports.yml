@@ -1,4 +1,120 @@
-ReportDefinitions:
+ReportDefinitions: 
+- reportName: ArchitectMisReport
+  decryptionPathId: ArchitectMisReport
+  summary: Fetches Architect Details Report data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-obps
+  sourceColumns:
+  - name: name
+    label: Architect Name
+    type: string
+    source: obps
+  - name: mobilenumber
+    label: Contact No
+    type: string
+    source: obps
+  - name: emailid
+    label: Email Id
+    type: string
+    source: obps
+  - name: validity
+    label: Validity
+    type: string
+    source: obps
+  - name: Designation
+    label: Designation
+    type: string
+    source: obps 
+  searchParams:
+  - name: ulb
+    label: ULB
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: obps
+    wrapper: true
+    isMandatory: false
+    disabled: true
+    searchClause: and usr.tenantid=$ulb
+  query: select usr.name as name,usr.tenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,TO_CHAR(usr.validitydate, 'DD/MM/YYYY') AS validity,
+        CASE
+         WHEN rolev1.role_code='BPA_ARCHITECT' THEN 'Architect'
+         WHEN rolev1.role_code='BPA_SUPERVISOR' THEN 'Supervisor'
+         WHEN rolev1.role_code='BPA_STRUCTURALENGINEER' THEN 'Structural Engineer'
+         WHEN rolev1.role_code='BPA_BUILDER' THEN 'Builder'
+         WHEN rolev1.role_code='BPA_ENGINEER' THEN 'Engineer'
+         END AS Designation from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code in ('BPA_ARCHITECT','BPA_SUPERVISOR','BPA_STRUCTURALENGINEER','BPA_BUILDER','BPA_ENGINEER')
+ 
+- reportName: ApplicationStatusReport
+  decryptionPathId: ApplicationStatusReport
+  summary: Fetches application data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-obps
+  sourceColumns:
+  - name: Applicationno
+    label: Application No
+    type: string
+    source: obps
+  - name: name
+    label: Architect Name
+    type: string
+    source: obps 
+  - name: username
+    label: Owner Name
+    type: string
+    source: obps
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: applicationdate
+    label: Application Date
+    type: string
+    source: obps
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: approvaldate
+    label: Approval Date
+    type: string
+    source: obps
+    isLocalisationRequired: true
+    localisationPrefix: 
+  - name: status
+    label: status
+    type: string
+    source: obps
+    isLocalisationRequired: true
+    localisationPrefix:
+  searchParams:
+  - name: ulb
+    label: ULB
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: obps
+    wrapper: true
+    isMandatory: true
+    searchClause: AND bp.tenantid = $ulb
+  - name: fromDate
+    label: FromDate
+    type: epoch
+    source: obps
+    isMandatory: false
+    searchClause: AND bp.createdtime >= $fromDate
+  - name: toDate
+    label: ToDate
+    type: epoch
+    source: obps
+    isMandatory: false
+    searchClause: AND bp.createdtime  <= $toDate  
+  query: SELECT applicationno as Applicationno, bp.tenantid, Architectuser.name as name,Citizenuser.name as username,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,CASE WHEN bp.approvaldate = 0 THEN NULL ELSE TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') END AS approvaldate,
+        CASE 
+        WHEN bp.status='DOC_VERIFICATION_PENDING_BY_ENGINEER' OR bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 'Pending at Sub-Engineer'
+        WHEN bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER' THEN 'Pending at Building Officer'
+        WHEN bp.status='POST_FEE_APPROVAL_INPROGRESS' THEN 'Approved by Building officer'
+        WHEN bp.status='APPROVAL_INPROGRESS' THEN 'Pending at final authority'
+        WHEN bp.status='PENDING_SANC_FEE_PAYMENT' THEN 'Approved by final Authority and pending post fee'
+        WHEN bp.status='APPROVED' THEN 'Post fee paid and issued permit order'
+    END AS status
+    FROM eg_bpa_buildingplan bp INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
+    where bp.status in('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER','POST_FEE_APPROVAL_INPROGRESS','APPROVAL_INPROGRESS','PENDING_SANC_FEE_PAYMENT','APPROVED')
+    
 - reportName: bpaApplicationStatusReport
   decryptionPathId: bpaApplicationStatusReport
   summary: Fetches BPA data based on provided search parameters
@@ -147,124 +263,7 @@ ReportDefinitions:
       INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
       LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
   groupby: GROUP BY bp.applicationno, bp.tenantid, adr.khataNo, adr.mauza, adr.plotno, adr.plotArea, adr.occupancy, adr.patwarihn, Architectuser.name, Architectuser.mobilenumber, Architectuser.emailid, bp.createdtime, bp.approvaldate, bp.status	  
-  orderby: ORDER BY bp.applicationno
-  
-- reportName: ArchitectMisReport
-  decryptionPathId: ArchitectMisReport
-  summary: Fetches Architect Details Report data based on provided search parameters
-  version: 1.0.0
-  moduleName: rainmaker-obps
-  sourceColumns:
-  - name: name
-    label: Architect Name
-    type: string
-    source: obps
-  - name: mobilenumber
-    label: Contact No
-    type: string
-    source: obps
-  - name: emailid
-    label: Email Id
-    type: string
-    source: obps
-  - name: validity
-    label: Validity
-    type: string
-    source: obps
-  - name: Designation
-    label: Designation
-    type: string
-    source: obps 
-  searchParams:
-  - name: ulb
-    label: ULB
-    type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: obps
-    wrapper: true
-    isMandatory: false
-    disabled: true
-    searchClause: and usr.tenantid=$ulb
-  query: select usr.name as name,usr.tenantid,usr.mobilenumber as mobilenumber,usr.emailid as emailid,TO_CHAR(usr.validitydate, 'DD/MM/YYYY') AS validity,
-        CASE
-         WHEN rolev1.role_code='BPA_ARCHITECT' THEN 'Architect'
-         WHEN rolev1.role_code='BPA_SUPERVISOR' THEN 'Supervisor'
-         WHEN rolev1.role_code='BPA_STRUCTURALENGINEER' THEN 'Structural Engineer'
-         WHEN rolev1.role_code='BPA_BUILDER' THEN 'Builder'
-         WHEN rolev1.role_code='BPA_ENGINEER' THEN 'Engineer'
-         END AS Designation from eg_user usr inner join eg_userrole_v1 rolev1 on usr.id=rolev1.user_id where rolev1.role_code in ('BPA_ARCHITECT','BPA_SUPERVISOR','BPA_STRUCTURALENGINEER','BPA_BUILDER','BPA_ENGINEER')
- 
-- reportName: ApplicationStatusReport
-  decryptionPathId: ApplicationStatusReport
-  summary: Fetches application data based on provided search parameters
-  version: 1.0.0
-  moduleName: rainmaker-obps
-  sourceColumns:
-  - name: Applicationno
-    label: Application No
-    type: string
-    source: obps
-  - name: name
-    label: Architect Name
-    type: string
-    source: obps 
-  - name: username
-    label: Owner Name
-    type: string
-    source: obps
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: applicationdate
-    label: Application Date
-    type: string
-    source: obps
-    isLocalisationRequired: true
-    localisationPrefix:
-  - name: approvaldate
-    label: Approval Date
-    type: string
-    source: obps
-    isLocalisationRequired: true
-    localisationPrefix: 
-  - name: status
-    label: status
-    type: string
-    source: obps
-    isLocalisationRequired: true
-    localisationPrefix:
-  searchParams:
-  - name: ulb
-    label: ULB
-    type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: obps
-    wrapper: true
-    isMandatory: true
-    searchClause: AND bp.tenantid = $ulb
-  - name: fromDate
-    label: FromDate
-    type: epoch
-    source: obps
-    isMandatory: false
-    searchClause: AND bp.createdtime >= $fromDate
-  - name: toDate
-    label: ToDate
-    type: epoch
-    source: obps
-    isMandatory: false
-    searchClause: AND bp.createdtime  <= $toDate  
-  query: SELECT applicationno as Applicationno, bp.tenantid, Architectuser.name as name,Citizenuser.name as username,TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,CASE WHEN bp.approvaldate = 0 THEN NULL ELSE TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') END AS approvaldate,
-        CASE 
-        WHEN bp.status='DOC_VERIFICATION_PENDING_BY_ENGINEER' OR bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 'Pending at Sub-Engineer'
-        WHEN bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER' THEN 'Pending at Building Officer'
-        WHEN bp.status='POST_FEE_APPROVAL_INPROGRESS' THEN 'Approved by Building officer'
-        WHEN bp.status='APPROVAL_INPROGRESS' THEN 'Pending at final authority'
-        WHEN bp.status='PENDING_SANC_FEE_PAYMENT' THEN 'Approved by final Authority and pending post fee'
-        WHEN bp.status='APPROVED' THEN 'Post fee paid and issued permit order'
-    END AS status
-    FROM eg_bpa_buildingplan bp INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid 
-    where bp.status in('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER','POST_FEE_APPROVAL_INPROGRESS','APPROVAL_INPROGRESS','PENDING_SANC_FEE_PAYMENT','APPROVED')
-     
+  orderby: ORDER BY bp.applicationno   
     
 
  
