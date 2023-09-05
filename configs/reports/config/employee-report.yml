@@ -1,117 +1,158 @@
 ReportDefinitions:
-- reportName: EmployeeReport
-  decryptionPathId: EmployeeReport
-  summary: Fetches employee data based on provided search parameters
+- reportName: bpaApplicationStatusReport
+  decryptionPathId: bpaApplicationStatusReport
+  summary: Fetches BPA data based on provided search parameters
   version: 1.0.0
-  moduleName: hrms
-  externalService:
-  - entity: $.MdmsRes.common-masters.Department
-    apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Department&tenantId=$tenantId
-    keyOrder: name,code
-    tableName: tbl_def_dept
-  - entity: $.MdmsRes.common-masters.Designation
-    apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Designation&tenantId=$tenantId
-    keyOrder: name,code
-    tableName: tbl_def_desig
-  - entity: $.MdmsRes.ACCESSCONTROL-ROLES.roles
-    apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=ACCESSCONTROL-ROLES&masterName=roles&tenantId=$tenantId
-    keyOrder: name,code
-    tableName: tbl_def_roles
+  moduleName: eg_hrms_employee
   sourceColumns:
-  - name: id
-    label: reports.hrms.id
+  - name: applicationno
+    label: Application No
     type: string
     source: eg_hrms_employee
-  - name: name
-    label: reports.hrms.name
+  - name: applicationdate
+    label: Application Date
     type: string
     source: eg_hrms_employee
-  - name: rolecodes
-    label: reports.hrms.role
-    type: stringarray
-    source: eg_hrms_employee
-    isLocalisationRequired: true
-    localisationPrefix: ACCESSCONTROL_ROLES_ROLES_
-  - name: designation
-    label: reports.hrms.designation
+  - name: approval_date
+    label: Approval Date
     type: string
     source: eg_hrms_employee
-    isLocalisationRequired: true
-    localisationPrefix: COMMON_MASTERS_DESIGNATION_
-  - name: department
-    label: reports.hrms.department
+  - name: username
+    label: Architect Name
     type: string
     source: eg_hrms_employee
-    isLocalisationRequired: true
-    localisationPrefix: COMMON_MASTERS_DEPARTMENT_
+  - name: altcontactnumber
+    label: Architect Contact No.
+    type: string
+    source: eg_hrms_employee
+  - name: emailid
+    label: Architect Mail ID.
+    type: string
+    source: eg_hrms_employee
+  - name: owner_1
+    label: Owner Name1
+    type: string
+    source: eg_hrms_employee
+  - name: owner_2
+    label: Owner Name2
+    type: string
+    source: eg_hrms_employee
+  - name: owner_3
+    label: Owner Name3
+    type: string
+    source: eg_hrms_employee
+  - name: owner_1_no
+    label: Owner 1 Contact no.
+    type: string
+    source: eg_hrms_employee
+  - name: owner_2_no
+    label: Owner 2 Contact no.
+    type: string
+    source: eg_hrms_employee
+  - name: owner_3_no
+    label: Owner 3 Contact no.
+    type: string
+    source: eg_hrms_employee
+  - name: khatano
+    label: Khata No
+    type: string
+    source: eg_hrms_employee
+  - name: city
+    label: City
+    type: string
+    source: eg_hrms_employee
+  - name: plotno
+    label: Plot No
+    type: string
+    source: eg_hrms_employee
+  - name: plotarea
+    label: Plot Area
+    type: string
+    source: eg_hrms_employee
+  - name: occupancy_type
+    label: Occupancy Type
+    type: string
+    source: eg_hrms_employee
+  - name: patwari_halka_no
+    label: Patwari Halka No.
+    type: string
+    source: eg_hrms_employee
   - name: status
-    label: reports.hrms.status
+    label: Status
     type: string
     source: eg_hrms_employee
-    isLocalisationRequired: true
-    localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
   searchParams:
   - name: ulb
     label: ULB
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: pt
+    source: eg_hrms_employee
     wrapper: true
     isMandatory: true
-    searchClause: AND emp_data.tenantid = $ulb
-  - name: status
-    label: reports.hrms.status
-    type: multivaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=cg&moduleName=egov-hrms&masterName=EmployeeStatus|$.MdmsRes.egov-hrms.EmployeeStatus[?(@.active)].code|$.MdmsRes.egov-hrms.EmployeeStatus[?(@.active)].code
-    source: seva
+    searchClause: AND bp.tenantid = $ulb
+  - name: fromDate
+    label: FromDate
+    type: epoch
+    source: eg_hrms_employee
     isMandatory: false
-    isLocalisationRequired: true
-    localisationPrefix: EGOV_HRMS_EMPLOYEESTATUS_
-    searchClause: AND emp_data.employeestatus IN ( $status )
-  - name: role
-    label: reports.hrms.role
-    type: multivaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=cg&moduleName=ACCESSCONTROL-ROLES&masterName=roles|$.MdmsRes.ACCESSCONTROL-ROLES.roles[?(@.code nin ['CITIZEN'])].code|$.MdmsRes.ACCESSCONTROL-ROLES.roles[?(@.code nin ['Citizen'])].code
+    searchClause: AND bp.createdtime >= $fromDate
+  - name: toDate
+    label: ToDate
+    type: epoch
+    source: eg_hrms_employee
     isMandatory: false
-    isLocalisationRequired: true
-    localisationPrefix: ACCESSCONTROL_ROLES_ROLES_
-    searchClause: AND ARRAY[ $role ]::varchar[] && emp_data.rolecodes::varchar[]
-  - name: deptname
-    label: reports.pgr.dept.name
-    type: multivaluelist
-    source: eg_pgr_service
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=common-masters&masterName=Department|$.MdmsRes.common-masters.Department[*].code|$.MdmsRes.common-masters.Department[*].code
-    isMandatory: false
-    isLocalisationRequired: true
-    localisationPrefix: COMMON_MASTERS_DEPARTMENT_
-    searchClause: AND deptmap_def.code IN ($deptname)
+    searchClause: AND bp.createdtime  <= $toDate
   query: |
-    WITH emp_data AS (SELECT DISTINCT
-      ehe.id,
-      ehe.uuid,
-      ehe.tenantid,
-      eu.name,
-      (SELECT ARRAY(SELECT DISTINCT er.name from eg_user eu LEFT JOIN eg_userrole_v1 eur ON eu.id=eur.user_id AND eu.tenantid=eur.user_tenantid LEFT JOIN (VALUES tbl_def_roles) AS er(name,code) ON eur.role_code=er.code WHERE eu.uuid=ehe.uuid AND er.name IS NOT NULL)) as role,
-      (SELECT ARRAY(SELECT DISTINCT er.code from eg_user eu LEFT JOIN eg_userrole_v1 eur ON eu.id=eur.user_id AND eu.tenantid=eur.user_tenantid LEFT JOIN (VALUES tbl_def_roles) AS er(name,code) ON eur.role_code=er.code WHERE eu.uuid=ehe.uuid AND er.code IS NOT NULL)) as rolecodes,
-      eha.designation,
-      eha.department,
-      ehe.employeestatus
-      FROM eg_hrms_employee ehe
-      LEFT OUTER JOIN eg_user eu ON ehe.uuid = eu.uuid
-      LEFT OUTER JOIN eg_hrms_assignment eha ON eu.uuid = eha.employeeid
-      WHERE eu.active = true)
-    SELECT emp_data.id as id,
-      emp_data.name as name,
-      ARRAY_TO_STRING(emp_data.role, ',') as role,
-      ARRAY_TO_STRING(emp_data.rolecodes, ',') as rolecodes,
-      desigmap_def.code as designation,
-      deptmap_def.code as department,
-      emp_data.employeestatus as status
-    FROM emp_data
-    INNER JOIN (VALUES tbl_def_dept) AS deptmap_def(name,code) ON deptmap_def.code=emp_data.department
-    INNER JOIN (VALUES tbl_def_desig) AS desigmap_def(name,code) ON desigmap_def.code=emp_data.designation
-    WHERE 1=1
-  order by: ehe.id ASC
+    WITH DistinctNames AS ( SELECT DISTINCT bp.applicationno,Citizenuser.name AS distinct_name, ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.name) AS rn, Citizenuser.mobilenumber AS distinct_no, ROW_NUMBER() OVER (PARTITION BY bp.applicationno ORDER BY Citizenuser.mobilenumber) AS rnn FROM eg_bpa_buildingplan bp INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid) SELECT bp.applicationno, bp.tenantid, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000), 'DD/MM/YYYY') AS applicationdate,
+      TO_CHAR(TO_TIMESTAMP(bp.approvaldate / 1000), 'DD/MM/YYYY') AS approval_date,
+      Architectuser.name AS username,
+      Architectuser.mobilenumber AS altcontactnumber,
+      Architectuser.emailid AS emailid,
+      MAX(CASE WHEN rn = 1 THEN dn.distinct_name END) AS owner_1,
+      MAX(CASE WHEN rn = 2 THEN dn.distinct_name END) AS owner_2,
+      MAX(CASE WHEN rn = 3 THEN dn.distinct_name END) AS owner_3,
+      MAX(CASE WHEN rnn = 1 THEN dn.distinct_no END) AS owner_1_no,
+      MAX(CASE WHEN rnn = 2 THEN dn.distinct_no END) AS owner_2_no,
+      MAX(CASE WHEN rnn = 3 THEN dn.distinct_no END) AS owner_3_no,
+      adr.khataNo AS khatano,
+      adr.mauza AS city,
+      adr.plotno AS plotno,
+      adr.plotArea AS plotarea,
+      adr.occupancy AS occupancy_type,
+      adr.patwarihn AS patwari_halka_no,
+      CASE
+        WHEN bp.status = 'APPROVED' THEN 'Approved'
+        WHEN bp.status IN (
+          'PENDING_APPL_FEE', 'DOC_VERIFICATION_PENDING_BY_ENGINEER',
+          'DOC_VERIFICATION_INPROGRESS_BY_BUILDER',
+          'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER',
+          'POST_FEE_APPROVAL_INPROGRESS',
+          'PENDING_SANC_FEE_PAYMENT', 'CITIZEN_ACTION_PENDING_AT_DOC_VERIF'
+        ) THEN 'Pending'
+        WHEN bp.status = 'REJECTED' THEN 'Rejected'
+      END AS status  FROM
+     eg_bpa_buildingplan bp
+      INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+      INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+      INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid
+      INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
+      LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
+  groupby: GROUP BY 
+			bp.applicationno, 
+			bp.tenantid, 
+			adr.khataNo, 
+			adr.mauza, 
+			adr.plotno, 
+			adr.plotArea, 
+			adr.occupancy, 
+			adr.patwarihn, 
+			Architectuser.name, 
+			Architectuser.mobilenumber, 
+			Architectuser.emailid, 
+			bp.createdtime, 
+			bp.approvaldate, 
+			bp.status
+  order by: ORDER BY bp.applicationno 
   
 
 
