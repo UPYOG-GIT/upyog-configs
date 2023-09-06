@@ -5,54 +5,60 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-bpa
   sourceColumns:
-  - name: Pending_by_subengineer
+  - name: Name_of_ULB
+    label: ULB
+    type: string
+    source: bpa
+  - name: total_cases_uploaded
     label: Pending by Sub Engineer
     type: string
     source: bpa
-  - name: Pending_by_Builder
+  - name: Total_Pending_Cases
     label: Pending by Builder
     type: string
     source: bpa
-  - name: Pending_by_commissioner
+  - name: Case_Pending_at_Sub_Engineer
     label: Pending by Commissioner
     type: string
     source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: ""
-  - name: Pending_by_architect
+  - name: Case_Pending_at_Builder
     label: Pending by Architect
     type: string
     source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: ""
-  - name: Total_pending_cases
+  - name: Case_Pending_at_Commisoner
     label: Total Pending Cases
     type: string
     source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: ""
   searchParams:
+  - name: ulb
+    label: ULB
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantId&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: bpa
+    wrapper: true
+    isMandatory: true
+    disabled: true
+    searchClause: AND bp.tenantid = $ulb
   - name: fromDate
     label: FromDate
     type: epoch
     source: bpa
     isMandatory: false
-    disabled: true
-    searchClause: AND 1=1
+    searchClause: AND bp.createdtime >= $fromDate
   - name: toDate
     label: ToDate
     type: epoch
     source: bpa
     isMandatory: false
-    searchClause: AND 1=1
+    searchClause: AND bp.createdtime  <= $toDate 
 
-  query: select Pending_by_subengineer,  Pending_by_Builder, Pending_by_commissioner, Pending_by_architect, (Pending_by_subengineer + Pending_by_Builder + Pending_by_commissioner + Pending_by_architect ) as Total_pending_cases from (
-        SELECT
-      COUNT(CASE WHEN status = 'DOC_VERIFICATION_PENDING_BY_ENGINEER' THEN 1 END) AS Pending_by_subengineer,
-      COUNT(CASE WHEN status = 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' THEN 1 END) AS Pending_by_Builder,
-      COUNT(CASE WHEN status = 'PENDINGAPPROVAL' THEN 1 END) AS Pending_by_commissioner,
-      COUNT(CASE WHEN status = 'PENDING_APPL_FEE' THEN 1 END) AS Pending_by_architect
-      FROM  eg_bpa_buildingplan WHERE createdtime >= $fromDate) as t WHERE 1=1
+  query: select ms.message as Name_of_ULB,count(*) as total_cases_uploaded,
+   COUNT(CASE WHEN bp.status IN ('DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'POST_FEE_APPROVAL_INPROGRESS', 'APPROVAL_INPROGRESS') THEN 1 END) AS Total_Pending_Cases,
+   COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' or bp.status='POST_FEE_APPROVAL_INPROGRESS' then 1 end) as Case_Pending_at_Sub_Engineer,
+   COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER'  then 1 end) as Case_Pending_at_Builder,
+   COUNT (case when bp.status='APPROVAL_INPROGRESS' then 1 end) as Case_Pending_at_Commisoner
+   from eg_bpa_buildingplan bp inner join message ms on bp.tenantid = ms.code where 1=1
+  groupby:  group by bp.tenantid,ms.message
   
 - reportName: HistoryMisReport
   decryptionPathId: HistoryMisReport
