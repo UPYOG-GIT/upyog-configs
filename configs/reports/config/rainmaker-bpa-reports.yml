@@ -10,23 +10,23 @@ ReportDefinitions:
     type: string
     source: bpa
   - name: total_cases_uploaded
-    label: Pending by Sub Engineer
+    label: Total Cases Uploaded
     type: string
     source: bpa
   - name: Total_Pending_Cases
-    label: Pending by Builder
+    label: Total Pending Cases
     type: string
     source: bpa
   - name: Case_Pending_at_Sub_Engineer
-    label: Pending by Commissioner
+    label: Cases Pending at Sub Engineer
     type: string
     source: bpa
   - name: Case_Pending_at_Builder
-    label: Pending by Architect
+    label: Cases Pending at Builder
     type: string
     source: bpa
   - name: Case_Pending_at_Commisoner
-    label: Total Pending Cases
+    label: Cases Pending at Commissoner
     type: string
     source: bpa
   searchParams:
@@ -52,7 +52,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND 1=1
 
-  query: select ms.message as Name_of_ULB, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY'), bp.tenantid, count(*) as total_cases_uploaded,
+  query: select ms.message as Name_of_ULB , bp.tenantid, count(*) as total_cases_uploaded,
    COUNT(CASE WHEN bp.status IN ('DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'POST_FEE_APPROVAL_INPROGRESS', 'APPROVAL_INPROGRESS') THEN 1 END) AS Total_Pending_Cases,
    COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' or bp.status='POST_FEE_APPROVAL_INPROGRESS' then 1 end) as Case_Pending_at_Sub_Engineer,
    COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER'  then 1 end) as Case_Pending_at_Builder,
