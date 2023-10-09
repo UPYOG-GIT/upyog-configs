@@ -1215,12 +1215,12 @@
                 "responseMapping": [
                   {
                     "variable": "logoImage",
-                    "value": "$.MdmsRes.tenant.tenants[0].logoId",
+                    "value": "$.MdmsRes.tenant.tenants[0].logoId3",
                     "type": "image"
                   },
 				  {
                     "variable": "logoImage1",
-                    "value": "$.MdmsRes.tenant.tenants[0].logoId1",
+                    "value": "$.MdmsRes.tenant.tenants[0].logoId3",
                     "type": "image"
                   },
                   {
