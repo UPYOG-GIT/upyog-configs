@@ -136,7 +136,7 @@ ReportDefinitions:
       INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
       INNER JOIN eg_land_address adr ON adr.landinfoid = bp.landid
       INNER JOIN eg_user Architectuser ON bp.createdby = Architectuser.uuid
-      LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno
+      LEFT JOIN DistinctNames AS dn ON bp.applicationno = dn.applicationno where 1=1
   groupby: GROUP BY 
            bp.applicationno, 
            bp.tenantid, 
