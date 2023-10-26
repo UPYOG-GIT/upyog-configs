@@ -124,7 +124,7 @@ ReportDefinitions:
   - name: ulb
     label: ULB
     type: singlevaluelist
-    value: ${requestPayload.tenantid}
+    searchClause: AND bp.tenantid = ${request.payload.tenantid}
   - name: fromDate
     label: FromDate
     type: epoch
