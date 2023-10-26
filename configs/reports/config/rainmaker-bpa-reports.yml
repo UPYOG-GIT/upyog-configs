@@ -52,6 +52,8 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND 1=1
 
+    
+
   query: select ms.message as Name_of_ULB , bp.tenantid, count(*) as total_cases_uploaded,
    COUNT(CASE WHEN bp.status IN ('INITIATED','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'POST_FEE_APPROVAL_INPROGRESS', 'APPROVAL_INPROGRESS') THEN 1 END) AS Total_Pending_Cases,
    COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' or bp.status='POST_FEE_APPROVAL_INPROGRESS' then 1 end) as Case_Pending_at_Sub_Engineer,
@@ -121,10 +123,12 @@ ReportDefinitions:
     isLocalisationRequired: true
     localisationPrefix:
   searchParams:
-  - name: ulb
+ - name: ulb
     label: ULB
     type: singlevaluelist
-    searchClause: AND bp.tenantid = ${request.payload.tenantid}
+  - name: tenantid
+    label: Tenant ID
+    type: string
   - name: fromDate
     label: FromDate
     type: epoch
