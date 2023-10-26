@@ -124,12 +124,7 @@ ReportDefinitions:
   - name: ulb
     label: ULB
     type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=${requestPayload.tenantid}&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: bpa
-    wrapper: true
-    isMandatory: true
-    disabled: true
-    searchClause: AND bp.tenantid = ${requestPayload.tenantid}
+    value: ${requestPayload.tenantid}
   - name: fromDate
     label: FromDate
     type: epoch
