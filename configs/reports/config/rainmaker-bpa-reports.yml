@@ -120,9 +120,6 @@ ReportDefinitions:
     isLocalisationRequired: true
     localisationPrefix:
   searchParams:
-  - name: tenantid
-    label: Tenant ID
-    type: string
   - name: fromDate
     label: FromDate
     type: epoch
