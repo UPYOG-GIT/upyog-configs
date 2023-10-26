@@ -126,6 +126,7 @@ ReportDefinitions:
  - name: ulb
     label: ULB
     type: singlevaluelist
+    searchClause: AND bp.tenantid = $tenantid
   - name: tenantid
     label: Tenant ID
     type: string
