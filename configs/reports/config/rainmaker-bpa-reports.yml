@@ -412,7 +412,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate 
-  query: SELECT ms.messageas Name_of_ULB,bp.tenantid,
+  query: SELECT ms.message as Name_of_ULB,bp.tenantid,
          COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS NON_DIRECT_CASES_APPLIED,
          COUNT(DISTINCT CASE WHEN bp.status = 'APPROVED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS APPROVED_CASES,
          COUNT(DISTINCT CASE WHEN bp.status = 'REJECTED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS REJECTED_CASES,
