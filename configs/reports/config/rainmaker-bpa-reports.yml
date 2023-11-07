@@ -362,7 +362,7 @@ ReportDefinitions:
   groupby: group by bp.tenantid,ms.message
   orderby: order by bp.tenantid,ms.message
 
-  - reportName: NonDirectBhavanAnugyaReport
+- reportName: NonDirectBhavanAnugyaReport
   decryptionPathId: NonDirectBhavanAnugyaReport
   summary: Fetches Non Direct Bhavan Anugya Report data based on provided search parameters
   version: 1.0.0
