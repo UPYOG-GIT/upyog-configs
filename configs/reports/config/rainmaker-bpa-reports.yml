@@ -413,13 +413,11 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bp.createdtime  <= $toDate 
   query: SELECT ms.messageas Name_of_ULB,bp.tenantid,
-		     COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno
-		     ELSE NULL END) AS NON_DIRECT_CASES_APPLIED,
-		     COUNT(DISTINCT CASE WHEN bp.status = 'APPROVED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS APPROVED_CASES,
-		     COUNT(DISTINCT CASE WHEN bp.status = 'REJECTED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL
-		     END) AS REJECTED_CASES,
-		     COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status NOT IN ('APPROVED', 'REJECTED') THEN bp.applicationno ELSE NULL END) AS INPROCESS
-		     FROM eg_bpa_buildingplan bp
-		     inner join message ms on bp.tenantid = ms.code 
-		     INNER JOIN egbs_billdetail_v1 bd ON bp.applicationno = bd.consumercode
+         COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS NON_DIRECT_CASES_APPLIED,
+         COUNT(DISTINCT CASE WHEN bp.status = 'APPROVED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS APPROVED_CASES,
+         COUNT(DISTINCT CASE WHEN bp.status = 'REJECTED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS REJECTED_CASES,
+         COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status NOT IN ('APPROVED', 'REJECTED') THEN bp.applicationno ELSE NULL END) AS INPROCESS
+         FROM eg_bpa_buildingplan bp
+         inner join message ms on bp.tenantid = ms.code 
+         INNER JOIN egbs_billdetail_v1 bd ON bp.applicationno = bd.consumercode
   groupby: GROUP BY bp.tenantid,ms.message
