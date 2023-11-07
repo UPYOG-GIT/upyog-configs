@@ -361,3 +361,65 @@ ReportDefinitions:
           count(case when (bp.status = 'REASSIGN' and txn_status='SUCCESS' and txn_amount=1.00) then 1 end ) as Reassign, 'NA' as Plinth_Level_Site_Inspection from eg_bpa_buildingplan bp inner join message ms on bp.tenantid = ms.code inner join eg_user usr on bp.createdby = usr.uuid JOIN eg_pg_transactions bd ON bp.applicationno = bd.consumer_code  where 1 = 1 
   groupby: group by bp.tenantid,ms.message
   orderby: order by bp.tenantid,ms.message
+
+  - reportName: NonDirectBhavanAnugyaReport
+  decryptionPathId: NonDirectBhavanAnugyaReport
+  summary: Fetches Non Direct Bhavan Anugya Report data based on provided search parameters
+  version: 1.0.0
+  moduleName: rainmaker-bpa
+  sourceColumns:
+  - name: Name_of_ULB
+    label: Name Of ULB
+    type: string
+    source: bpa
+  - name: NON_DIRECT_CASES_APPLIED
+    label: NON DIRECT CASES APPLIED
+    type: string
+    source: bpa
+  - name: APPROVED_CASES
+    label: APPROVED CASES
+    type: string
+    source: bpa
+  - name: REJECTED_CASES
+    label: REJECT CASES
+    type: string
+    source: bpa
+  - name: INPROCESS
+    label: INPROCESS CASES
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  searchParams:
+  - name: ULB
+    label: ULB
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: bpa
+    wrapper: true
+    isMandatory: true
+    disabled: true
+    searchClause: AND bp.tenantid = $ulb
+  - name: fromDate
+    label: FromDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: AND bp.createdtime >= $fromDate
+  - name: toDate
+    label: ToDate
+    type: epoch
+    source: bpa
+    isMandatory: false
+    searchClause: AND bp.createdtime  <= $toDate 
+  query: SELECT ms.messageas Name_of_ULB,bp.tenantid,
+		     COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno
+		     ELSE NULL END) AS NON_DIRECT_CASES_APPLIED,
+		     COUNT(DISTINCT CASE WHEN bp.status = 'APPROVED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS APPROVED_CASES,
+		     COUNT(DISTINCT CASE WHEN bp.status = 'REJECTED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL
+		     END) AS REJECTED_CASES,
+		     COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status NOT IN ('APPROVED', 'REJECTED') THEN bp.applicationno ELSE NULL END) AS INPROCESS
+		     FROM eg_bpa_buildingplan bp
+		     inner join message ms on bp.tenantid = ms.code 
+		     INNER JOIN egbs_billdetail_v1 bd ON bp.applicationno = bd.consumercode
+  groupby: GROUP BY bp.tenantid,ms.message
