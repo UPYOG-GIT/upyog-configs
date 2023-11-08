@@ -419,5 +419,5 @@ ReportDefinitions:
          COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status NOT IN ('APPROVED', 'REJECTED') THEN bp.applicationno ELSE NULL END) AS INPROCESS
          FROM eg_bpa_buildingplan bp
          inner join message ms on bp.tenantid = ms.code 
-         INNER JOIN egbs_billdetail_v1 bd ON bp.applicationno = bd.consumercode
+         INNER JOIN egbs_billdetail_v1 bd ON bp.applicationno = bd.consumercode where 1=1
   groupby: GROUP BY bp.tenantid,ms.message
