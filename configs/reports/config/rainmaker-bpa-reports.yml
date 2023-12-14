@@ -214,10 +214,6 @@ ReportDefinitions:
     label: Penalty
     type: string
     source: bpa
-  - name: Rain_Water_Harvesting_Deposit
-    label: Rain Water Harvesting Deposit
-    type: string
-    source: bpa
   - name: Electricity_Connection
     label: Electricity Connection
     type: string
