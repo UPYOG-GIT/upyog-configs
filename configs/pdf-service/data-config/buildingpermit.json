@@ -1220,7 +1220,7 @@
                   },
 				  {
                     "variable": "logoImage1",
-                    "value": "$.MdmsRes.tenant.tenants[0].logoId4",
+                    "value": "$.MdmsRes.tenant.tenants[0].logoId1",
                     "type": "image"
                   },
                   {
