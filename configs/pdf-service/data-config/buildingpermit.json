@@ -1175,6 +1175,14 @@
                     "variable": "amount5",
                     "value": "$.Payments[0].paymentDetails[0].feeDetail[4].amount"
                 },
+			{
+                    "variable": "chargesTypeName6",
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[5].chargesTypeName"
+                },
+		{
+                    "variable": "amount6",
+                    "value": "$.Payments[0].paymentDetails[0].feeDetail[5].amount"
+                },
                   {
                     "variable": "sanFee",
                     "value": "$.Payments[0].paymentDetails[0].bill.billDetails[0].billAccountDetails[0].amount"
