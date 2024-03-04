@@ -309,6 +309,15 @@
                 "alignment": "center"
               }
             ],
+		[
+              {
+                "text": "{{chargesTypeName6}}"
+              },
+              {
+                "text": "{{amount6}}",
+                "alignment": "center"
+              }
+            ],
             [
               {
                 "text": "Total",
