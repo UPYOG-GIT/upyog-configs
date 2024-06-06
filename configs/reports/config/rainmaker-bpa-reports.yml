@@ -162,6 +162,9 @@ ReportDefinitions:
     label: Application Date
     type: string
     source: bpa
+  - name: occupancy_type
+    label: Occupancy Type
+    type: string
   - name: status
     label: Payment Status
     type: string
@@ -243,7 +246,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND bp.createdtime <= $toDate
-  query: SELECT application_no, Citizenuser.name as name, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,
+  query: SELECT application_no, Citizenuser.name as name, TO_CHAR(TO_TIMESTAMP(bp.createdtime / 1000),'DD/MM/YYYY') AS Application_date,bp.tenantid,adr.occupancy as occupancy_type,
     CASE 
         WHEN bp.status = 'APPROVED' THEN 'Approved'
         WHEN bp.status IN ('DOC_VERIFICATION_PENDING_BY_ENGINEER','DOC_VERIFICATION_INPROGRESS_BY_BUILDER','APPROVAL_INPROGRESS','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT','CITIZEN_ACTION_PENDING_AT_DOC_VERIF') THEN 'Post Fee Pending'
@@ -267,7 +270,8 @@ ReportDefinitions:
     SUM(amount) AS Total_Amount
     FROM fee_details fd
     INNER JOIN eg_bpa_buildingplan bp ON fd.application_no = bp.applicationno
-    INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid 
+    INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
+    INNER JOIN eg_land_address adr ON bp.landid = adr.landinfoid
     INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
     INNER JOIN eg_user usr ON usr.uuid = bp.createdby
     WHERE 1 = 1 AND  bp.status IN ('APPROVED','PENDING_APPL_FEE','DOC_VERIFICATION_PENDING_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'POST_FEE_APPROVAL_INPROGRESS', 'PENDING_SANC_FEE_PAYMENT','CITIZEN_ACTION_PENDING_AT_DOC_VERIF')
