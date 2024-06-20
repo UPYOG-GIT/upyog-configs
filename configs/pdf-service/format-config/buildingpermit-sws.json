@@ -1,0 +1,454 @@
+{
+  "key": "buildingpermit-sws",
+  "config": {
+    "defaultStyle": {
+      "font": "Cambay"
+    },
+    "content": [
+      {
+        "text" : "{{GENERATED_ON}} : ",
+        "absolutePosition" : {
+           "x" : 400,
+           "y" : 5
+        }
+      },
+      {
+        "text" : " {{orderGeneratedOn}}",
+        "absolutePosition" : {
+           "x" : 490,
+           "y" : 5
+        }
+      },
+      {
+        "columns": [
+          {
+            "image": "{{logoImage}}",
+            "width": 70,
+            "height": 75,
+            "alignment": "left"
+          },
+          {
+            "stack": [
+              {
+                "text": "{{tenantName}} {{Muncipal_Council}}",
+                "style": "header"
+              },
+              {
+                "text": "{{APPENDIX}}",
+                "style": "sub-header"
+              },
+              {
+                "text": "{{BPA_FORM_APPROVAL}}",
+                "style": "header"
+              },
+              {
+                "text": "{{BPA_HEADER_RULE}}",
+                "style": "sub-header"
+              }
+            ]
+          },
+          {
+            "image": "{{logoImage1}}",
+            "width": 70,
+            "height": 75,
+            "alignment": "right"
+          }
+        ]
+      },
+      {
+        "columns": [
+          {
+            "text": [
+			
+			  {
+                "text": "{{BPA_LAND_RULE}}",
+                "bold": false
+              },
+			  {
+                "text": "{{BPA_CERTIFICATE_INTRODUCTION}}",
+                "bold": false
+              }
+            ],
+            "alignment": "left",
+            "width": "*",
+	"alignment": "justify",
+	"lineHeight": 0.85
+          }
+        ],
+        "style": "top-margin"
+      },
+	  {
+        "columns": [
+          {
+            "text": [
+			
+			  {
+                "text": "{{PLAN_PERMISION_NO}} : ",
+                "bold": true
+              },
+              {
+                "text": "{{planPermissionNo}}",
+                "bold": true,
+                "font": "Roboto"
+              }
+            ],
+            "alignment": "left",
+            "width": "*"
+          }
+        ],
+        "style": "top-margin"
+      },
+      {
+        "text": [
+          {
+            "text": "{{WRT_TXT}}"
+          },
+          {
+            "text": " {{applicationNo}}",
+            "bold": true,
+            "font": "Roboto"
+          },
+          {
+            "text": " {{dated}}"
+          },
+          {
+            "text": " {{createdDate}}",
+	     "bold": true
+          },
+          {
+            "text": ", {{PERMISSION_GRANT_TXT}} : "
+          }    
+        ],
+        "style": "top-margin",
+	  "alignment": "justify",
+	"lineHeight": 0.85
+      },
+      {
+        "text": [
+          {
+            "text": "{{SALUTATION}} "
+          },
+          {
+            "text": "{{favourOf}}",
+            "bold": true
+          },
+          {
+            "text": " {{FOR}} "
+          }
+        ],
+        "style": "top-margin",
+	 "alignment": "justify",
+	"lineHeight": 0.85
+      },
+      {
+        "text": [
+	  {
+            "text": "{{DSCR1}}"
+          },
+	  {
+            "text": "{{occupancy}}"
+          },
+	  {
+            "text": "{{DSCR2}}"
+          },
+          {
+            "text": "{{PLOT_NO}}"
+          },
+          {
+            "text": " {{plotNo}}",
+            "bold": true
+          },
+	{
+            "text": " {{PLOTAREA}} "
+        },
+        {
+            "text": "{{plotArea}}",
+            "bold": true
+        },
+		{
+            "text": " {{G_FLOOR}} "
+        },
+        {
+            "text": "{{G_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{F_FLOOR}} "
+        },
+        {
+            "text": "{{F_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{S_FLOOR}} "
+        },
+        {
+            "text": "{{S_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{T_FLOOR}} "
+        },
+        {
+            "text": "{{T_BUILTUP_AREA}}",
+            "bold": true
+        },
+		{
+            "text": " {{TOTAL_BUILTUP_AREA}}"
+            
+        },
+	{
+            "text": " {{totalBuitUpArea}} ",
+	     "bold": true	
+        },
+          {
+            "text": " {{ADDRESS}} "
+          },
+          {
+            "text": "{{address}}",
+            "bold": true
+          },
+          {
+            "text": " {{OF}} "
+          },
+          {
+            "text": "{{tenantName}} {{BPA_PDF_MUNCIPAL}}",
+            "bold": true
+          },
+          {
+            "text": "  {{CONDNS_TXT}}"
+          }
+        ],
+	  "alignment": "justify",
+	"lineHeight": 0.85
+      },
+      {
+        "separator": ")",
+        "ol": [
+          "{{conditions}}"
+        ]
+      },
+	 {
+        "stack": [
+          {
+            "text": "{{PERMIT_DETAILS_TXT}},"
+          }
+        ],
+        "bold": true,
+        "style": "top-margin"
+      },
+     {
+        "table": {
+          "widths": [
+            "50%",
+            "50%"
+          ],
+          "body": [
+            [
+              {
+                "text": "Fee Description",
+                "bold": true
+              },
+              {
+                "text": "Amount (Rs)",
+                "bold": true,
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "{{preChargesTypeName}}"
+              },
+              {
+                "text": "{{appFee}}",
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "{{chargesTypeName1}}"
+              },
+              {
+                "text": "{{amount1}}",
+                "alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "{{chargesTypeName2}}"
+              },
+              {
+                "text": "{{amount2}}",
+                "alignment": "center"
+              }
+            ],
+			[
+              {
+                "text": "{{chargesTypeName3}}"
+              },
+              {
+                "text": "{{amount3}}",
+                "alignment": "center"
+              }
+            ],
+	    [
+              {
+                "text": "{{chargesTypeName4}}"
+              },
+              {
+                "text": "{{amount4}}",
+                "alignment": "center"
+              }
+            ],
+	    [
+              {
+                "text": "{{chargesTypeName5}}"
+              },
+              {
+                "text": "{{amount5}}",
+                "alignment": "center"
+              }
+            ],
+		[
+              {
+                "text": "{{chargesTypeName6}}"
+              },
+              {
+                "text": "{{amount6}}",
+                "alignment": "center"
+              }
+            ],
+            [
+              {
+                "text": "Total",
+                "bold": true
+              },
+              {
+                "text": "{{totalDue}}",
+                "bold": true,
+                "alignment": "center"
+              }
+            ]
+          ]
+        },
+        "alignment": "center",
+        "margin": [
+          0,
+          5,
+          0,
+          0
+        ]
+      },
+      {
+        "stack": [
+          {
+            "text": "{{BY_ORDER}}",
+            "style": "top-margin"
+          },
+          {
+            "text": "{{AUTH_OFFICER}}",
+            "margin": 2
+          }
+        ],
+        "alignment": "right",
+        "style": "top-margin"
+      },
+      {
+        "text": [
+          {
+            "text": "{{VALIDITY_DSCR}} "
+          },
+          {
+            "text": "{{validityDate}}"
+          },
+          {
+            "text": " {{ONLY}}."
+          }
+        ],
+        "style": "top-margin",
+        "bold": true
+      },
+      {
+        "text": "{{HEADING_FOR_FINAL_RULES}} ",
+        "bold": true,
+        "style": "header"
+      },
+      {
+        "separator": ")",
+        "ol": [
+		  "{{RULEF_1}}",
+		  "{{RULEF_2}}",
+		  "{{RULEF_3}}",
+		  "{{RULEF_4}}",
+		  "The boundary line will be {{roadWidth}} meters away from the center of the road.",
+		  "{{RULEF_5}}",
+		  "{{RULEF_6}}",
+		  "{{RULEF_7}}",
+		  "{{RULEF_8}}",
+		  "{{RULEF_9}}",
+		  "{{RULEF_10}}",
+		  "{{RULEF_11}}",
+		  "{{RULEF_12}}",
+		  "{{RULEF_13}}",
+		  "{{RULEF_14}}",
+		  "{{RULEF_15}}",
+		  "{{RULEF_16}}",
+		  "{{RULEF_17}}",
+		  "{{RULEF_18}}",
+		  "{{RULEF_19}}",
+		  "{{RULEF_20}}",
+		  "{{RULEF_21}}",
+		  "{{RULEF_22}}",
+		  "{{RULEF_23}}",
+		  "{{RULEF_24}}"
+        ],
+	  "alignment": "justify",
+	"lineHeight": 0.65
+      },
+      {
+        "stack":[
+		{
+            "text" : "This is Computer Generated Certificate",
+            "alignment" : "center"              
+          },
+          {
+            "text" : "{{REPORT_RUNDATE}} : {{reportrunDate}}",
+            "alignment" : "right"              
+          }
+        ]
+      }
+    ],
+  "footer": "(function(currentPage, pageCount) { return currentPage.toString() + ' of ' + pageCount; })",
+	"styles": {
+      "header": {
+        "bold": true,
+        "alignment": "center"
+      },
+      "sub-header": {
+        "alignment": "center",
+        "margin": [
+          0,
+          5,
+          0,
+          5
+        ]
+      },
+      "top-margin": {
+        "margin": [
+          0,
+          10,
+          0,
+          0
+        ]
+      },
+      "top-high-margin": {
+        "margin": [
+          0,
+          30,
+          0,
+          0
+        ]
+      }
+    }
+  }
+}
