@@ -324,12 +324,6 @@ ReportDefinitions:
     source: bpa
     isLocalisationRequired: true
     localisationPrefix: 
-  - name: Plinth_Level_Site_Inspection
-    label: Plinth Level Site Inspection
-    type: string
-    source: bpa
-    isLocalisationRequired: true
-    localisationPrefix: 
   searchParams:
   - name: ulb
     label: ULB
