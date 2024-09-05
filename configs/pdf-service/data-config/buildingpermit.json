@@ -61,9 +61,15 @@
                 }
             },
               {
-                "variable": "favourOf",
+                "variable": "favourOf1",
                 "value": {
-                  "path": "$.landInfo.owners.*.name"
+                  "path": "$.landInfo.owners[0].name"
+                }
+              },
+		     {
+                "variable": "favourOf2",
+                "value": {
+                  "path": "$.landInfo.owners[1].name"
                 }
               },
 			  {
