@@ -64,7 +64,7 @@
                 "variable": "favourOf1",
                 "value": {
                   "path": "$.landInfo.owners.*.name",
-		  "transformation": "{{favourOf1.join(' and ')}}"
+		  "transformation": "{{favourOf1.join(', ')}}"
                 }
               },
 		     {
