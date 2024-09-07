@@ -150,7 +150,8 @@
             "text": "{{DSCR1}}"
           },
 	  {
-            "text": "{{occupancy}}"
+            "text": "{{occupancy}}",
+	    "bold": true
           },
 	  {
             "text": "{{DSCR2}}"
