@@ -129,7 +129,7 @@
             "text": "{{SALUTATION}} "
           },
           {
-            "text": "{{favourOf1.join(' and ')}}",
+            "text": "{{favourOf1}}",
             "bold": true
           },
           {
