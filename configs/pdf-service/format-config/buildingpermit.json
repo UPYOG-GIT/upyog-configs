@@ -133,7 +133,7 @@
             "bold": true
           },
           {
-            "text": "{{favourOf2}}",
+            "text": "& {{favourOf2}}",
             "bold": true
           },
           {
