@@ -379,7 +379,13 @@ ReportDefinitions:
     type: string
     source: bpa
   - name: INPROCESS
-    label: INPROCESS CASES
+    label: DEPARTMENTAL INPROCESS CASES
+    type: string
+    source: bpa
+    isLocalisationRequired: true
+    localisationPrefix:
+  - name: CITIZEN_INPROCESS
+    label: CITIZEN INPROCESS CASES
     type: string
     source: bpa
     isLocalisationRequired: true
@@ -410,7 +416,8 @@ ReportDefinitions:
          COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS NON_DIRECT_CASES_APPLIED,
          COUNT(DISTINCT CASE WHEN bp.status = 'APPROVED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS APPROVED_CASES,
          COUNT(DISTINCT CASE WHEN bp.status = 'REJECTED' AND bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 THEN bp.applicationno ELSE NULL END) AS REJECTED_CASES,
-         COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status NOT IN ('APPROVED', 'REJECTED') THEN bp.applicationno ELSE NULL END) AS INPROCESS
+         COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status IN ('DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'POST_FEE_APPROVAL_INPROGRESS', 'POST_FEE_APPROVAL_INPROGRESS_BY_BUILDER') THEN bp.applicationno ELSE NULL END) AS INPROCESS,
+         COUNT(DISTINCT CASE WHEN bd.businessservice = 'BPA.NC_APP_FEE' AND bd.totalamount > 1 AND bp.status IN ('INITIATED', 'CITIZEN_APPROVAL_INPROCESS', 'INPROGRESS', 'PENDING_APPL_FEE', 'PENDING_SANC_FEE_PAYMENT','CITIZEN_ACTION_PENDING_AT_DOC_VERIF') THEN bp.applicationno ELSE NULL END) AS CITIZEN_INPROCESS
          FROM eg_bpa_buildingplan bp
          inner join message ms on bp.tenantid = ms.code 
          INNER JOIN egbs_billdetail_v1 bd ON bp.applicationno = bd.consumercode where 1=1
