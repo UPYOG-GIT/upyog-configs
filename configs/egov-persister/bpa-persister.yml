@@ -96,7 +96,7 @@ serviceMaps:
 
           - jsonPath: $.NdbResponseInfo.environment
           
-          - jsonPath: $.NdbResponseInfo.PushedDate
+          - jsonPath: $.NdbResponseInfo.Date
 
 
  - version: 1.0
