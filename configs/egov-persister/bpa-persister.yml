@@ -88,15 +88,15 @@ serviceMaps:
    queryMaps:
 
        - query: INSERT INTO eg_ndb_push_status(response_hash, error, environment, data_pushed_date) VALUES (?, ?, ?,?); 
-         basePath: NdbResponseInfoWrapper
+         basePath: ndbResponseInfoWrapper
          jsonMaps:
-          - jsonPath: $.NdbResponseInfoWrapper.responseHash
+          - jsonPath: $.ndbResponseInfoWrapper.responseHash
           
-          - jsonPath: $.NdbResponseInfoWrapper.Errors
+          - jsonPath: $.ndbResponseInfoWrapper.Errors
 
-          - jsonPath: $.NdbResponseInfoWrapper.environment
+          - jsonPath: $.ndbResponseInfoWrapper.environment
           
-          - jsonPath: $.NdbResponseInfoWrapper.PushedDate
+          - jsonPath: $.ndbResponseInfoWrapper.PushedDate
 
 
  - version: 1.0
