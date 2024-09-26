@@ -87,7 +87,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_ndb_push_status(response_hash, error, environment, createddate) VALUES (?, ?, ?,?); 
+       - query: INSERT INTO eg_ndb_push_status(response_hash, error, environment, data_pushed_date) VALUES (?, ?, ?,?); 
          basePath: NdbResponseInfoWrapper
          jsonMaps:
           - jsonPath: $.NdbResponseInfoWrapper.responseHash
