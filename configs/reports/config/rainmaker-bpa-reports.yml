@@ -292,10 +292,6 @@ ReportDefinitions:
     label: Occupancy Type
     type: string
     source: bpa
-  - name: name
-    label: Owner Name
-    type: string
-    source: bpa
   - name: Application_date
     label: Application Date
     type: string
@@ -376,7 +372,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND pg.created_time <= $toDate
-  query: SELECT pg.consumer_code As Appliaction_No, Citizenuser.name as name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, 
+  query: SELECT pg.consumer_code As Appliaction_No, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, 
     CASE 
         WHEN eb.businessservice = 'BPA.NC_APP_FEE' THEN 'Pre Fees'
         WHEN eb.businessservice = 'BPA.NC_SAN_FEE' THEN 'Post Fees'
@@ -402,7 +398,7 @@ ReportDefinitions:
     INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
     INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
     WHERE pg.txn_status='SUCCESS'  
-  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, Citizenuser.name
+  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy
   orderby: ORDER BY pg.created_time
 
 - reportName: DirectBhavanAnugyaReport
