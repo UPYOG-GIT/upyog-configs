@@ -320,7 +320,7 @@ ReportDefinitions:
     type: string
     source: bpa
   - name: Post_Fee
-    label: Post_Fee (Building Permission Fee)
+    label: Post Fee (Building Permission Fee)
     type: string
     source: bpa
   - name: Pre_Fee
