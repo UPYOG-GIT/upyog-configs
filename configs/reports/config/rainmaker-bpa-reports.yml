@@ -401,10 +401,9 @@ ReportDefinitions:
     INNER JOIN eg_land_address adr ON bp.landid = adr.landinfoid
     INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
     INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
-    WHERE pg.txn_status='SUCCESS' AND pg.created_time BETWEEN 1738348200000 AND 1740767399000 
-    AND pg.tenant_id='cg.birgaon' 
-    GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, Citizenuser.name
-    ORDER BY pg.created_time
+    WHERE pg.txn_status='SUCCESS'  
+  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, Citizenuser.name
+  orderby: ORDER BY pg.created_time
 
 - reportName: DirectBhavanAnugyaReport
   decryptionPathId: DirectBhavanAnugyaReport
