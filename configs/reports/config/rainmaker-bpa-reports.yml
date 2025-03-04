@@ -363,7 +363,7 @@ ReportDefinitions:
     source: bpa
     wrapper: true
     isMandatory: true
-    searchClause: AND pg.tenantid = $ulb
+    searchClause: AND pg.tenant_id = $ulb
   - name: fromDate
     label: FromDate
     type: epoch
