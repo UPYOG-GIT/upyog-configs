@@ -348,7 +348,7 @@ ReportDefinitions:
     type: string
     source: bpa
   - name: Total_Amount
-    label: Total Amount
+    label: Total Paid Amount
     type: string
     source: bpa
   searchParams:
