@@ -207,7 +207,7 @@ serviceMaps:
           - jsonPath: $.LandInfo.unit.*.auditDetails.lastModifiedTime
 
 
-       - query: INSERT INTO eg_land_geolocation( id, latitude, longitude, additionaldetails, addressid) VALUES (?, ?, ?, ?, ?);
+       - query: INSERT INTO eg_land_geolocation( id, latitude, longitude, additionaldetails, addressid, gisplacename) VALUES (?, ?, ?, ?, ?, ?);
          basePath: LandInfo.address.geoLocation
          jsonMaps:
           - jsonPath: $.LandInfo.address.geoLocation.id
@@ -225,6 +225,8 @@ serviceMaps:
             dbType: JSONB
 
           - jsonPath: $.LandInfo.address.id
+
+          - jsonPath: $.LandInfo.address.geoLocation.gisPlaceName
 
 
        - query: INSERT INTO eg_land_auditdetails SELECT * FROM eg_land_landInfo WHERE id =?;
