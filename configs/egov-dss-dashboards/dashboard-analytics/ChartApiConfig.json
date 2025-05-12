@@ -16003,7 +16003,7 @@
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"module\" : \"Data.paymentDetails.businessService.keyword\",\"tenantId\" : \"Data.tenantId\", \"district\" : \"Data.tenantData.city.districtCode\" }",
    		"dateRefField": "Data.paymentDetails.receiptDate",
         "indexName": "paymentsindex-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}},{\"terms\":{\"Data.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"Data.paymentDetails.businessService.keyword\":[\"BPA.LOW_RISK_PERMIT_FEE\",\"BPA.NC_APP_FEE\",\"BPA.NC_OC_APP_FEE\"]}}]}},\"aggs\":{\"Total Collection\":{\"sum\":{\"field\":\"Data.paymentDetails.totalAmountPaid\"}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}},{\"terms\":{\"Data.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"Data.paymentDetails.businessService.keyword\":[\"BPA.LOW_RISK_PERMIT_FEE\",\"BPA.NC_APP_FEE\",\"BPA.NC_OC_APP_FEE\",\"BPA.NC_SAN_FEE\"]}}]}},\"aggs\":{\"Total Collection\":{\"sum\":{\"field\":\"Data.paymentDetails.totalAmountPaid\"}}}}}}"
       },
       {
         "module": "OBPS",
