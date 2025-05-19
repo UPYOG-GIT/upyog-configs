@@ -109,7 +109,7 @@ ServiceMaps:
   - topic: egov-payment-legacy-index
     configKey: LEGACYINDEX
     indexes:
-    - name: paymentsindex-v1
+    - name: payment-index-legacy
       type: payments
       id: $.id
       isBulk: true
