@@ -210,7 +210,7 @@ ServiceMaps:
    - topic: bpa-connection-legacyIndex
      configKey: LEGACYINDEX
      indexes:
-     - name: bpa-index
+     - name: bpa-index-legacy
        type: bpaapplication
        id: $.id, $.tenantId
        isBulk: true
