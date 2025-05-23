@@ -207,6 +207,7 @@ ServiceMaps:
              uriResponseMapping:
              - inJsonPath: $.ProcessInstances
                outJsonPath: $.Data.history
+               
    - topic: bpa-connection-legacyIndex
      configKey: LEGACYINDEX
      indexes:
@@ -253,6 +254,8 @@ ServiceMaps:
            outJsonPath: $.Data.auditDetails
          - inJsonPath: $.landInfo.plotAreaApproved
            outJsonPath: $.Data.plotAreaApproved
+         - inJsonPath: $.landInfo.plotArea
+           outJsonPath: $.Data.plotArea
          externalUriMapping:
            - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
              queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.landInfo.address.locality.code,tenantId=$.tenantId
