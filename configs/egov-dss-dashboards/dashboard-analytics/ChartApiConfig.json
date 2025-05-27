@@ -650,7 +650,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{ \"aggs\": { \"AGGR\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ], \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } } ] } }, \"aggs\": { \"Total Application\": { \"value_count\": { \"field\": \"Data.applicationNo.keyword\" } } } } }} ",
         "dateRefField": "Data.@timestamp"
@@ -737,7 +737,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"APPROVED\",\"CANCELED\",\"REJECTED\"]}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Applications Closed\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}",
         "dateRefField": "Data.@timestamp"
@@ -817,7 +817,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{\"aggs\":{\"BPA\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Closed With In Sla\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\",\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}",
         "dateRefField": "Data.@timestamp"
@@ -863,7 +863,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Citizen Registered\":{\"cardinality\":{\"field\":\"Data.landInfo.owners.mobileNumber.keyword\"}}}}}}",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp"
@@ -971,7 +971,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"interval\":\"intervalvalue\"},\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Total\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"interval\":\"intervalvalue\"},\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"APPROVED\",\"CANCELED\",\"REJECTED\"]}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}",
         "dateRefField": "Data.@timestamp"
@@ -1047,7 +1047,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{\"aggs\":{\"BPA\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Closed With In Sla\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\",\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}",
         "dateRefField": "Data.@timestamp"
@@ -1124,7 +1124,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{\"aggs\":{\"BPA\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Closed With In Sla\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\",\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}",
         "dateRefField": "Data.@timestamp"
@@ -1194,7 +1194,7 @@
       },
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{ \"aggs\": { \"AGGR\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ], \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } } ] } }, \"aggs\": { \"OBPS\": { \"value_count\": { \"field\": \"Data.applicationNo.keyword\" } } } } }} ",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp"
@@ -7443,7 +7443,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{ \"aggs\": { \"AGGR\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ], \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } } ] } }, \"aggs\": { \"Total Applications\": { \"value_count\": { \"field\": \"Data.applicationNo.keyword\" } } } } }} ",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp"
@@ -7474,7 +7474,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{ \"aggs\": { \"AGGR\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ], \"must\": [ { \"term\": { \"Data.status.keyword\": \"APPROVED\" } }, { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } } ] } }, \"aggs\": { \"Total Permits Issued\": { \"value_count\": { \"field\": \"Data.applicationNo.keyword\" } } } } } }",
         "dateRefField": "Data.@timestamp"
@@ -7505,7 +7505,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}}]}},\"aggs\":{\"Total OC Issued\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}",
         "dateRefField": "Data.@timestamp"
@@ -7536,7 +7536,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery":"{ \"aggs\": { \"AGGR\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ], \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\",\"BPA_OC\"] } } ] } }, \"aggs\": { \"Total Land Applied\": { \"sum\": { \"field\": \"Data.plotArea\" } } } } } }",
         "dateRefField": "Data.@timestamp"
@@ -7568,7 +7568,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery":"{ \"aggs\": { \"BPA\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ] } }, \"aggs\": { \"Average days to issue Permit\": { \"filter\": { \"bool\": { \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } }, { \"term\": { \"Data.status.keyword\": \"APPROVED\" } } ] } }, \"aggs\": { \"average_days\": { \"avg\": { \"script\": { \"source\": \"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)/(86400*1000)\" } } } } } } } } }",
         "dateRefField": "Data.@timestamp"
@@ -7599,7 +7599,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery":"{ \"aggs\": { \"BPA\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ] } }, \"aggs\": { \"SLA Compliance Permit\": { \"filter\": { \"bool\": { \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } }, { \"term\": { \"Data.status.keyword\": \"APPROVED\" } }, { \"script\": { \"script\": { \"source\": \"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\", \"lang\": \"painless\", \"params\": { \"threshold\": 172800000 } } } } ] } } } } } } }",
         "dateRefField": "Data.@timestamp"
@@ -7630,7 +7630,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery":"{ \"aggs\": { \"BPA\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ] } }, \"aggs\": { \"Average days to issue OC\": { \"filter\": { \"bool\": { \"must\": [ { \"term\": { \"Data.businessService.keyword\": \"BPA_OC\" } }, { \"term\": { \"Data.status.keyword\": \"APPROVED\" } } ] } }, \"aggs\": { \"average_days\": { \"avg\": { \"script\": { \"source\": \"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)/(86400*1000)\" } } } } } } } } }",
         "dateRefField": "Data.@timestamp"
@@ -7661,7 +7661,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery":"{ \"aggs\": { \"BPA\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ] } }, \"aggs\": { \"SLA Compliance OC\": { \"filter\": { \"bool\": { \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA_OC\"] } }, { \"term\": { \"Data.status.keyword\": \"APPROVED\" } }, { \"script\": { \"script\": { \"source\": \"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\", \"lang\": \"painless\", \"params\": { \"threshold\": 172800000 } } } } ] } } } } } } }",
         "dateRefField": "Data.@timestamp"
@@ -7719,7 +7719,7 @@
         "module": "OBPS",
         "dateRefField": "Data.@timestamp",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"PermitsIssued By RiskType\":{\"terms\":{\"field\":\"Data.riskType.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.riskType.keyword\"}}}}}}}}"
       }
     ],
@@ -7744,7 +7744,7 @@
         "module": "OBPS",
         "dateRefField": "Data.@timestamp",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"PermitsIssued By OccupancyType\":{\"terms\":{\"field\":\"Data.landInfo.unit.occupancyType.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.landInfo.unit.occupancyType.keyword\"}}}}}}}}"
       }
     ],
@@ -7769,7 +7769,7 @@
         "module": "OBPS",
         "dateRefField": "Data.@timestamp",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery":"{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"TotalPermitIssued\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"interval\":\"intervalvalue\"},\"aggs\":{\"totalPermitIssued\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_LOW\",\"BPA\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.businessService.keyword\"}}}}}},\"TotalOCSubmitted\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"interval\":\"intervalvalue\"},\"aggs\":{\"totalOCSUB\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.businessService.keyword\"}}}}}},\"TotalOCissued\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"interval\":\"intervalvalue\"},\"aggs\":{\"totalOCissued\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.businessService.keyword\"}}}}}}}}}}"
       }
     ],
@@ -10719,14 +10719,14 @@
         "module": "OBPS",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Total Applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":\"200\",\"order\":{\"Permits\":\"desc\"}},\"aggs\":{\"Permits\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
       },
       {
         "module": "OBPS",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Approved Permit applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":\"200\",\"order\":{\"Permits\":\"desc\"}},\"aggs\":{\"Permits\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
       }
     ],
@@ -10758,14 +10758,14 @@
         "module": "OBPS",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Total Applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":\"200\",\"order\":{\"Permits\":\"asc\"}},\"aggs\":{\"Permits\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
       },
       {
         "module": "OBPS",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "dateRefField": "Data.@timestamp",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"Approved Permit applications\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":\"200\",\"order\":{\"Permits\":\"asc\"}},\"aggs\":{\"Permits\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
       }
     ],
@@ -16009,7 +16009,7 @@
         "module": "OBPS",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\", \"district\" : \"Data.tenantData.city.districtCode\"}",
         "dateRefField": "Data.auditDetails.createdTime",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Total Applications Submitted\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"total\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}},\"Total Permits Issued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"total\":{\"value_count\":{\"field\":\"Data.businessService.keyword\"}}}},\"Average days to issue Permit\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"average_days\":{\"avg\":{\"script\":{\"source\":\"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)\/(86400*1000)\"}}}}},\"Average days to issue OC\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.businessService.keyword\":\"BPA_OC\"}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"average_days\":{\"avg\":{\"script\":{\"source\":\"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)\/(86400*1000)\"}}}}},\"SLA Compliance Permit\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}}},\"SLA Compliance OC\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.businessService.keyword\":\"BPA_OC\"}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}}},\"Total OC Issued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}}]}}},\"Total OC Submitted\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}}]}}},\"Deviation\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\",\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"exists\":{\"field\":\"Data.plotAreaApproved\"}}]}},\"aggs\":{\"deviation\":{\"avg\":{\"script\":{\"source\":\" Math.round(((doc['Data.plotAreaApproved'].value-doc['Data.plotArea'].value)*100)\/(doc['Data.plotArea'].value))\"}}}}}}}}}"
       },
       {
@@ -16101,7 +16101,7 @@
         "module": "OBPS",
         "requestQueryMap":  "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\", \"ulbId\" : \"Data.tenantId\", \"district\" : \"Data.tenantData.city.districtCode\"}",
         "dateRefField": "Data.auditDetails.createdTime",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.tenantId.keyword\": \"cg.testing\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"ULBs\": {\n          \"terms\": {\n            \"field\": \"Data.tenantId.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Total Applications Submitted\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA\",\n                          \"BPA_LOW\"\n                        ]\n                      }\n                    }\n                  ]\n                }\n              }\n            },\n            \"Total Permits Issued\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    },\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA\",\n                          \"BPA_LOW\"\n                        ]\n                      }\n                    }\n                  ]\n                }\n              }\n            },\n            \"Average days to issue Permit\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA\",\n                          \"BPA_LOW\"\n                        ]\n                      }\n                    },\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    }\n                  ]\n                }\n              },\n              \"aggs\": {\n                \"average_days\": {\n                  \"avg\": {\n                    \"script\": {\n                      \"source\": \"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)/(86400*1000)\"\n                    }\n                  }\n                }\n              }\n            },\n            \"Average days to issue OC\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"term\": {\n                        \"Data.businessService.keyword\": \"BPA_OC\"\n                      }\n                    },\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    }\n                  ]\n                }\n              },\n              \"aggs\": {\n                \"average_days\": {\n                  \"avg\": {\n                    \"script\": {\n                      \"source\": \"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)/(86400*1000)\"\n                    }\n                  }\n                }\n              }\n            },\n            \"SLA Compliance Permit\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA\",\n                          \"BPA_LOW\"\n                        ]\n                      }\n                    },\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    },\n                    {\n                      \"script\": {\n                        \"script\": {\n                          \"source\": \"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\n                          \"lang\": \"painless\",\n                          \"params\": {\n                            \"threshold\": 172800000\n                          }\n                        }\n                      }\n                    }\n                  ]\n                }\n              }\n            },\n            \"SLA Compliance OC\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"term\": {\n                        \"Data.businessService.keyword\": \"BPA_OC\"\n                      }\n                    },\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    },\n                    {\n                      \"script\": {\n                        \"script\": {\n                          \"source\": \"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\n                          \"lang\": \"painless\",\n                          \"params\": {\n                            \"threshold\": 172800000\n                          }\n                        }\n                      }\n                    }\n                  ]\n                }\n              }\n            },\n            \"Total OC Issued\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    },\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA_OC\"\n                        ]\n                      }\n                    }\n                  ]\n                }\n              }\n            },\n            \"Total OC Submitted\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA_OC\"\n                        ]\n                      }\n                    }\n                  ]\n                }\n              }\n            },\n            \"Deviation\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must\": [\n                    {\n                      \"terms\": {\n                        \"Data.businessService.keyword\": [\n                          \"BPA_OC\",\n                          \"BPA\",\n                          \"BPA_LOW\"\n                        ]\n                      }\n                    },\n                    {\n                      \"term\": {\n                        \"Data.status.keyword\": \"APPROVED\"\n                      }\n                    },\n                    {\n                      \"exists\": {\n                        \"field\": \"Data.plotAreaApproved\"\n                      }\n                    }\n                  ]\n                }\n              },\n              \"aggs\": {\n                \"deviation\": {\n                  \"avg\": {\n                    \"script\": {\n                      \"source\": \" Math.round(((doc['Data.plotAreaApproved'].value-doc['Data.plotArea'].value)*100)/(doc['Data.plotArea'].value))\"\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"     
          },
          {
@@ -16191,7 +16191,7 @@
         "module": "OBPS",
         "requestQueryMap":  "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\", \"ulbId\" : \"Data.tenantId\", \"district\" : \"Data.tenantData.city.districtCode\"}",
         "dateRefField": "Data.auditDetails.createdTime",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "aggrQuery":"{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Ward\":{\"terms\":{\"field\":\"Data.ward.name.keyword\",\"size\":1000},\"aggs\":{\"Total Applications Submitted\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}}},\"Total Permits Issued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}}},\"Average days to issue Permit\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"average_days\":{\"avg\":{\"script\":{\"source\":\"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)\/(86400*1000)\"}}}}},\"Average days to issue OC\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.businessService.keyword\":\"BPA_OC\"}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"average_days\":{\"avg\":{\"script\":{\"source\":\"(doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value)\/(86400*1000)\"}}}}},\"SLA Compliance Permit\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}}},\"SLA Compliance OC\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.businessService.keyword\":\"BPA_OC\"}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"script\":{\"script\":{\"source\":\"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\",\"lang\":\"painless\",\"params\":{\"threshold\":172800000}}}}]}}},\"Total OC Issued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}}]}}},\"Total OC Submitted\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\"]}}]}}},\"Deviation\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.businessService.keyword\":[\"BPA_OC\",\"BPA\",\"BPA_LOW\"]}},{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"exists\":{\"field\":\"Data.plotAreaApproved\"}}]}},\"aggs\":{\"deviation\":{\"avg\":{\"script\":{\"source\":\" Math.round(((doc['Data.plotAreaApproved'].value-doc['Data.plotArea'].value)*100)\/(doc['Data.plotArea'].value))\"}}}}}}}}}}}"
          }
         
@@ -16378,7 +16378,7 @@
     "queries": [
       {
         "module": "OBPS",
-        "indexName": "bpa-index",
+        "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "aggrQuery":"{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}]}},\"aggs\":{\"Citizens Registered\":{\"cardinality\":{\"field\":\"Data.landInfo.owners.mobileNumber.keyword\"}}}}}}",
         "dateRefField": "Data.@timestamp"
