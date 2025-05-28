@@ -7601,7 +7601,7 @@
         "module": "OBPS",
         "indexName": "bpa-index-legacy",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
-        "aggrQuery":"{ \"aggs\": { \"BPA\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ] } }, \"aggs\": { \"SLA Compliance Permit\": { \"filter\": { \"bool\": { \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } }, { \"term\": { \"Data.status.keyword\": \"APPROVED\" } }, { \"script\": { \"script\": { \"source\": \"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\", \"lang\": \"painless\", \"params\": { \"threshold\": 172800000 } } } } ] } } } } } } }",
+        "aggrQuery":"{ \"aggs\": { \"BPA\": { \"filter\": { \"bool\": { \"must_not\": [ { \"term\": { \"Data.tenantId.keyword\": \"cg.testing\" } } ] } }, \"aggs\": { \"SLA Compliance Permit\": { \"filter\": { \"bool\": { \"must\": [ { \"terms\": { \"Data.businessService.keyword\": [\"BPA\",\"BPA_LOW\"] } }, { \"term\": { \"Data.status.keyword\": \"APPROVED\" } }, { \"script\": { \"script\": { \"source\": \"doc['Data.auditDetails.lastModifiedTime'].value-doc['Data.auditDetails.createdTime'].value<params.threshold\", \"lang\": \"painless\", \"params\": { \"threshold\": 5184000000 } } } } ] } } } } } } }",
         "dateRefField": "Data.@timestamp"
       }
     ],
