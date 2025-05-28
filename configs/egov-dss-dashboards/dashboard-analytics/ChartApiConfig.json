@@ -7745,7 +7745,7 @@
         "dateRefField": "Data.@timestamp",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" \r\n}",
         "indexName": "bpa-index-legacy",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"PermitsIssued By OccupancyType\":{\"terms\":{\"field\":\"Data.landInfo.unit.occupancyType.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.landInfo.unit.occupancyType.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"cg.testing\"}}],\"must\":[{\"term\":{\"Data.status.keyword\":\"APPROVED\"}},{\"terms\":{\"Data.businessService.keyword\":[\"BPA\",\"BPA_LOW\"]}}]}},\"aggs\":{\"PermitsIssued By OccupancyType\":{\"terms\":{\"field\":\"Data.landInfo.address.occupancy.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.landInfo.address.occupancy.keyword\"}}}}}}}}"
       }
     ],
     "translateTenantCode": false,
