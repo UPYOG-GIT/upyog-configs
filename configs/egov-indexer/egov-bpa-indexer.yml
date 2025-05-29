@@ -5,7 +5,7 @@ ServiceMaps:
    - topic: save-bpa-buildingplan
      configKey: INDEX
      indexes:
-       - name: bpa-index_v2
+       - name: bpa-index-v2
          type: bpaapplication
          id: $.id, $.tenantId
          isBulk: false
@@ -75,7 +75,7 @@ ServiceMaps:
    - topic: update-bpa-buildingplan
      configKey: INDEX
      indexes:
-     - name: bpa-index_v2
+     - name: bpa-index-v2
        type: bpaapplication
        id: $.id, $.tenantId
        isBulk: false
@@ -143,7 +143,7 @@ ServiceMaps:
    - topic: update-bpa-workflow
      configKey: INDEX
      indexes:
-     - name: bpa-index_v2
+     - name: bpa-index-v2
        type: bpaapplication
        id: $.id, $.tenantId
        isBulk: false
@@ -211,7 +211,7 @@ ServiceMaps:
    - topic: bpa-connection-legacyIndex
      configKey: LEGACYINDEX
      indexes:
-     - name: bpa-index_v2
+     - name: bpa-index-v2
        type: bpaapplication
        id: $.id, $.tenantId
        isBulk: true
