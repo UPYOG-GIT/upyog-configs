@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_bpa_buildingplan(id, applicationNo, landId, accountId, edcrNumber, tenantId, status, approvalDate, businessService, additionalDetails, createdBy, lastmodifiedBy, createdTime, lastmodifiedTime, swsapplicationid, swsunitregistrationno, isswsapplication) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
+       - query: INSERT INTO eg_bpa_buildingplan(id, applicationNo, landId, accountId, edcrNumber, tenantId, status, approvalDate, businessService, additionalDetails, createdBy, lastmodifiedBy, createdTime, lastmodifiedTime, swsapplicationid, swsunitregistrationno, isswsapplication, risktype) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
          basePath: BPA
          jsonMaps:
           - jsonPath: $.BPA.id
@@ -45,6 +45,8 @@ serviceMaps:
           - jsonPath: $.BPA.swsUnitRegistrationNo
 
           - jsonPath: $.BPA.isSwsApplication
+
+          - jsonPath: $.BPA.riskType
 
 
        - query: INSERT INTO eg_bpa_document( id, documenttype, fileStoreId, buildingplanid, documentuid, additionalDetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
