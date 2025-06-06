@@ -54,8 +54,8 @@ ReportDefinitions:
   query: select ms.message as Name_of_ULB , bp.tenantid, count(*) as total_cases_uploaded,
    COUNT(CASE WHEN bp.status IN ('INITIATED','DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'POST_FEE_APPROVAL_INPROGRESS', 'APPROVAL_INPROGRESS') THEN 1 END) AS Total_Pending_Cases,
    COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_ENGINEER' or bp.status='POST_FEE_APPROVAL_INPROGRESS' then 1 end) as Case_Pending_at_Sub_Engineer,
-   COUNT (case when bp.status='DOC_VERIFICATION_INPROGRESS_BY_BUILDER'  then 1 end) as Case_Pending_at_Builder,
-   COUNT (case when bp.status='APPROVAL_INPROGRESS' then 1 end) as Case_Pending_at_Commisoner
+   COUNT (case when bp.status IN ('DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS', 'POST_FEE_APPROVAL_INPROGRESS_BY_BUILDER')  then 1 end) as Case_Pending_at_Builder,
+   COUNT (case when bp.status IN ('APPROVAL_INPROGRESS_BY_COMMISSIONER') then 1 end) as Case_Pending_at_Commisoner
    from eg_bpa_buildingplan bp inner join message ms on bp.tenantid = ms.code WHERE createdtime >= $fromDate
   groupby:  group by bp.tenantid,ms.message
   
