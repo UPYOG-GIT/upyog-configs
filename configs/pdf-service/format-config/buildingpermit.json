@@ -133,10 +133,6 @@
             "bold": true
           },
           {
-            "text": " & {{favourOf2}}",
-            "bold": true
-          },
-          {
             "text": " {{FOR}} "
           }
         ],
