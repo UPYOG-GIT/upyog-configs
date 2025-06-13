@@ -288,6 +288,10 @@ ReportDefinitions:
     label: Application No
     type: string
     source: bpa
+  - name: approvalno
+    label: Approval No
+    type: string
+    source: bpa
   - name: Occupancy_Type
     label: Occupancy Type
     type: string
@@ -372,7 +376,7 @@ ReportDefinitions:
     source: bpa
     isMandatory: false
     searchClause: AND pg.created_time <= $toDate
-  query: SELECT pg.consumer_code As Appliaction_No, Citizenuser.name as name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, 
+  query: SELECT pg.consumer_code As Appliaction_No, Citizenuser.name as name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, bp.approvalno,  
     CASE 
         WHEN eb.businessservice = 'BPA.NC_APP_FEE' THEN 'Pre Fees'
         WHEN eb.businessservice = 'BPA.NC_SAN_FEE' THEN 'Post Fees'
