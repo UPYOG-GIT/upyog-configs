@@ -1,4 +1,6 @@
+--- 
 serviceMaps: 
+  serviceName: fsm
   mappings: 
     - 
       description: "Persists FSM Application details in eg_fsm_application  table"
@@ -43,6 +45,8 @@ serviceMaps:
             - 
               jsonPath: $.fsm.paymentPreference
             - 
+              jsonPath: $.fsm.advanceAmount
+            - 
               jsonPath: $.fsm.applicationType
             - 
               jsonPath: $.fsm.oldApplicationNo
@@ -54,7 +58,7 @@ serviceMaps:
               jsonPath: $.fsm.auditDetails.createdTime
             - 
               jsonPath: $.fsm.auditDetails.lastModifiedTime
-          query: "INSERT INTO  eg_fsm_application( id, applicationno, tenantid, additionaldetails, accountid, description, applicationstatus, source, sanitationtype, propertyusage, nooftrips, status, vehicle_id, vehicletype, vehicleCapacity, paymentPreference, applicationType, oldApplicationNo, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+          query: "INSERT INTO  eg_fsm_application( id, applicationno, tenantid, additionaldetails, accountid, description, applicationstatus, source, sanitationtype, propertyusage, nooftrips, status, vehicle_id, vehicletype, vehicleCapacity, paymentPreference,advanceAmount, applicationType, oldApplicationNo, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?);"
         - 
           basePath: fsm.address
           jsonMaps: 
@@ -156,6 +160,7 @@ serviceMaps:
               jsonPath: $.fsm.pitDetail.auditDetails.lastModifiedTime
           query: "INSERT INTO  eg_fsm_pit_detail( id, tenantid, height, length, width, diameter, distancefromroad, fsm_id, additionaldetails,  createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
       version: 1.0
+    
     - 
       description: "Persists FSM Application details in eg_fsm_application  table"
       fromTopic: update-fsm-application
@@ -197,6 +202,8 @@ serviceMaps:
             - 
               jsonPath: $.fsm.paymentPreference
             - 
+              jsonPath: $.fsm.advanceAmount
+            - 
               jsonPath: $.fsm.auditDetails.createdBy
             - 
               jsonPath: $.fsm.auditDetails.lastModifiedBy
@@ -210,7 +217,7 @@ serviceMaps:
               jsonPath: $.fsm.dsoId
             - 
               jsonPath: $.fsm.id
-          query: "UPDATE  eg_fsm_application SET additionaldetails=?, description=?, applicationstatus=?, source=?, sanitationtype=?, propertyusage=?, nooftrips=?, status=?, vehicle_id=?, vehicletype=?,vehicleCapacity=?, paymentPreference=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?, possible_srv_date=?, dso_id=? where id=?"
+          query: "UPDATE  eg_fsm_application SET additionaldetails=?, description=?, applicationstatus=?, source=?, sanitationtype=?, propertyusage=?, nooftrips=?, status=?, vehicle_id=?, vehicletype=?,vehicleCapacity=?, paymentPreference=?,advanceAmount=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?, possible_srv_date=?, dso_id=? where id=?"
         - 
           basePath: fsm.address
           jsonMaps: 
@@ -352,9 +359,43 @@ serviceMaps:
               jsonPath: $.fsm.possibleServiceDate
             - 
               jsonPath: $.fsm.dsoId
-            - 
+            -  
               jsonPath: $.fsm.id
           query: "UPDATE eg_fsm_application SET additionaldetails=?, applicationstatus=?, vehicle_id =?, vehicletype=?, lastmodifiedby=?,  lastmodifiedtime=?, possible_srv_date=?, dso_id=? where id=?"
+        - 
+          basePath: fsm.pitDetail
+          jsonMaps: 
+            - 
+              jsonPath: $.fsm.pitDetail.id
+          query: "INSERT INTO eg_fsm_pit_detail_auditlog SELECT * FROM eg_fsm_pit_detail WHERE id =?;"
+        - 
+          basePath: fsm.pitDetail
+          jsonMaps: 
+            - 
+              dbType: JSONB
+              jsonPath: $.fsm.pitDetail.additionalDetails
+              type: JSON
+            - 
+              jsonPath: $.fsm.pitDetail.height
+            - 
+              jsonPath: $.fsm.pitDetail.length
+            - 
+              jsonPath: $.fsm.pitDetail.width
+            - 
+              jsonPath: $.fsm.pitDetail.diameter
+            - 
+              jsonPath: $.fsm.pitDetail.distanceFromRoad
+            - 
+              jsonPath: $.fsm.pitDetail.auditDetails.createdBy
+            - 
+              jsonPath: $.fsm.pitDetail.auditDetails.lastModifiedBy
+            - 
+              jsonPath: $.fsm.pitDetail.auditDetails.createdTime
+            - 
+              jsonPath: $.fsm.pitDetail.auditDetails.lastModifiedTime
+            - 
+              jsonPath: $.fsm.pitDetail.id
+          query: "UPDATE  eg_fsm_pit_detail SET additionaldetails=?,height=?, length=?, width=?, diameter=?, distancefromroad=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?  where id=?"
       version: 1.0
     - 
       description: "Persists FSTP-employee mapping in eg_fsm_plantmapping table"
@@ -410,4 +451,96 @@ serviceMaps:
               jsonPath: $.plantMapping.id
           query: "UPDATE  eg_fsm_plantmapping SET  status=?, employeeuuid=?, plantcode=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=? where id=?"
       version: 1.0
-  serviceName: fsm
+     
+    -
+      description: Vehicle Trip details in eg_vehicle_trip and in eg_vehicle_trip_detail table
+      fromTopic: update-vehicle-trip-Details
+      isTransaction: true
+      queryMaps:
+        -
+          basePath: $.vehicleTrip.*.tripDetails.*
+          jsonMaps:
+        
+            - jsonPath: $.vehicleTrip.*.tripDetails.*.status
+            
+            - jsonPath: $.vehicleTrip.*.tripDetails.*.auditDetails.lastModifiedBy
+  
+            - jsonPath: $.vehicleTrip.*.tripDetails.*.auditDetails.lastModifiedTime
+          
+            - jsonPath: $.vehicleTrip.*.tripDetails.*.id
+          query: UPDATE eg_vehicle_trip_detail SET  status=?, lastmodifiedby=?, lastmodifiedtime=? WHERE id=?
+        -
+          basePath: $.vehicleTrip.*
+          jsonMaps:
+            
+            - jsonPath: $.vehicleTrip.*.status
+          
+            - jsonPath: $.vehicleTrip.*.auditDetails.lastModifiedBy
+  
+            - jsonPath: $.vehicleTrip.*.auditDetails.lastModifiedTime
+          
+            - jsonPath: $.vehicleTrip.*.id
+          query: UPDATE eg_vehicle_trip SET  status=?, lastmodifiedby=?, lastmodifiedtime=? WHERE id=?
+      version: 1.0
+                
+    - version: 1.0
+      description: Updates fsm status for auto escalate
+      fromTopic: fsm-auto-escalation
+      isTransaction: true
+      queryMaps:
+
+        - query: UPDATE eg_fsm_application SET applicationstatus=?, lastmodifiedby=?, lastmodifiedtime=? WHERE applicationno=? AND tenantId=?;
+          basePath: ProcessInstances.*
+          jsonMaps:
+       
+
+            - jsonPath: $.ProcessInstances.*.state.applicationStatus
+
+            - jsonPath: $.ProcessInstances.*.auditDetails.lastModifiedBy
+
+            - jsonPath: $.ProcessInstances.*.auditDetails.lastModifiedTime
+
+            - jsonPath: $.ProcessInstances.*.businessId
+
+            - jsonPath: $.ProcessInstances.*.tenantId
+      
+    - version: 1.0
+      description: Insert FSM Application worker details in eg_fsm_application_worker table
+      fromTopic: create-fsm-application-workers
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO eg_fsm_application_worker( id, tenantId, application_id, individual_id, workerType, status, additionaldetails, createdBy, lastmodifiedBy, createdTime, lastmodifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+          basePath: $.workers.*
+          jsonMaps:
+            - jsonPath: $.workers.*.id
+            - jsonPath: $.workers.*.tenantId
+            - jsonPath: $.workers.*.applicationId
+            - jsonPath: $.workers.*.individualId
+            - jsonPath: $.workers.*.workerType
+            - jsonPath: $.workers.*.status
+            - jsonPath: $.workers.*.additionalDetails
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.workers.*.auditDetails.createdBy
+            - jsonPath: $.workers.*.auditDetails.lastModifiedBy
+            - jsonPath: $.workers.*.auditDetails.createdTime
+            - jsonPath: $.workers.*.auditDetails.lastModifiedTime
+
+    - version: 1.0
+      description: Update FSM Application worker details in eg_fsm_application_worker table
+      fromTopic: update-fsm-application-workers
+      isTransaction: true
+      queryMaps:
+        - query: UPDATE eg_fsm_application_worker SET workerType=?, status=?, additionaldetails=?, createdBy=?, lastmodifiedBy=?, createdTime=?, lastmodifiedTime=? WHERE id=?;
+          basePath: $.workers.*
+          jsonMaps:
+            - jsonPath: $.workers.*.workerType
+            - jsonPath: $.workers.*.status
+            - jsonPath: $.workers.*.additionalDetails
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.workers.*.auditDetails.createdBy
+            - jsonPath: $.workers.*.auditDetails.lastModifiedBy
+            - jsonPath: $.workers.*.auditDetails.createdTime
+            - jsonPath: $.workers.*.auditDetails.lastModifiedTime
+            - jsonPath: $.workers.*.id
