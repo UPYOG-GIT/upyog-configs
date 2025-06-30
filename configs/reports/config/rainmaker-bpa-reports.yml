@@ -377,7 +377,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pg.created_time <= $toDate
   query: WITH owner_names AS (SELECT bp.applicationno AS consumer_code, pg.created_time, string_agg(DISTINCT u.name, ', ') AS owner_names FROM eg_bpa_buildingplan bp JOIN eg_land_ownerinfo o ON bp.landid = o.landinfoid JOIN eg_user u ON o.uuid = u.uuid JOIN eg_pg_transactions pg ON bp.applicationno = pg.consumer_code WHERE pg.txn_status = 'SUCCESS' AND pg.created_time >= $fromDate AND pg.created_time <= $toDate AND pg.tenant_id = $ulb GROUP BY bp.applicationno, pg.created_time)
-    SELECT pg.consumer_code As Appliaction_No, Citizenuser.name as name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, bp.approvalno,  
+    SELECT pg.consumer_code As Appliaction_No, ow.owner_names AS name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, bp.approvalno,  
     CASE 
         WHEN eb.businessservice = 'BPA.NC_APP_FEE' THEN 'Pre Fees'
         WHEN eb.businessservice = 'BPA.NC_SAN_FEE' THEN 'Post Fees'
@@ -400,10 +400,9 @@ ReportDefinitions:
     JOIN egbs_billdetail_v1 eb ON pg.bill_id = eb.billid
     INNER JOIN eg_bpa_buildingplan bp ON bp.applicationno = pg.consumer_code
     INNER JOIN eg_land_address adr ON bp.landid = adr.landinfoid
-    INNER JOIN eg_land_ownerinfo ownerinfo ON bp.landid = ownerinfo.landinfoid
-    INNER JOIN eg_user Citizenuser ON ownerinfo.uuid = Citizenuser.uuid
+    JOIN owner_names ow ON ow.consumer_code = pg.consumer_code AND ow.created_time = pg.created_time
     WHERE pg.txn_status='SUCCESS'  
-  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, Citizenuser.name, bp.approvalno
+  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, ow.owner_names, bp.approvalno
   orderby: ORDER BY pg.created_time
 
 - reportName: DirectBhavanAnugyaReport
