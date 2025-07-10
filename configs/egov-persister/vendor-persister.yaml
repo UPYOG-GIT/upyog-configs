@@ -325,7 +325,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_driver( id, name, tenantid, additionaldetails, owner_id, description, status,licenseNumber, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO eg_driver( id, name, tenantid, additionaldetails, owner_id, description, status,licenseNumber, createdby, lastmodifiedby, createdtime, lastmodifiedtime, vehicle_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: driver
          jsonMaps:
           - jsonPath: $.driver.id
@@ -342,6 +342,7 @@ serviceMaps:
           - jsonPath: $.driver.auditDetails.lastModifiedBy
           - jsonPath: $.driver.auditDetails.createdTime
           - jsonPath: $.driver.auditDetails.lastModifiedTime
+          - jsonPath: $.driver.vehicleId
           
          
        
