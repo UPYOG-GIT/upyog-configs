@@ -106,7 +106,11 @@ serviceMaps:
               jsonPath: $.fsm.address.auditDetails.createdTime
             - 
               jsonPath: $.fsm.address.auditDetails.lastModifiedTime
-          query: "INSERT INTO  eg_fsm_address(id, tenantid, doorno, plotno, landmark, city, district, region, state, country, locality, pincode, additionalDetails, buildingname, street,slumname, fsm_id, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+            - 
+              jsonPath: $.fsm.address.zone.code
+            - 
+              jsonPath: $.fsm.address.ward.code
+          query: "INSERT INTO  eg_fsm_address(id, tenantid, doorno, plotno, landmark, city, district, region, state, country, locality, pincode, additionalDetails, buildingname, street,slumname, fsm_id, createdby, lastmodifiedby, createdtime, lastmodifiedtime, zone, ward) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
         - 
           basePath: fsm.address.geoLocation
           jsonMaps: 
