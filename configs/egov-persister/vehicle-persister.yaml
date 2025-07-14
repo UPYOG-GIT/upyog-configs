@@ -6,7 +6,7 @@ serviceMaps:
       fromTopic: save-vehicle-application
       isTransaction: true
       queryMaps:
-        - query : INSERT INTO eg_vehicle( id, tenantId, registrationNumber, model, type, tankCapicity, suctionType, pollutionCertiValidTill, InsuranceCertValidTill, fitnessValidTill, roadTaxPaidTill, gpsEnabled, source, status, additionalDetails, owner_id , createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query : INSERT INTO eg_vehicle( id, tenantId, registrationNumber, model, type, tankCapicity, suctionType, pollutionCertiValidTill, InsuranceCertValidTill, fitnessValidTill, roadTaxPaidTill, gpsEnabled, source, status, additionalDetails, owner_id , createdBy, lastModifiedBy, createdTime, lastModifiedTime, vendor_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: vehicle
           jsonMaps:
             - jsonPath: $.vehicle.id
@@ -31,6 +31,7 @@ serviceMaps:
             - jsonPath: $.vehicle.auditDetails.lastModifiedBy
             - jsonPath: $.vehicle.auditDetails.createdTime
             - jsonPath: $.vehicle.auditDetails.lastModifiedTime
+            - jsonPath: $.vehicle.vendorId
              
     - version: 1.0
       description: Persists Vehicle Application details in eg_vehicle table
@@ -43,7 +44,7 @@ serviceMaps:
           jsonMaps:
             - jsonPath: $.vehicle.id
             
-        - query : UPDATE eg_vehicle SET tenantId=?, registrationNumber=?, model=?, type=?, tankCapicity=?, suctionType=?, pollutionCertiValidTill=?, InsuranceCertValidTill=?, fitnessValidTill=?, roadTaxPaidTill=?, gpsEnabled=?, source=?, status=?, additionalDetails=?, owner_id =?, createdBy=?, lastModifiedBy=?, createdTime=?, lastModifiedTime=? WHERE id=?
+        - query : UPDATE eg_vehicle SET tenantId=?, registrationNumber=?, model=?, type=?, tankCapicity=?, suctionType=?, pollutionCertiValidTill=?, InsuranceCertValidTill=?, fitnessValidTill=?, roadTaxPaidTill=?, gpsEnabled=?, source=?, status=?, additionalDetails=?, owner_id =?, createdBy=?, lastModifiedBy=?, createdTime=?, lastModifiedTime=?, vendor_id=? WHERE id=?
           basePath: vehicle
           jsonMaps:
             - jsonPath: $.vehicle.tenantId
@@ -67,6 +68,7 @@ serviceMaps:
             - jsonPath: $.vehicle.auditDetails.lastModifiedBy
             - jsonPath: $.vehicle.auditDetails.createdTime
             - jsonPath: $.vehicle.auditDetails.lastModifiedTime
+            - jsonPath: $.vehicle.vendorId
             - jsonPath: $.vehicle.id
 
     - version: 1.0
