@@ -218,6 +218,19 @@ serviceMaps:
             - jsonPath: $.vehicleTrip.*.tripDetails.*.auditDetails.lastModifiedTime
             
             - jsonPath: $.vehicleTrip.*.tripDetails.*.id
+
+    - version: 1.0
+      description: Update Vendor details
+      fromTopic: save-vendordrivervehicle-detail
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO eg_vendor_vehicle(vendor_id,vechile_id, vendorVehicleStatus) VALUES ( ?, ?, ?);
+          basePath: vendor.vehicles.*
+          jsonMaps:
+            - jsonPath: $.vendor.id
+            - jsonPath: $.vendor.vehicles.*.id
+            - jsonPath: $.vendor.vehicles.*.vendorVehicleStatus
+
             
     - version: 1.0
       description: Vehicle Trip details in eg_vehicle_trip  table
