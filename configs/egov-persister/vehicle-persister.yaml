@@ -221,7 +221,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update Vendor details
-      fromTopic: save-vendordrivervehicle-detail
+      fromTopic: save-vendorvehicle-detail
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_vendor_vehicle(vendor_id,vechile_id, vendorVehicleStatus) VALUES ( ?, ?, ?);
