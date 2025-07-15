@@ -345,7 +345,25 @@ serviceMaps:
           - jsonPath: $.driver.vehicleId
           - jsonPath: $.driver.vendorId
           
-         
+ - version: 1.0
+   description: Update Vendor details
+   fromTopic: save-vendordrivervehicle-detail
+   isTransaction: true
+   queryMaps:
+   
+       - query: INSERT INTO eg_vendor_driver(vendor_id, driver_id, vendordriverstatus) VALUES ( ?, ?, ?);
+         basePath: vendor.drivers.*
+         jsonMaps:
+          - jsonPath: $.vendor.id
+          - jsonPath: $.vendor.drivers.*.id
+          - jsonPath: $.vendor.drivers.*.vendorDriverStatus
+          
+       - query: INSERT INTO eg_vendor_vehicle(vendor_id,vechile_id, vendorVehicleStatus) VALUES ( ?, ?, ?); 
+         basePath: vendor.vehicles.*
+         jsonMaps:
+          - jsonPath: $.vendor.id
+          - jsonPath: $.vendor.vehicles.*.id
+          - jsonPath: $.vendor.vehicles.*.vendorVehicleStatus
        
  - version: 1.0
    description: Update Driver details
@@ -377,3 +395,4 @@ serviceMaps:
           - jsonPath: $.driver.vehicleId
           - jsonPath: $.driver.vendorId
           - jsonPath: $.driver.id
+
