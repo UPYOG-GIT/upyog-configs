@@ -392,7 +392,7 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name = 'Electricity Connection' THEN amount END) AS Electricity_Connection,
     SUM(CASE WHEN charges_type_name = 'Boundry Wall' THEN amount END) AS Boundry_Wall,
     SUM(CASE WHEN charges_type_name LIKE ('%FDR%') THEN amount END) AS Rain_Water_FDR,
-    SUM(CASE WHEN charges_type_name = 'Other Charges' THEN amount END) AS Other_Charges,
+    SUM(CASE WHEN charges_type_name IN('Other Charges','Others') THEN amount END) AS Other_Charges,
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
     pg.txn_amount AS Total_Amount
     FROM eg_pg_transactions pg 
