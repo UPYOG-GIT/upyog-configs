@@ -351,6 +351,14 @@ ReportDefinitions:
     label: Penalty
     type: string
     source: bpa
+  - name: Other_Fees_of_Building_Permission
+    label: Other Charges for Building Permission NH Revised
+    type: string
+    source: bpa
+  - name: Other_Charges_for_Building_Permission_NH_Revised
+    label: Other Charges for Building Permission NH Revised
+    type: string
+    source: bpa
   - name: Total_Amount
     label: Total Paid Amount
     type: string
