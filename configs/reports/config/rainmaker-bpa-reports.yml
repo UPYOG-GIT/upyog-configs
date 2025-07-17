@@ -394,6 +394,7 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name LIKE ('%FDR%') THEN amount END) AS Rain_Water_FDR,
     SUM(CASE WHEN charges_type_name IN('Other Charges','Others') THEN amount END) AS Other_Charges,
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
+    SUM(CASE WHEN charges_type_name = 'Other Fees of Building Permission' THEN amount END) AS "Other Fees of Building Permission",
     pg.txn_amount AS Total_Amount
     FROM eg_pg_transactions pg 
     JOIN fee_details fd ON fd.bill_id = pg.bill_id
