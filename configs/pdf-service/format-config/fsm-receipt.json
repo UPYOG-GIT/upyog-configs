@@ -23,10 +23,6 @@
                 {
                   "stack": [
                     {
-                      "text": "{{ulbgrade}} ",
-                      "style": "receipt-logo-header"
-                    },
-                    {
                       "text": "{{serviceType}} ",
                       "style": "receipt-logo-sub-header"
                     }
@@ -181,26 +177,6 @@
                     false
                   ],
                   "style": "receipt-table"
-                },
-                {
-                  "text": "",
-                  "border": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ],
-                  "style": "receipt-table-value"
-                },
-                {
-                  "text": "",
-                  "border": [
-                    false,
-                    false,
-                    true,
-                    false
-                  ],
-                  "style": "receipt-table"
                 }
               ],
               [
@@ -307,50 +283,6 @@
                 }
               ],
               "alignment": "left"
-            },
-            {
-              "text": [
-                {
-                  "text": "{{commissioner/eo}}",
-                  "bold": true
-                }
-              ],
-              "alignment": "right",
-              "margin": [
-                0,
-                0,
-                -10,
-                1
-              ]
-            }
-          ]
-        },
-        {
-          "style": "no-signature",
-          "text": "{{no_signature}}"
-        },
-        {
-          "style": "pt-disclaimer",
-          "stack": [
-            {
-              "text": "{{disclamer}}",
-              "bold": true,
-              "style": "pt-disclaimer-value"
-            },
-            {
-              "style": "pt-disclaimer-value",
-              "table": {
-                "widths": [
-                  "120%",
-                  "*",
-                  "*",
-                  "*"
-                ],
-                "body": [
-                  "{{#variable11}}[{\"text\":\"{{disclaimerContent}}\",\"border\":[false,false,false,false],\"style\":\"pt-disclaimer-value\"}]{{/variable11}}"
-                ]
-              },
-              "layout": {}
             }
           ]
         }
