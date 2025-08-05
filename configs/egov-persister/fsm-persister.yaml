@@ -225,7 +225,7 @@ serviceMaps:
               jsonPath: $.fsm.driverId
             - 
               jsonPath: $.fsm.id
-          query: "UPDATE  eg_fsm_application SET additionaldetails=?, description=?, applicationstatus=?, source=?, sanitationtype=?, propertyusage=?, nooftrips=?, status=?, vehicle_id=?, vehicletype=?,vehicleCapacity=?, paymentPreference=?,advanceAmount=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?, possible_srv_date=?, dso_id=?, driver_id where id=?"
+          query: "UPDATE  eg_fsm_application SET additionaldetails=?, description=?, applicationstatus=?, source=?, sanitationtype=?, propertyusage=?, nooftrips=?, status=?, vehicle_id=?, vehicletype=?,vehicleCapacity=?, paymentPreference=?,advanceAmount=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?, possible_srv_date=?, dso_id=?, driver_id=? where id=?"
         - 
           basePath: fsm.address
           jsonMaps: 
