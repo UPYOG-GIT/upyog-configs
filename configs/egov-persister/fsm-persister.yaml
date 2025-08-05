@@ -58,7 +58,9 @@ serviceMaps:
               jsonPath: $.fsm.auditDetails.createdTime
             - 
               jsonPath: $.fsm.auditDetails.lastModifiedTime
-          query: "INSERT INTO  eg_fsm_application( id, applicationno, tenantid, additionaldetails, accountid, description, applicationstatus, source, sanitationtype, propertyusage, nooftrips, status, vehicle_id, vehicletype, vehicleCapacity, paymentPreference,advanceAmount, applicationType, oldApplicationNo, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?);"
+            - 
+              jsonPath: $.fsm.driverId
+          query: "INSERT INTO  eg_fsm_application( id, applicationno, tenantid, additionaldetails, accountid, description, applicationstatus, source, sanitationtype, propertyusage, nooftrips, status, vehicle_id, vehicletype, vehicleCapacity, paymentPreference,advanceAmount, applicationType, oldApplicationNo, createdby, lastmodifiedby, createdtime, lastmodifiedtime, driver_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?);"
         - 
           basePath: fsm.address
           jsonMaps: 
@@ -220,8 +222,10 @@ serviceMaps:
             - 
               jsonPath: $.fsm.dsoId
             - 
+              jsonPath: $.fsm.driverId
+            - 
               jsonPath: $.fsm.id
-          query: "UPDATE  eg_fsm_application SET additionaldetails=?, description=?, applicationstatus=?, source=?, sanitationtype=?, propertyusage=?, nooftrips=?, status=?, vehicle_id=?, vehicletype=?,vehicleCapacity=?, paymentPreference=?,advanceAmount=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?, possible_srv_date=?, dso_id=? where id=?"
+          query: "UPDATE  eg_fsm_application SET additionaldetails=?, description=?, applicationstatus=?, source=?, sanitationtype=?, propertyusage=?, nooftrips=?, status=?, vehicle_id=?, vehicletype=?,vehicleCapacity=?, paymentPreference=?,advanceAmount=?, createdby=?, lastmodifiedby=?, createdtime=?, lastmodifiedtime=?, possible_srv_date=?, dso_id=?, driver_id where id=?"
         - 
           basePath: fsm.address
           jsonMaps: 
