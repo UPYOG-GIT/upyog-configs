@@ -45,7 +45,7 @@ serviceMaps:
           jsonMaps:
             - jsonPath: $.vehicle.id
             
-        - query : UPDATE eg_vehicle SET tenantId=?, registrationNumber=?, model=?, type=?, tankCapicity=?, suctionType=?, pollutionCertiValidTill=?, InsuranceCertValidTill=?, fitnessValidTill=?, roadTaxPaidTill=?, gpsEnabled=?, source=?, status=?, additionalDetails=?, owner_id =?, createdBy=?, lastModifiedBy=?, createdTime=?, lastModifiedTime=?, vendor_id=? WHERE id=?
+        - query : UPDATE eg_vehicle SET tenantId=?, registrationNumber=?, model=?, type=?, tankCapicity=?, suctionType=?, pollutionCertiValidTill=?, InsuranceCertValidTill=?, fitnessValidTill=?, roadTaxPaidTill=?, gpsEnabled=?, source=?, status=?, additionalDetails=?, owner_id =?, createdBy=?, lastModifiedBy=?, createdTime=?, lastModifiedTime=?, vendor_id=?, vehicle_img=? WHERE id=?
           basePath: vehicle
           jsonMaps:
             - jsonPath: $.vehicle.tenantId
@@ -70,6 +70,7 @@ serviceMaps:
             - jsonPath: $.vehicle.auditDetails.createdTime
             - jsonPath: $.vehicle.auditDetails.lastModifiedTime
             - jsonPath: $.vehicle.vendorId
+            - jsonPath: $.vehicle.vehicleImg
             - jsonPath: $.vehicle.id
 
     - version: 1.0
