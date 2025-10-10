@@ -389,7 +389,11 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pg.created_time <= $toDate
   query: WITH owner_names AS (SELECT bp.applicationno AS consumer_code, pg.created_time, MIN(u.name) AS owner_names FROM eg_bpa_buildingplan bp JOIN eg_land_ownerinfo o ON bp.landid = o.landinfoid JOIN eg_user u ON o.uuid = u.uuid JOIN eg_pg_transactions pg ON bp.applicationno = pg.consumer_code WHERE pg.txn_status = 'SUCCESS' AND pg.created_time >= $fromDate AND pg.created_time <= $toDate AND pg.tenant_id = $ulb GROUP BY bp.applicationno, pg.created_time) 
-    SELECT pg.consumer_code As Appliaction_No, ow.owner_names AS name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, bp.approvalno,  
+    SELECT pg.consumer_code As Appliaction_No, ow.owner_names AS name, adr.occupancy as Occupancy_Type, TO_CHAR(TO_TIMESTAMP(pg.created_time / 1000),'DD/MM/YYYY') AS Payment_Date, 
+    CASE 
+        WHEN eb.businessservice = 'BPA.NC_SAN_FEE' THEN bp.approvalno 
+        ELSE '' 
+    END AS approvalno,
     CASE 
         WHEN eb.businessservice = 'BPA.NC_APP_FEE' THEN 'Pre Fees'
         WHEN eb.businessservice = 'BPA.NC_SAN_FEE' THEN 'Post Fees'
