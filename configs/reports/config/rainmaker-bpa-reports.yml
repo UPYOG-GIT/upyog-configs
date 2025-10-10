@@ -416,7 +416,7 @@ ReportDefinitions:
     INNER JOIN eg_land_address adr ON bp.landid = adr.landinfoid
     JOIN owner_names ow ON ow.consumer_code = pg.consumer_code AND ow.created_time = pg.created_time
     WHERE pg.txn_status='SUCCESS'  
-  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, ow.owner_names, bp.approvalno
+  groupby: GROUP BY pg.consumer_code, pg.txn_amount, eb.businessservice, pg.created_time, adr.occupancy, ow.owner_names, bp.approvalno, adr.address
   orderby: ORDER BY pg.created_time
 
 - reportName: DirectBhavanAnugyaReport
