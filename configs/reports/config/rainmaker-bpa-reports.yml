@@ -363,6 +363,10 @@ ReportDefinitions:
     label: Total Paid Amount
     type: string
     source: bpa
+  - name: Address
+    label: Address
+    type: string
+    source: bpa
   searchParams:
   - name: ulb
     label: ULB
@@ -404,7 +408,7 @@ ReportDefinitions:
     SUM(CASE WHEN charges_type_name = 'Penalty' THEN amount END) AS Penalty,
     SUM(CASE WHEN charges_type_name = 'Other Fees of Building Permission' THEN amount END) AS Other_Fees_of_Building_Permission,
     SUM(CASE WHEN charges_type_name = 'Other Charges for Building Permission NH Revised' THEN amount END) AS Other_Charges_for_Building_Permission_NH_Revised,
-    pg.txn_amount AS Total_Amount
+    pg.txn_amount AS Total_Amount, adr.address as Address
     FROM eg_pg_transactions pg 
     JOIN fee_details fd ON fd.bill_id = pg.bill_id
     JOIN egbs_billdetail_v1 eb ON pg.bill_id = eb.billid
