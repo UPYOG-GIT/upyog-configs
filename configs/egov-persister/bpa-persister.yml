@@ -50,7 +50,7 @@ serviceMaps:
 
           - jsonPath: $.BPA.propertyId
 
-          - jsonPath: $.BPA.swsdetails
+          - jsonPath: $.BPA.swsDetails
             type: JSON
             dbType: JSONB
 
