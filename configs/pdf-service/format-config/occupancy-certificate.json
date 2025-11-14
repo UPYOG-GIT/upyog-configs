@@ -49,12 +49,13 @@
           {
             "text": [
               {
-                "text": "{{OCCUPANCY_CERTIFICATE_NO}} : ",
+                "text": "{{PLAN_PERMISION_NO}} : ",
                 "bold": true
               },
               {
-                "text": "{{occupancyCertificateNo}}",
-                "bold": true
+                "text": "{{planPermissionNo}}",
+                "bold": true,
+                "font": "Roboto"
               }
             ],
             "alignment": "left",
@@ -68,7 +69,8 @@
               },
               {
                 "text": "{{applicationDate}}",
-                "bold": true
+                "bold": true,
+                "font": "Roboto"
               }
             ],
             "alignment": "right",
@@ -76,19 +78,8 @@
           }
         ],
         "style": "top-margin",
-        "bold" : true
-      },
-      {
-        "text":[
-          {
-            "text": " {{PROPERTY_ID}}: ",
-            "bold":true
-          },
-          {
-            "text": " {{propertyId}}",
-            "bold":true
-          }
-        ]
+        "bold" : true,
+        "font" : "Roboto"
       },
       {
         "text": [
@@ -115,7 +106,8 @@
           }
         ],
         "style": "top-margin",
-        "bold" : true
+        "bold" : true,
+        "font" : "Roboto"
       },
       {
         "text": [
@@ -123,13 +115,13 @@
             "text": "{{certifiedText}}"
           },
           {
-            "text": " {{permitNo}}"
+            "text": " {{planPermissionNo}}"
           },
           {
-            "text" : " {{dated}}"
+            "text": " {{dated}} "
           },
           {
-            "text": " {{permitDate}} "
+            "text": " {{applicationDate}}"
           },
           {
             "text": " {{issuedTo}}"
@@ -175,7 +167,8 @@
           }
         ],
         "style": "top-high-margin",
-        "bold" : true
+        "bold" : true,
+        "font" : "Roboto"
       },
       {
         "image": "{{qrCode}}",
