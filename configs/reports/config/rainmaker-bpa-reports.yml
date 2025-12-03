@@ -493,7 +493,7 @@ ReportDefinitions:
     searchClause: AND bp.createdtime  <= $toDate 
   query: select ms.message as Name_of_ULB, bp.tenantid, 
           COUNT(CASE WHEN (bp.status != 'INITIATED' and txn_status='SUCCESS' and txn_amount=1.00) THEN 1 END) AS Direct_Bhawan_Anugya, count(case when (bp.status = 'APPROVED' and txn_status='SUCCESS' and txn_amount=1.00) then 1 end) as BPC_issued, 
-          count( case when (bp.status IN ('CITIZEN_ACTION_PENDING_AT_DOC_VERIF', 'BACK_FROM_DOC_VERIFICATION', 'PENDINGAPPROVAL', 'PENDING_POST_FEE_APPROVAL_BY_BUILDER', 'BACK_FROM_APPROVAL', 'BACK_FROM_DOC_VERIFICATION_BY_BUILDER', 'SITE_VISIT_PENDING', 'DOC_VERIFICATION_PENDING_BY_BUILDER', 'DOC_VERIFICATION_PENDING_BY_ENGINEER', 'PENDING_POST_FEE_APPROVAL', 'PENDING_APPROVAL_BY_COMMISSIONER') and txn_status='SUCCESS' and txn_amount=1.00) then 1 end ) as Inprogress, 
+          count( case when (bp.status IN ('DOC_VERIFICATION_INPROGRESS_BY_BUILDER', 'INPROGRESS', 'POST_FEE_APPROVAL_INPROGRESS_BY_BUILDER', 'APPROVAL_INPROGRESS_BY_COMMISSIONER', 'BACK_FROM_DOC_VERIFICATION_BY_BUILDER', 'SITE_VISIT_PENDING', 'CITIZEN_ACTION_PENDING_AT_DOC_VERIF', 'CITIZEN_ACTION_PENDING_AT_APPROVAL', 'POST_FEE_APPROVAL_INPROGRESS', 'DOC_VERIFICATION_INPROGRESS_BY_ENGINEER', 'APPROVAL_INPROGRESS') and txn_status='SUCCESS' and txn_amount=1.00) then 1 end ) as Inprogress, 
           count( case when (bp.status = 'PENDING_SANC_FEE_PAYMENT' and txn_status='SUCCESS' and txn_amount=1.00) then 1 end ) as Post_Fee_verified, 
           count(case when (bp.status = 'APPROVED' and txn_status='SUCCESS' and txn_amount=1.00) then 1 end) as Post_Fee_paid, 
           count(case when (bp.status = 'REJECTED' and txn_status='SUCCESS' and txn_amount=1.00) then 1 end) as Rejected, 
