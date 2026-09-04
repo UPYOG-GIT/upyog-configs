@@ -700,19 +700,19 @@ ReportDefinitions:
       source: bpa
       wrapper: true
       isMandatory: true
-      searchClause: AND ept.tenant_id = $ulb
+      searchClause: AND pd.ulb_code = $ulb
     - name: fromDate
       label: From Date
       type: epoch
       source: bpa
       isMandatory: false
-      searchClause: AND ept.last_modified_time >= $fromDate
+      searchClause: AND pd.last_modified_time >= $fromDate
     - name: toDate
       label: To Date
       type: epoch
       source: bpa
       isMandatory: false
-      searchClause: AND ept.last_modified_time <= $toDate
+      searchClause: AND pd.last_modified_time <= $toDate
 
   query: >
     WITH payment_details AS (
@@ -782,7 +782,6 @@ ReportDefinitions:
             Citizenuser.name,
             fd.application_no,
             bp.createdtime,
-            bp.status
     )
     SELECT
         pd.application_no,
@@ -813,7 +812,8 @@ ReportDefinitions:
         fs.other_building_permission_fee,
         fs.penalty,
         fs.electricity_connection,
-        fs.total_amount
+        fs.total_amount,
+        pd.last_modified_time
     FROM payment_details pd 
     LEFT JOIN fee_summary fs ON pd.application_no = fs.application_no
 
